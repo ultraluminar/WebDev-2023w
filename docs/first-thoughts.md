@@ -13,15 +13,15 @@
 
 ## Inhalt
 ### 4 Hauptbereiche
-- Lexikon
+- **Lexikon**
     - 50 - 100 verschiedene Tiere
     - Vielfalt an Attributen
-- Quizzes und Spiele
+- **Quizzes und Spiele**
     - Quizze zu verschiedenen Tieren
 - **Spiele**
     - Tiere erraten auf Basis von Attributen
     - Tiere nach Tiergeräuchen erraten
     - Tier Memory
-- Q&A
+- **Q&A**
     - Fragen, Antworten
     - Bestimmen der Frage und antworten durch "durchklicken"
