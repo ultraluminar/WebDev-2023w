@@ -16,7 +16,7 @@
 - **Lexikon**
     - 50 - 100 verschiedene Tiere
     - Vielfalt an Attributen
-- **Quizzes und Spiele**
+- **Quizzes**
     - Quizze zu verschiedenen Tieren
 - **Spiele**
     - Tiere erraten auf Basis von Attributen
