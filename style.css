@@ -1,0 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&family=Rubik+Scribble&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header a {
+    text-decoration: none;
+    color: #000;
+    font-weight: bold;
+}
+
+.logo-text {
+    font-family: 'Rubik Scribble', cursive;
+    font-size: 1.5em;
+    color: black;
+}
+
+nav {
+    display: none;
+    flex-direction: column;
+}
+
+nav a {
+    display: block;
+    padding: 10px;
+    background-color: #cbcbcb;
+    text-decoration: none;
+    color: #000;
+}
+
+nav a:hover {
+    background-color: #ebebeb;
+}
