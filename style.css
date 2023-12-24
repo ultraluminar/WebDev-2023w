@@ -24,6 +24,48 @@ header a {
     color: black;
 }
 
+#burger-menu {
+    display: block;
+    position: relative;
+    width: 1.5em;
+    height: 1.5em;
+    transform: rotate(0deg);
+    transition: .5s ease-in-out;
+    cursor: pointer;
+}
+
+#burger-menu span {
+    display: block;
+    position: absolute;
+    height: 0.2em;
+    width: 100%;
+    background: #000;
+    border-radius: 0.2em;
+    opacity: 1;
+    left: 0;
+    transform: rotate(0deg);
+    transition: .25s ease-in-out;
+}
+
+#burger-menu span:nth-child(1) {
+    top: 0.5em;
+}
+
+#burger-menu span:nth-child(2) {
+    top: 0.9em;
+}
+
+#burger-menu.open span:nth-child(1) {
+    top: 0.7em;
+    transform: rotate(45deg);
+}
+
+#burger-menu.open span:nth-child(2) {
+    top: 0.7em;
+    transform: rotate(-45deg);
+}
+
+/* Navigation */
 nav {
     display: none;
     flex-direction: column;
