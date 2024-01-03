@@ -73,7 +73,7 @@ nav {
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
-    
+    gap: 0.2em;
 }
 
 nav a {
@@ -82,11 +82,11 @@ nav a {
     width: 40%;
     min-width: 10em;
     text-align: center;
-    background-color: #cbcbcb;
+    background-color: #ffffff;
     text-decoration: none;
     color: #000;
-    border: 2px solid #000;
-    border-radius: 100px;
+    border: 1px solid #000;
+    border-radius: 50%;     /* round corners */
 }
 
 nav a:hover {
