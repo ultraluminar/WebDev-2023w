@@ -1,12 +1,12 @@
 {
-    "open": [
-      {
-        "title": "replace onclick with addEventListener",
-        "description": "event is deprecated replace it with addEventListener",
-        "priority": "LOW",
-        "status": "posted",
-        "comments": []
-      }
-    ],
-    "closed": []
+  "open": [
+    {
+      "title": "replace onclick with addEventListener",
+      "description": "event is deprecated replace it with addEventListener",
+      "priority": "LOW",
+      "status": "posted",
+      "comments": []
+    }
+  ],
+  "closed": []
 }
