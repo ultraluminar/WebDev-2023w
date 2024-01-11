@@ -20,7 +20,7 @@
     - Quizze zu verschiedenen Tieren
 - **Spiele**
     - Tiere erraten auf Basis von Attributen
-    - Tiere nach Tiergeräuchen erraten
+    - Tiere nach Tiergeräuschen erraten
     - Tier Memory
 - **Q&A**
     - Fragen, Antworten
