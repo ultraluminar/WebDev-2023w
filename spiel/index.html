@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="../style.css">
         <script src="game.js"></script>
         <title>Abenteuer Tierwelt - Startseite</title>
     </head>
@@ -11,7 +11,7 @@
         <header>
             <div class="container">
                 <div>
-                    <a href="index.html"><img src="images/image-logo.png" alt="Logo" id="logo" width="32px"/></a>
+                    <a href="index.html"><img src="../images/image-logo.png" alt="Logo" id="logo" width="32px"/></a>
                     <a href="index.html"><span class="logo-text">Abenteuer Tierwelt</span></a>
                 </div>
                 <a id="burger-menu" onclick="toggleNav(event)">
@@ -22,15 +22,20 @@
             <hr id="header-seperator"/>
         </header>
         <nav id="nav">
-            <a href="index.html" class="self">Startseite</a>
-            <a href="lexikon/index.html">Lexikon</a>
-            <a href="quiz/index.html">Quizze</a>
-            <a href="spiel/index.html">Spiele</a>
-            <a href="fragen-und-antworten/index.html">Fragen & Antworten</a>
+            <a href="../index.html" class="self">Startseite</a>
+            <a href="../lexikon/index.html">Lexikon</a>
+            <a href="../quiz/index.html">Quizze</a>
+            <a href="../spiel/index.html">Spiele</a>
+            <a href="../fragen-und-antworten/index.html">Fragen & Antworten</a>
         </nav>
         <div id="main">
             <h1>Choose an animal</h1>
-            <select name="animalDropdown" id="animalDropdown"></select>
+
+            <input type="text" id="searchInput" list="animalList" placeholder="Search for an animal">
+
+            <datalist id="animalList">
+                <!-- Options will be added dynamically using JavaScript -->
+            </datalist>
         </div>
     </body>
 </html>
