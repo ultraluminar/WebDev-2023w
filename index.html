@@ -9,15 +9,18 @@
     </head>
     <body>
         <header>
-            <div>
-                <a href="index.html"><span class="logo-text">Abenteuer Tierreich</span></a>
+            <div class="container">
+                <div>
+                    <a href="index.html"><img src="images/image-logo.png" alt="Logo" id="logo" width="32px"/></a>
+                    <a href="index.html"><span class="logo-text">Abenteuer Tierwelt</span></a>
+                </div>
+                <a id="burger-menu" onclick="toggleNav(event)">
+                    <span></span>
+                    <span></span>
+                </a>
             </div>
-            <a id="burger-menu" onclick="toggleNav(event)">
-                <span></span>
-                <span></span>
-            </a>
+            <hr id="header-seperator"/>
         </header>
-        <hr id="header-seperator"/>
         <nav id="nav">
             <a href="lexikon/index.html">Lexikon</a>
             <a href="quiz/index.html">Quizze</a>
