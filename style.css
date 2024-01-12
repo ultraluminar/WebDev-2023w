@@ -130,7 +130,7 @@ nav {
     border-bottom: solid 1px grey;
     box-shadow: 0px 0px 50px -20px #b6b6b6;
 
-    transform: translateY(-16em);
+    transform: translateY(-17.5em);
     transition: 0.5s ease-in-out;
 }
 
@@ -143,8 +143,13 @@ nav a {
     background-color: var(--primary-color);
     text-decoration: none;
     color: var(--background-color);
-    /* border: 2px solid #000; */
+    border: 2px solid var(--primary-color);
     border-radius: 0.75em;     /* round corners */
+}
+
+nav a.self {
+    background-color: var(--secondary-color);
+    color: var(--text-color);
 }
 
 /* nav a:hover {
