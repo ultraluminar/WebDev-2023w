@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto&family=Rubik+Scribble&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Scribble&family=Ubuntu:wght@400;700&display=swap');
 
 :root{
     --primary-color: #175632;
@@ -36,8 +36,9 @@ body {
     color: var(--text-color);
 }
 
+/* Header */
 header {
-    position: sticky; /* Fix the position */
+    position: sticky;
     top: 0; /* At the top of the page */
     z-index: 2;
     background: var(--background-color);
@@ -74,6 +75,7 @@ header a {
     color: black;
 }
 
+/* Burger Menu */
 #burger-menu {
     display: block;
     position: relative;
@@ -152,6 +154,34 @@ nav a.self {
     color: var(--text-color);
 }
 
-/* nav a:hover {
-    background-color: #ebebeb;
-} */
+/* Home/Landingpage*/
+section {
+    margin: 2em;
+}
+
+.hero {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-image img {
+    width: 100%;
+    max-width: calc(100vh / 2);
+}
+
+.hero-text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1em;
+    padding: 1em;
+}
+
+.hero-text h1 {
+    font-family: Ubuntu, sans-serif;
+    font-size: 3em;
+    color: var(--text-color);
+    text-align: left;
+}
