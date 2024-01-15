@@ -53,11 +53,13 @@ header div {
 }
 
 header .container {
-    padding: 15px 25px;
+    padding: 12px 20px;
     justify-content: space-between;
 }
 
 header a {
+    display: flex;
+    align-items: center;
     text-decoration: none;
     color: #000;
     font-weight: bold;
@@ -71,7 +73,7 @@ header a {
 
 .logo-text {
     font-family: 'Rubik Scribble', cursive;
-    font-size: 1.5em;
+    font-size: 1.75em;
     color: black;
 }
 
@@ -157,7 +159,7 @@ nav a.self {
 
 /* Home/Landingpage*/
 section {
-    margin: 2em;
+    margin: 2em 4%;
 }
 
 .hero {
