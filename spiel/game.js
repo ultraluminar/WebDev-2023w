@@ -26,7 +26,7 @@ function extractFirstColumn(data) {
     return data.map(row => row[0]);
 }
 
-    
+
 
 // after page has loaded
 document.addEventListener('DOMContentLoaded', async function () {
@@ -86,7 +86,7 @@ document.addEventListener('DOMContentLoaded', async function () {
                 console.log("You have already tried this animal, try another one!");
                 return; }
 
-            dataTable.appendChild(createContentRow(guessedAnimalRow, randomAnimalRow));
+            createContentRow(guessedAnimalRow, randomAnimalRow);
 
             
             if (guessedAnimal == randomAnimalRow[0]) {
@@ -96,15 +96,13 @@ document.addEventListener('DOMContentLoaded', async function () {
     }
 
     function createContentRow(playerGuessRow, randomAnimalRow) {
-        const tableRow = document.createElement('tr');
+        const tableRow = dataTable.insertRow(1);
 
         playerGuessRow.forEach((value, index) => {
-            const td = document.createElement('td');
+            const td = tableRow.insertCell(-1);
             td.textContent = value;
             td.classList.add(value === randomAnimalRow[index] ? 'correct' : 'incorrect');
-            tableRow.appendChild(td);
         });
-        return tableRow;
     }
 
 
