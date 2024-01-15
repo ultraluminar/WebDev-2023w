@@ -205,6 +205,15 @@ section {
     text-align: left;
 }
 
+/* Game */
+.correct {
+    background-color: #60D26F;
+}
+
+.incorrect {
+    background-color: #D26060;
+}
+
 /* Helpers */
 .bg-primary {
     background-color: var(--primary-color);

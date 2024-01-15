@@ -11,8 +11,8 @@
         <header>
             <div class="container">
                 <div>
-                    <a href="index.html"><img src="../images/image-logo.png" alt="Logo" id="logo" width="32px"/></a>
-                    <a href="index.html"><span class="logo-text">Abenteuer Tierwelt</span></a>
+                    <a href="../index.html"><img src="../images/image-logo.png" alt="Logo" id="logo" width="32px"/></a>
+                    <a href="../index.html"><span class="logo-text">Abenteuer Tierwelt</span></a>
                 </div>
                 <a id="burger-menu" onclick="toggleNav(event)">
                     <span></span>
@@ -31,7 +31,7 @@
         <div id="main">
             <h1>Choose an animal</h1>
 
-            <input type="text" id="searchInput" list="animalList" placeholder="Search for an animal">
+            <input type="text" id="searchInput" list="animalList" placeholder="Select an animal">
 
             <datalist id="animalList">
                 <!-- Options will be added dynamically using JavaScript -->
@@ -39,7 +39,10 @@
 
             <button id="logSelectionBtn">Log Selection</button>
 
-            <p id="selectedAnimalDisplay"></p>
+            <table id="animalTable">
+                <!-- Table will be added dynamically using JavaScript -->
+            </table>
+
         </div>
     </body>
 </html>
