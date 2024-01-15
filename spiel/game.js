@@ -78,7 +78,7 @@ document.addEventListener('DOMContentLoaded', async function () {
 
         // if selected animal is valid
         if (guessedAnimalRow) {
-            if (tryList.length == maxVersuche) {
+            if (tryList.length === maxVersuche) {
                 console.log("You have already tried 5 times!, Game Over!");
                 return; }
             // if selected animal has already been tried
@@ -88,8 +88,7 @@ document.addEventListener('DOMContentLoaded', async function () {
 
             createContentRow(guessedAnimalRow, randomAnimalRow);
 
-            
-            if (guessedAnimal == randomAnimalRow[0]) {
+            if (guessedAnimal === randomAnimalRow[0]) {
                 console.log("You have guessed the animal, Congratulations!");
                 return; }
         }
