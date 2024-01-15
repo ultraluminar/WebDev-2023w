@@ -110,7 +110,6 @@ document.addEventListener('DOMContentLoaded', async function () {
 
     function createHeaderRow() {
         const tableHeader = document.createElement('tr');
-        tableHeader.appendChild(document.createElement('th'));
         csvHeader.forEach(header => {
             const th = document.createElement('th');
             th.textContent = header;
