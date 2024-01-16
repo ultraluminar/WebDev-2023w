@@ -3,6 +3,7 @@
 :root{
     --primary-color: #175632;
     --secondary-color: #60D26F;
+    --secondary-color-light: #A3E6A4;
     --accent-color: #83BEC5;
 
     --text-color: #0f0f0f;
@@ -175,7 +176,6 @@ section {
 }
 
 .hero-text {
-    font-size: 0.9em;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -223,6 +223,9 @@ section {
     width: 100%;
     border-collapse: collapse;
     font-size: clamp(0px, 2.25vw, 0.9em); /* Minimum size of 16px, preferred size of 2.25vw, maximum size of 32px */
+    /* border: 1px solid #000;
+    border-radius: 1em;
+    overflow: hidden; */
 }
 
 .game-body table, td, th {
@@ -239,6 +242,7 @@ section {
 
 .game-body th {
     text-align: center;
+    background-color: var(--accent-color);
     max-width: 8vw;
     word-wrap: break-word;
 }
@@ -255,7 +259,7 @@ section {
 }
 
 .bg-secondary {
-    background-color: var(--secondary-color);
+    background-color: var(--secondary-color-light);
     color: var(--text-color);
 }
 
@@ -276,11 +280,96 @@ h1 {
     text-align: left;
 }
 
-.heading-container{
+h2 {
+    font-size: 2rem;
+    color: var(--text-color);
+    text-align: left;
+}
+
+h3 {
+    font-size: 1.65rem;
+    color: var(--text-color);
+    text-align: left;
+}
+
+h4 {
+    font-size: 1.2rem;
+    color: var(--text-color);
+    text-align: left;
+}
+
+p {
     font-size: 0.9em;
+}
+
+em {
+    color: var(--primary-color);
+    font-weight: bold;
+    font-style: normal;
+    font-size: 1.15em;
+}
+
+/* Divs */
+.heading-container{
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     gap: 0.5em;
     padding: 1em;
+}
+
+/* Info Box */
+.info-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2em;
+    padding: 2em 4em;
+    background-color: var(--secondary-color-light);
+    border-radius: 1em;
+    overflow: hidden;
+}
+
+.info-heading, .info-footer {
+    display: flex;
+    flex-direction: column;
+    width: calc(100% + 5em);
+    gap: 1em;
+}
+
+.info-body {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 1.5em;
+}
+
+.info-body .one::before {
+    content: "1";
+    font-size: 1.65rem;
+    font-weight: bold;
+    position: absolute;
+    transform: translate(-1em);
+    color: var(--accent-color);
+    line-height: 0.5;
+}
+
+.info-body .two::before {
+    content: "2";
+    font-size: 1.65rem;
+    font-weight: bold;
+    position: absolute;
+    transform: translate(-1em);
+    color: var(--accent-color);
+    line-height: 0.5;
+}
+
+.info-body .three::before {
+    content: "3";
+    font-size: 1.65rem;
+    font-weight: bold;
+    position: absolute;
+    transform: translate(-1em);
+    color: var(--accent-color);
+    line-height: 0.5;
 }
