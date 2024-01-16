@@ -5,6 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="../style.css">
         <script src="game.js"></script>
+        <script src="../nav.js"></script>
         <title>Abenteuer Tierwelt - Startseite</title>
         <link rel="apple-touch-icon" sizes="180x180" href="../assets/icons/apple-touch-icon.png">
         <link rel="icon" type="image/png" sizes="32x32" href="../assets/icons/favicon-32x32.png">
@@ -31,27 +32,25 @@
             <hr id="header-seperator"/>
         </header>
         <nav id="nav">
-            <a href="../index.html" class="self">Startseite</a>
+            <a href="../index.html">Startseite</a>
             <a href="../lexikon/index.html">Lexikon</a>
             <a href="../quiz/index.html">Quizze</a>
-            <a href="../spiel/index.html">Spiele</a>
+            <a href="../spiel/index.html" class="self">Spiele</a>
             <a href="../fragen-und-antworten/index.html">Fragen & Antworten</a>
         </nav>
-        <div id="main">
-            <h1>Choose an animal</h1>
-
+        <section>
+            <h1>Tiere raten</h1>
+            <p>Wähle ein Tier aus der Liste aus und versuche es zu erraten.</p>
+        </section>
+        <section>
             <input type="text" id="searchInput" list="animalList" placeholder="Select an animal">
-
             <datalist id="animalList">
                 <!-- Options will be added dynamically using JavaScript -->
             </datalist>
-
             <button id="logSelectionBtn">Guess Animal</button>
-
             <table id="animalTable">
                 <!-- Table will be added dynamically using JavaScript -->
             </table>
-
-        </div>
+        </section>
     </body>
 </html>

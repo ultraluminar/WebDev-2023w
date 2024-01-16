@@ -34,6 +34,7 @@
 body {
     background-color: var(--background-color);
     color: var(--text-color);
+    font-family: Ubuntu, sans-serif;
 }
 
 /* Header */
@@ -143,7 +144,6 @@ nav a {
     padding: 10px;
     width: 40%;
     min-width: 10em;
-    font-family: Ubuntu, sans-serif;
     text-align: center;
     text-decoration: none;
     color: var(--background-color);
@@ -177,7 +177,6 @@ section {
 .hero-text {
     font-size: 0.9em;
     display: flex;
-    font-family: Ubuntu, sans-serif;
     flex-direction: column;
     align-items: flex-start;
     gap: 1.5em;
@@ -215,6 +214,8 @@ section {
 .incorrect {
     background-color: #D26060;
 }
+
+
 
 /* Helpers */
 .bg-primary {
