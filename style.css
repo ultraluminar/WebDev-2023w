@@ -203,12 +203,12 @@ section {
 
 /* Game */
 .correct {
-    background-color: #60D26F;
+    background-color: var(--secondary-color);
 }
 
 .incorrect {
-    background-color: #D26060;
-    color: var(--background-color)
+    background-color: #d84e4e;
+    color: white;
 }
 
 .game-head {
@@ -222,21 +222,21 @@ section {
 .game-body table {
     width: 100%;
     border-collapse: collapse;
-    font-size: clamp(0px, 2.25vw, 0.9em); /* Minimum size of 16px, preferred size of 2.25vw, maximum size of 32px */
-    /* border: 1px solid #000;
+    font-size: clamp(0px, 2.6vw, 0.9em); /* Minimum size of 16px, preferred size of 2.25vw, maximum size of 32px */
+    border: 1px solid #000;
     border-radius: 1em;
-    overflow: hidden; */
+    overflow: hidden;
 }
 
 .game-body table, td, th {
-    padding: 0.5em 1em;
+    padding: 0.7em 0.5em;
     border: 1px solid #000;
 }
 
 .game-body td{
     text-align: center;
     max-width: 8vw;
-    height: 50px;
+    height: calc(30px + 2vw);
     word-wrap: break-word;
 }
 
