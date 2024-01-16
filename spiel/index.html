@@ -38,19 +38,23 @@
             <a href="../spiel/index.html" class="self">Spiele</a>
             <a href="../fragen-und-antworten/index.html">Fragen & Antworten</a>
         </nav>
-        <section>
+        <section class="heading-container">
             <h1>Tiere raten</h1>
-            <p>Wähle ein Tier aus der Liste aus und versuche es zu erraten.</p>
+            <p class="subheading">Ich habe mir ein Tier überlegt. Denkst du, du kannts es erraten?</p>
         </section>
-        <section>
-            <input type="text" id="searchInput" list="animalList" placeholder="Select an animal">
-            <datalist id="animalList">
-                <!-- Options will be added dynamically using JavaScript -->
-            </datalist>
-            <button id="logSelectionBtn">Guess Animal</button>
-            <table id="animalTable">
-                <!-- Table will be added dynamically using JavaScript -->
-            </table>
+        <section class="game">
+            <div class="game-head">
+                <input type="text" id="searchInput" list="animalList" placeholder="Select an animal">
+                <datalist id="animalList">
+                    <!-- Options will be added dynamically using JavaScript -->
+                </datalist>
+                <button id="logSelectionBtn">Guess Animal</button>
+            </div>
+            <div class="game-body">
+                <table id="animalTable">
+                    <!-- Table will be added dynamically using JavaScript -->
+                </table>
+            </div>
         </section>
     </body>
 </html>

@@ -200,11 +200,6 @@ section {
     text-align: center;
 }
 
-.hero-text h1 {
-    font-size: 2.75rem;
-    color: var(--text-color);
-    text-align: left;
-}
 
 /* Game */
 .correct {
@@ -213,11 +208,47 @@ section {
 
 .incorrect {
     background-color: #D26060;
+    color: var(--background-color)
 }
 
+.game-head {
+    display: flex;
+    justify-content: center; /* Aligns items horizontally in the center */
+    align-items: center; /* Aligns items vertically in the center */
+    padding: 0.5em 1em;
+    margin: 0 auto; /* Centers the div itself if it has a specified width */
+}
 
+.game-body table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: clamp(0px, 2.25vw, 0.9em); /* Minimum size of 16px, preferred size of 2.25vw, maximum size of 32px */
+}
+
+.game-body table, td, th {
+    padding: 0.5em 1em;
+    border: 1px solid #000;
+}
+
+.game-body td{
+    text-align: center;
+    max-width: 8vw;
+    height: 50px;
+    word-wrap: break-word;
+}
+
+.game-body th {
+    text-align: center;
+    max-width: 8vw;
+    word-wrap: break-word;
+}
+
+.game-body th:nth-child(5), td:nth-child(5) {
+    max-width: 6vw;
+}
 
 /* Helpers */
+/* Button colors */
 .bg-primary {
     background-color: var(--primary-color);
     color: var(--background-color);
@@ -228,6 +259,7 @@ section {
     color: var(--text-color);
 }
 
+/* Text, Links */
 .inline-link {
     color: var(--primary-color);
     text-decoration: none;
@@ -236,4 +268,19 @@ section {
 
 .inline-link:hover {
     color: var(--secondary-color);
+}
+
+h1 {
+    font-size: 2.75rem;
+    color: var(--text-color);
+    text-align: left;
+}
+
+.heading-container{
+    font-size: 0.9em;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5em;
+    padding: 1em;
 }
