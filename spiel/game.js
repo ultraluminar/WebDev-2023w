@@ -47,7 +47,7 @@ document.addEventListener('DOMContentLoaded', async function () {
     randomAnimalRow = getRandomAnimalRow();
     
     // Add header row to animalTable
-    dataTable.appendChild(createHeaderRow());
+    createHeaderRow();
 
     // Debounce input event to avoid updating options too often
     searchInput.addEventListener('input', getDeboucer());
@@ -106,13 +106,11 @@ document.addEventListener('DOMContentLoaded', async function () {
 
 
     function createHeaderRow() {
-        const tableHeader = document.createElement('tr');
+        const tableHeader = dataTable.insertRow(0);
         csvHeader.forEach(header => {
-            const th = document.createElement('th');
+            const th = tableHeader.insertCell(-1);
             th.textContent = header;
-            tableHeader.appendChild(th);
         });
-        return tableHeader;
     }
 
 
