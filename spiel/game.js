@@ -108,8 +108,9 @@ document.addEventListener('DOMContentLoaded', async function () {
     function createHeaderRow() {
         const tableHeader = dataTable.insertRow(0);
         csvHeader.forEach(header => {
-            const th = tableHeader.insertCell(-1);
-            th.textContent = header;
+            const th = tableHeader.insertCell(-1)
+            th.outerHTML = "<th>" + header + "</th>";
+
         });
     }
 
