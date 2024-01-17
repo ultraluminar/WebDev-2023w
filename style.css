@@ -314,6 +314,39 @@ section {
     font-size: 1.1em;
 }
 
+.funfact {
+    display: grid;
+    grid-template-columns: min-content 1fr min-content;
+    align-items: center;
+    gap: 1em;
+    padding: 1.5em 1.5em;
+    background-color: var(--secondary-color-light);
+    border-radius: 1em;
+}
+
+.funfact-icon {
+    grid-column: 1/2;
+    grid-row: 1/2;
+    width: 2rem;
+}
+
+.funfact-heading {
+    grid-column: 2/4;
+    grid-row: 1/2;
+    text-align: left;
+}
+
+.funfact-text {
+    grid-column: 2/3;
+    grid-row: 2/3;
+    text-align: left;
+}
+
+.funfact-text b {
+    color: var(--primary-color);
+    font-weight: bold;
+}
+
 
 /* Text, Links */
 .inline-link {
