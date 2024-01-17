@@ -176,7 +176,7 @@ nav a.self {
 
 .hero-image img {
     width: 100%;
-    max-width: vh;
+    max-width: 70vh;
 }
 
 .hero-text {
