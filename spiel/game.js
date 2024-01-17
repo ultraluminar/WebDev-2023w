@@ -143,12 +143,8 @@ document.addEventListener("DOMContentLoaded", async function () {
     const csv = await loadAndParseCSV();
 
     const animalTable = new AnimalTable(csv)
-    const combobox = new Combobox(csv.column0, animalTable);
-
+    new Combobox(csv.column0.sort(), animalTable);
 });
-
-let tryList = [];
-let maxVersuche = 10;
 
 // Load CSV data from local file and parse it
 async function loadAndParseCSV() {
