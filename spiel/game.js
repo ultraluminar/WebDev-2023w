@@ -56,7 +56,7 @@ class Combobox{
         this.comboboxNode.addEventListener('input', this.filterOptions.bind(this));
         this.comboboxNode.addEventListener('keydown', this.onInputKeyDown.bind(this));
 
-        //TODO: add event listener for listboxNode: pointerover, pointerout
+        //TODO: close listbox on focusout
 
         nodesContent.forEach(nodeContent => {
             const li = Object.assign(
