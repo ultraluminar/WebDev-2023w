@@ -167,7 +167,7 @@ nav a.self {
 }
 
 .hero {
-    grid-area: "hero";
+    grid-area: hero;
     display: flex;
     flex-direction: column-reverse;
     align-items: center;
@@ -271,19 +271,21 @@ nav a.self {
 
 
 /* encyclopaedia */
-/* facts-list */
 #animal-page-main {
     display: grid;
     grid-template-columns: 1fr;
     grid-template-areas: "hero"
+                         "facts"
+                         "first-paragraph"
                          "funfact"
-                         "facts";
+                         "second-paragraph";
     margin: 2em 4%;
     gap: 2em;
 }
 
+/* facts-list */
 .facts {
-    grid-area: "facts";
+    grid-area: facts;
     display: flex;
     flex-direction: column;
     gap: 1em;
@@ -329,8 +331,9 @@ nav a.self {
     font-size: 1.1em;
 }
 
+/* funfact */
 .funfact {
-    grid-area: "funfact";
+    grid-area: funfact;
     display: grid;
     grid-template-columns: min-content 1fr min-content;
     align-items: center;
@@ -361,6 +364,24 @@ nav a.self {
 .funfact-text b {
     color: var(--primary-color);
     font-weight: bold;
+}
+
+/* Animal Text */
+.first-paragraph, .second-paragraph {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    text-align: left;
+    font-size: 1em;
+    padding: 1em;
+}
+
+.first-paragraph {
+    grid-area: first-paragraph;
+}
+
+.second-paragraph {
+    grid-area: second-paragraph;
 }
 
 
@@ -401,6 +422,7 @@ h4 {
 
 p {
     font-size: 1em;
+    line-height: 1.3;
 }
 
 em {
