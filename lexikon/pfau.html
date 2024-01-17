@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../style.css">
+        <script src="script.js"></script>
+        <script src="../nav.js"></script>
+        <title>Der blaue Pfau - Lexikon</title>
+        <link rel="apple-touch-icon" sizes="180x180" href="../assets/icons/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="../assets/icons/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="../assets/icons/favicon-16x16.png">
+        <link rel="manifest" href="../assets/icons/site.webmanifest">
+        <link rel="mask-icon" href="../assets/icons/safari-pinned-tab.svg" color="#5bbad5">
+        <link rel="shortcut icon" href="../assets/icons/favicon.ico">
+        <meta name="msapplication-TileColor" content="#00aba9">
+        <meta name="msapplication-config" content="../assets/icons/browserconfig.xml">
+        <meta name="theme-color" content="#175632">
+    </head>
+    <body>
+        <header>
+            <div class="container">
+                <div>
+                    <a href="../index.html"><img src="../assets/images/logo128.png" alt="Logo" id="logo" height="45px"/></a>
+                    <a href="../index.html"><span class="logo-text">Abenteuer Tierwelt</span></a>
+                </div>
+                <a id="burger-menu" onclick="toggleNav(event)">
+                    <span></span>
+                    <span></span>
+                </a>
+            </div>
+            <hr id="header-seperator"/>
+        </header>
+        <nav id="nav">
+            <a href="../index.html">Startseite</a>
+            <a href="../lexikon/index.html" class="self">Lexikon</a>
+            <a href="../quiz/index.html">Quizze</a>
+            <a href="../spiel/index.html">Spiele</a>
+            <a href="../fragen-und-antworten/index.html">Fragen & Antworten</a>
+        </nav>
+        <main id="animal-page-main">
+            <section class="hero">
+                <div class="hero-text">
+                    <h1>Der blaue Pfau</h1>
+                    <p>
+                        Der Blaue Pfau, ein wahrer Prachtvogel, begeistert mit seinem bunten Federkleid und seinen eindrucksvollen Radtänzen.
+                        <br><br>
+                        Erkunde die faszinierende Welt dieses farbenfrohen Vogels und erfahre, wie er mit seinem auffälligen Aussehen und Verhalten beeindruckt.
+                    </p>
+                </div>
+                <div class="hero-image">
+                    <img src="../assets/images/lexikon/main/pfau.png" alt="Eine Pfauenfamilie, ; gezeichnet">
+                </div>
+            </section>
+            <aside class="facts">
+                <h2 class="section-title">Steckbrief</h2>
+                <div class="facts-list">
+                    <ul>
+                        <li>
+                            <img src="../assets/icons/height.svg" alt="Größensymbol" class="facts-list-icon"> <!-- Source: https://www.svgrepo.com/svg/532189/line-height -->
+                            <div class="facts-list-label">Größe</div>
+                            <div class="facts-list-value">0,9 bis 2,3 m (inklusive Schwanz)</div>
+                        </li>
+                        <li>
+                            <img src="../assets/icons/weight.svg" alt="Gewichtssymbol" class="facts-list-icon"> <!-- Source: https://www.svgrepo.com/svg/152443/weight-tool -->
+                            <div class="facts-list-label">Gewicht</div>
+                            <div class="facts-list-value">4 bis 6 kg</div>
+                        </li>
+                        <li>
+                            <img src="../assets/icons/age.svg" alt="Alterssymbol" class="facts-list-icon"> <!-- Source: https://www.svgrepo.com/svg/352172/hourglass-half -->
+                            <div class="facts-list-label">Lebenserwartung</div>
+                            <div class="facts-list-value">15 bis 25 Jahre</div>
+                        </li>
+                        <li>
+                            <img src="../assets/icons/continent.svg" alt="Kontinentsymbol" class="facts-list-icon"> <!-- Source: https://www.svgrepo.com/svg/382663/earth-global-globe-planet-world-2 -->
+                            <div class="facts-list-label">Kontinente</div>
+                            <div class="facts-list-value">Asien</div>
+                        </li>
+                        <li>
+                            <img src="../assets/icons/habitat.svg" alt="Lebensraumsymbol" class="facts-list-icon"> <!-- Source: https://www.svgrepo.com/svg/382687/environment-forest-leaf-nature-tree -->
+                            <div class="facts-list-label">Lebensraum</div>
+                            <div class="facts-list-value">Wald, Dschungel</div>
+                        </li>
+                        <li>
+                            <img src="../assets/icons/food.svg" alt="Nahrungssymbol" class="facts-list-icon"> <!-- Source: https://www.svgrepo.com/svg/490738/food-restaurant -->
+                            <div class="facts-list-label">Nahrung</div>
+                            <div class="facts-list-value">Allesfresser</div>
+                        </li>
+                        <li>
+                            <img src="../assets/icons/social.svg" alt="Sozialverhaltenssymbol" class="facts-list-icon"> <!-- Source: https://www.svgrepo.com/svg/140768/users-relation -->
+                            <div class="facts-list-label">Sozialverhalten</div>
+                            <div class="facts-list-value">Einzelgänger</div>
+                        </li>
+                    </ul>
+                </div>
+            </aside>
+            <aside class="funfact">
+                <img src="../assets/icons/funfact.svg" alt="Funfact-Symbol" class="funfact-icon"> <!-- Source: https://www.svgrepo.com/svg/374948/light-bulb -->
+                <h3 class="funfact-heading">Lustiger Fakt</h3>
+                <p class="funfact-text">
+                    Der Blaue Pfau ist nicht nur ein hübscher Vogel, sondern auch ein echter <b>"Räderkünstler"</b>! Um die Aufmerksamkeit seiner Freunde zu erregen, kann er seine langen Schwanzfedern wie ein Rad drehen und dabei farbenfrohe Muster präsentieren – ein spektakulärer <b>Pfau-Räder-Showeffekt</b>!
+                </p>
+            </aside>
+            <article class="first-paragraph">
+                <h3>Schillernde Kunstwerke der Natur</h3>
+                <p>
+                    Blaue Pfauen sind faszinierende Vögel, die durch ihre lebendigen 
+                    und schillernden Farben beeindrucken. Die Männchen, auch als Pfauenhähne 
+                    bekannt, sind besonders auffällig mit ihrem prächtigen Federkleid. 
+                    Das auffälligste Merkmal ist das schimmernde, leuchtend blaue Gefieder, 
+                    das sich in wunderschönen Augenmustern entfaltet. Wenn sie ihr Gefieder 
+                    aufstellen, zeigen die blauen Pfauen eine atemberaubende Schönheit, 
+                    um die Aufmerksamkeit der Weibchen zu gewinnen.
+                </p>
+                <p>
+                    Die langen und farbenfrohen Schwanzfedern, auch Pfauenfedern genannt, 
+                    sind ein spektakulärer Anblick. Bei der Balz spreizt der Pfauenhahn 
+                    seine Federn wie einen Fächer und tanzt um das Weibchen herum. 
+                    Diese prächtigen Federn werden nicht nur für den Balztanz verwendet, 
+                    sondern helfen auch dabei, die Aufmerksamkeit von Raubtieren abzulenken.
+                </p>
+            </article>
+            <article class="second-paragraph">
+                <h3>Gemeinschaftsleben im Federkleid</h3>
+                <p>
+                    Blaue Pfauen sind gesellige Vögel, die gerne in Gruppen leben. 
+                    Diese Gruppen werden als Schwärme bezeichnet und bestehen oft aus 
+                    mehreren Weibchen und einem dominanten Pfauenhahn. Die Weibchen, auch 
+                    als Pfauenweibchen bekannt, haben ein weniger farbenfrohes, aber dennoch 
+                    elegantes Gefieder. Gemeinsam suchen sie nach Nahrung, wie Insekten, 
+                    Früchten und Samen, während der Pfauenhahn aufmerksam auf mögliche Gefahren achtet.
+                </p>
+                <p>
+                    In der Gemeinschaft zeigen die Pfauenhähne nicht nur ihre prächtigen Federn, 
+                    sondern auch ihre vielfältigen Laute. Ihr Rufen und Trommeln dient dazu, 
+                    die Gruppe zu koordinieren und ihre Anwesenheit bekannt zu machen. 
+                    Dieses gesellige Verhalten zeigt, dass die blauen Pfauen nicht nur 
+                    wegen ihres auffälligen Aussehens, sondern auch wegen ihrer interessanten 
+                    sozialen Interaktionen bewundert werden können.
+                </p>
+            </article>
+        </main>
+    </body>
+</html>

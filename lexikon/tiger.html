@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../style.css">
+        <script src="script.js"></script>
+        <script src="../nav.js"></script>
+        <title>Der Tiger - Lexikon</title>
+        <link rel="apple-touch-icon" sizes="180x180" href="../assets/icons/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="../assets/icons/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="../assets/icons/favicon-16x16.png">
+        <link rel="manifest" href="../assets/icons/site.webmanifest">
+        <link rel="mask-icon" href="../assets/icons/safari-pinned-tab.svg" color="#5bbad5">
+        <link rel="shortcut icon" href="../assets/icons/favicon.ico">
+        <meta name="msapplication-TileColor" content="#00aba9">
+        <meta name="msapplication-config" content="../assets/icons/browserconfig.xml">
+        <meta name="theme-color" content="#175632">
+    </head>
+    <body>
+        <header>
+            <div class="container">
+                <div>
+                    <a href="../index.html"><img src="../assets/images/logo128.png" alt="Logo" id="logo" height="45px"/></a>
+                    <a href="../index.html"><span class="logo-text">Abenteuer Tierwelt</span></a>
+                </div>
+                <a id="burger-menu" onclick="toggleNav(event)">
+                    <span></span>
+                    <span></span>
+                </a>
+            </div>
+            <hr id="header-seperator"/>
+        </header>
+        <nav id="nav">
+            <a href="../index.html">Startseite</a>
+            <a href="../lexikon/index.html" class="self">Lexikon</a>
+            <a href="../quiz/index.html">Quizze</a>
+            <a href="../spiel/index.html">Spiele</a>
+            <a href="../fragen-und-antworten/index.html">Fragen & Antworten</a>
+        </nav>
+        <main id="animal-page-main">
+            <section class="hero">
+                <div class="hero-text">
+                    <h1>Der Tiger</h1>
+                    <p>
+                        Der Tiger, ein majestätischer Jäger mit gestreiftem Fell, fasziniert durch seine Stärke und seine beeindruckenden Sprungfähigkeiten.
+                        <br><br>
+                        Entdecke die aufregende Welt dieses Raubtiers und erfahre, wie es in den dichten Wäldern und Graslandschaften Asiens lebt.
+                    </p>
+                </div>
+                <div class="hero-image">
+                    <img src="../assets/images/lexikon/main/tiger.png" alt="Eine Tigerfamilie im Wald; gezeichnet">
+                </div>
+            </section>
+            <aside class="facts">
+                <h2 class="section-title">Steckbrief</h2>
+                <div class="facts-list">
+                    <ul>
+                        <li>
+                            <img src="../assets/icons/height.svg" alt="Größensymbol" class="facts-list-icon"> <!-- Source: https://www.svgrepo.com/svg/532189/line-height -->
+                            <div class="facts-list-label">Größe</div>
+                            <div class="facts-list-value">2,5 bis 3,9 m</div>
+                        </li>
+                        <li>
+                            <img src="../assets/icons/weight.svg" alt="Gewichtssymbol" class="facts-list-icon"> <!-- Source: https://www.svgrepo.com/svg/152443/weight-tool -->
+                            <div class="facts-list-label">Gewicht</div>
+                            <div class="facts-list-value">100 bis 306 kg</div>
+                        </li>
+                        <li>
+                            <img src="../assets/icons/age.svg" alt="Alterssymbol" class="facts-list-icon"> <!-- Source: https://www.svgrepo.com/svg/352172/hourglass-half -->
+                            <div class="facts-list-label">Lebenserwartung</div>
+                            <div class="facts-list-value">10 bis 15 Jahre</div>
+                        </li>
+                        <li>
+                            <img src="../assets/icons/continent.svg" alt="Kontinentsymbol" class="facts-list-icon"> <!-- Source: https://www.svgrepo.com/svg/382663/earth-global-globe-planet-world-2 -->
+                            <div class="facts-list-label">Kontinente</div>
+                            <div class="facts-list-value">Asien</div>
+                        </li>
+                        <li>
+                            <img src="../assets/icons/habitat.svg" alt="Lebensraumsymbol" class="facts-list-icon"> <!-- Source: https://www.svgrepo.com/svg/382687/environment-forest-leaf-nature-tree -->
+                            <div class="facts-list-label">Lebensraum</div>
+                            <div class="facts-list-value">Wälder, Grasland</div>
+                        </li>
+                        <li>
+                            <img src="../assets/icons/food.svg" alt="Nahrungssymbol" class="facts-list-icon"> <!-- Source: https://www.svgrepo.com/svg/490738/food-restaurant -->
+                            <div class="facts-list-label">Nahrung</div>
+                            <div class="facts-list-value">Fleischfresser</div>
+                        </li>
+                        <li>
+                            <img src="../assets/icons/social.svg" alt="Sozialverhaltenssymbol" class="facts-list-icon"> <!-- Source: https://www.svgrepo.com/svg/140768/users-relation -->
+                            <div class="facts-list-label">Sozialverhalten</div>
+                            <div class="facts-list-value">Einzelgänger</div>
+                        </li>
+                    </ul>
+                </div>
+            </aside>
+            <aside class="funfact">
+                <img src="../assets/icons/funfact.svg" alt="Funfact-Symbol" class="funfact-icon"> <!-- Source: https://www.svgrepo.com/svg/374948/light-bulb -->
+                <h3 class="funfact-heading">Lustiger Fakt</h3>
+                <p class="funfact-text">
+                    Tiger haben nicht nur beeindruckende Streifen, sondern auch eine <b>heimliche Vorliebe für Musik</b> – sie kommunizieren miteinander durch einzigartige Brüllmuster, die wie ein echtes Dschungelkonzert klingen! Man könnte sagen, dass Tiger die Rockstars sind, die ihre Gefühle im Urwald mit einem lauten Brüll-Beat zum Ausdruck bringen.
+                </p>
+            </aside>
+            <article class="first-paragraph">
+                <h3>Majestätische Könige des Dschungels</h3>
+                <p>
+                    Der Tiger ist eine faszinierende Raubkatze, die in verschiedenen Teilen 
+                    Asiens beheimatet ist. Mit seinem gestreiften Fell und den auffälligen Augen 
+                    ist der Tiger ein Symbol für Stärke und Eleganz. Das charakteristische 
+                    Streifenmuster dient nicht nur als Tarnung im dichten Dschungel, sondern 
+                    macht den Tiger auch zu einem beeindruckenden Anblick.
+                </p>
+                <p>
+                    Tiger sind die größten Katzen der Welt und gehören zu den am meisten 
+                    bewunderten Raubtieren. Ihr kräftiger Körperbau, gepaart mit kräftigen 
+                    Muskeln und scharfen Krallen, macht sie zu furchteinflößenden Jägern. 
+                    Ihr Territorium erstreckt sich über weite Gebiete, die sie mit 
+                    Markierungen und lauten Brüllen verteidigen.
+                </p>
+            </article>
+            <article class="second-paragraph">
+                <h3>Jäger, Schwimmer, Einzelgänger</h3>
+                <p>
+                    Tiger sind nicht nur starke Jäger, sondern auch vielseitige Tiere mit 
+                    einigen erstaunlichen Fähigkeiten. Anders als viele andere Katzenarten 
+                    sind Tiger gute Schwimmer und fühlen sich im Wasser wohl. Sie können Flüsse 
+                    überqueren, um ihre Beute zu verfolgen oder sich abzukühlen. Dies macht sie 
+                    zu einzigartigen Raubkatzen, die sich sowohl auf dem Land als 
+                    auch im Wasser zurechtfinden.
+                </p>
+                <p>
+                    Trotz ihrer imposanten Erscheinung sind Tiger Einzelgänger und leben 
+                    meistens allein. Jeder Tiger markiert sein eigenes Territorium und 
+                    verteidigt es energisch. Diese Einzelgängerei ermöglicht es ihnen, 
+                    effektiv zu jagen und ihre Beute zu reißen. Die geheimnisvollen 
+                    und faszinierenden Aspekte des Tigerlebens bieten einen aufregenden 
+                    Einblick in die Welt dieser majestätischen Raubkatzen.
+                </p>
+            </article>
+        </main>
+    </body>
+</html>
