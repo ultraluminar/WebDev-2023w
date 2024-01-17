@@ -208,6 +208,15 @@ nav a.self {
 
 
 /* Game */
+#animal-guesser-page-main {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas: "hero"
+                         "game";
+    margin: 2em 4%;
+    gap: 2em;
+}
+
 .correct {
     background-color: var(--secondary-color);
 }
@@ -442,7 +451,7 @@ em {
     flex-direction: column;
     align-items: flex-start;
     gap: 0.5em;
-    padding: 1em;
+    padding: 0 1em;
 }
 
 /* Info Box */
