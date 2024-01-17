@@ -238,14 +238,13 @@ nav a.self {
     width: 100%;
     border-collapse: collapse;
     font-size: clamp(0px, 2.6vw, 0.9em); /* Minimum size of 16px, preferred size of 2.25vw, maximum size of 32px */
-    border: 1px solid #000;
     border-radius: 1em;
     overflow: hidden;
 }
 
 .game-body table, td, th {
     padding: 0.7em 0.5em;
-    border: 1px solid #000;
+    border: 1px solid var(--background-color);
 }
 
 .game-body td{
@@ -319,7 +318,7 @@ nav a.self {
 }
 
 .facts-list li:not(:last-of-type) {
-    border-bottom: 1px solid var(--secondary-color-light);
+    border-bottom: 1px solid var(--background-color);
 }
 
 .facts-list-icon {
