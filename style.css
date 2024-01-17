@@ -159,11 +159,15 @@ nav a.self {
 }
 
 /* Home/Landingpage*/
-section {
+#landing-page-main {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas: "hero";
     margin: 2em 4%;
 }
 
 .hero {
+    grid-area: "hero";
     display: flex;
     flex-direction: column-reverse;
     align-items: center;
@@ -172,7 +176,7 @@ section {
 
 .hero-image img {
     width: 100%;
-    max-width: calc(100vh / 2);
+    max-width: vh;
 }
 
 .hero-text {
@@ -268,7 +272,18 @@ section {
 
 /* encyclopaedia */
 /* facts-list */
+#animal-page-main {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas: "hero"
+                         "funfact"
+                         "facts";
+    margin: 2em 4%;
+    gap: 2em;
+}
+
 .facts {
+    grid-area: "facts";
     display: flex;
     flex-direction: column;
     gap: 1em;
@@ -315,6 +330,7 @@ section {
 }
 
 .funfact {
+    grid-area: "funfact";
     display: grid;
     grid-template-columns: min-content 1fr min-content;
     align-items: center;
