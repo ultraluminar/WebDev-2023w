@@ -1,6 +1,151 @@
-let csvData, csvHeader;
-let debounceTimeout;
-let randomAnimalRow;
+"use strict";
+
+class AnimalTable {
+    constructor(csv) {
+        this.csv = csv;
+        this.guessList = [];
+
+        this.dataTable = document.getElementById('animalTable');
+        this.randomAnimalRow = csv.data[Math.floor(Math.random() * csv.data.length)];
+
+
+        // create header row
+        const tableHeader = this.dataTable.insertRow(0);
+        this.csv.header.forEach(header => {
+            const th = tableHeader.insertCell(-1)
+            th.outerHTML = "<th>" + header + "</th>";
+        });
+
+    }
+
+    createContentRow(animal) {
+        const tableRow = this.dataTable.insertRow(1);
+        const animalRow = this.csv.data.find(row => row[0] === animal);
+        animalRow.forEach((value, index) => {
+            const td = tableRow.insertCell(-1);
+            td.classList.add(value === this.randomAnimalRow[index] ? 'correct' : 'incorrect');
+            td.textContent = value;
+        });
+
+    }
+    validateGuess(guess) {
+        return this.csv.column0.includes(guess) && !this.guessList.includes(guess);
+    }
+
+    makeGuess(guess) {
+        this.guessList.push(guess);
+        this.createContentRow(guess);
+    }
+}
+
+class Combobox{
+    constructor(nodesContent, animalTable) {
+        this.animalTable = animalTable;
+
+        this.allOptions = [];
+        this.option = null;
+
+        this.filteredOptions = [];
+
+        this.comboboxNode = document.getElementById("cb1-input");
+        this.buttonNode = document.getElementById("cb1-button");
+        this.listboxNode = document.getElementById("cb1-listbox");
+
+        this.buttonNode.addEventListener('click', this.onButtonClick.bind(this));
+        this.comboboxNode.addEventListener('click', this.onInputClick.bind(this));
+        this.comboboxNode.addEventListener('input', this.filterOptions.bind(this));
+        this.comboboxNode.addEventListener('keydown', this.onInputKeyDown.bind(this));
+
+        //TODO: add event listener for listboxNode: pointerover, pointerout
+
+        nodesContent.forEach(nodeContent => {
+            const li = Object.assign(
+                document.createElement('li'),
+                {textContent: nodeContent, role: 'option', tabindex: '-1' });
+
+            li.addEventListener('click',  this.onOptionClick.bind(this));
+            this.allOptions.push(li);
+
+        });
+        this.filterOptions();
+
+    }
+
+    onInputKeyDown(event) {
+        if (event.key === "Enter" && this.isOpen() && this.filteredOptions.length > 0) {
+            const guess = this.filteredOptions[0].textContent;
+            if (this.animalTable.validateGuess(guess)) {
+                this.toggleOpen();
+                this.comboboxNode.blur();
+                this.comboboxNode.value = "";
+                this.filterOptions();
+                this.animalTable.makeGuess(guess);
+            }
+        }
+    }
+
+    onOptionClick(event) {
+        console.log(event)
+        this.toggleOpen();
+        this.comboboxNode.value = "";
+        this.filterOptions();
+        this.animalTable.makeGuess(event.target.textContent);
+    }
+
+    isOpen() {
+        return this.listboxNode.classList.contains('open');
+    }
+
+    onInputClick() {
+        if (!this.isOpen()) {
+            this.toggleOpen();
+        }
+    }
+
+    onButtonClick() {
+        this.toggleOpen();
+        (this.isOpen()) ? this.comboboxNode.focus() : this.comboboxNode.blur();
+    }
+
+    toggleOpen() {
+        this.listboxNode.classList.toggle('open');
+        this.toggleAttributeValue(this.comboboxNode, 'aria-expanded');
+        this.toggleAttributeValue(this.buttonNode, 'aria-expanded');
+    }
+
+    toggleAttributeValue(node, attr) {
+        node.setAttribute(attr, !node.getAttribute(attr).toString());
+    }
+
+    filterOptions(event) {
+        let filter = event? event.target.value.toLowerCase() : '';
+
+        this.listboxNode.innerHTML = '';
+
+        const pattern = new RegExp(`(${filter})`, 'ig');
+        const replaceMask = '<b>$1</b>';
+
+        this.filteredOptions = (filter.length === 0) ? this.allOptions : this.allOptions.filter(
+            option => option.textContent.match(pattern) !== null && !this.animalTable.guessList.includes(option.textContent));
+
+        this.filteredOptions.forEach(option => {
+            option.innerHTML = option.textContent.replace(pattern, replaceMask);
+            this.listboxNode.appendChild(option);
+        });
+
+        if (this.filteredOptions.length > 0) {
+            this.filteredOptions[0].setAttribute('aria-selected', 'true');
+        }
+    }
+}
+
+document.addEventListener("DOMContentLoaded", async function () {
+    const csv = await loadAndParseCSV();
+
+    const animalTable = new AnimalTable(csv)
+    const combobox = new Combobox(csv.column0, animalTable);
+
+});
 
 let tryList = [];
 let maxVersuche = 10;
@@ -10,126 +155,16 @@ async function loadAndParseCSV() {
     const csvResponse = await fetch('animals.csv'); 
     const csvText = await csvResponse.text();
 
-    // split by newlines, split by commas, trim whitespace, remove empty rows and empty values
-    csvData = csvText
+    let data = csvText
         .split(/\r?\n/)
         .map(row => row.split(',')
             .map(value => value.trim())
             .filter(value => value !== ''))
         .filter(row => row.length > 1);
 
-    csvHeader = csvData.shift(); // remove header row from data
+    return {
+        header: data.shift(),
+        column0: data.map(row => row[0]),
+        data: data
+    };
 }
-
-// get header row from CSV data
-function extractFirstColumn(data) {
-    return data.map(row => row[0]);
-}
-
-
-
-// after page has loaded
-document.addEventListener('DOMContentLoaded', async function () {
-    // get html elements
-    const datalist = document.getElementById('animalList');
-    const dataTable = document.getElementById('animalTable');
-    const searchInput = document.getElementById('searchInput');
-    const logSelectionBtn = document.getElementById('logSelectionBtn');
-
-    // load and parse CSV data, exit if failed
-    try { await loadAndParseCSV(); } 
-    catch (error) {
-        console.error('Failed to fetch CSV data:', error);
-        return;
-    }
-
-    // get random animal from CSV data
-    randomAnimalRow = getRandomAnimalRow();
-    
-    // Add header row to animalTable
-    createHeaderRow();
-
-    // Debounce input event to avoid updating options too often
-    searchInput.addEventListener('input', getDeboucer());
-
-    // Log selection on button click or enter key press
-    logSelectionBtn.addEventListener('click', tryGuess);
-    searchInput.addEventListener('keydown', tryOnEnter);
-        
-    
-
-    // Update options in datalist based on search input
-    function updateOptions() { 
-        const searchTerm = searchInput.value.toLowerCase();
-        const filteredOptions = extractFirstColumn(csvData)
-            // get up to 5 options that match search term
-            .filter(value => value.toLowerCase().includes(searchTerm))
-            .slice(0, 5);
-
-        // remove old options and add new options
-        datalist.innerHTML = "";
-        filteredOptions.forEach(value => datalist.appendChild(new Option(value)));
-    }
-
-    function tryGuess() {
-        const guessedAnimal = searchInput.value.toLowerCase();
-        const guessedAnimalRow = csvData.find(row => row[0].toLowerCase() === guessedAnimal);
-
-
-        // if selected animal is valid
-        if (guessedAnimalRow) {
-            if (tryList.length === maxVersuche) {
-                console.log("You have already tried 5 times!, Game Over!");
-                return; }
-            // if selected animal has already been tried
-            if (tryList.includes(guessedAnimal)) {
-                console.log("You have already tried this animal, try another one!");
-                return; }
-
-            createContentRow(guessedAnimalRow, randomAnimalRow);
-
-            if (guessedAnimal === randomAnimalRow[0]) {
-                console.log("You have guessed the animal, Congratulations!");
-                return; }
-        }
-    }
-
-    function createContentRow(playerGuessRow, randomAnimalRow) {
-        const tableRow = dataTable.insertRow(1);
-
-        playerGuessRow.forEach((value, index) => {
-            const td = tableRow.insertCell(-1);
-            td.textContent = value;
-            td.classList.add(value === randomAnimalRow[index] ? 'correct' : 'incorrect');
-        });
-    }
-
-
-    function createHeaderRow() {
-        const tableHeader = dataTable.insertRow(0);
-        csvHeader.forEach(header => {
-            const th = tableHeader.insertCell(-1)
-            th.outerHTML = "<th>" + header + "</th>";
-
-        });
-    }
-
-
-    function getRandomAnimalRow() {
-        return csvData[Math.floor(Math.random() * csvData.length)];
-    }
-
-    function getDeboucer(){
-        return () => {
-            clearTimeout(debounceTimeout);
-            debounceTimeout = setTimeout(updateOptions, 300);
-        }
-    }
-    
-    function tryOnEnter(event) {
-        if (event.key === 'Enter') {
-            tryGuess();
-        }
-    }
-});
-
