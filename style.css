@@ -68,8 +68,8 @@ header a {
 }
 
 #header-seperator {
-    position: sticky;
-    top: 72px;
+    position: relative;
+    bottom: 0;
     z-index: 1;
 }
 
