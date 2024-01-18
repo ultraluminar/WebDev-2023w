@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../style.css">
+        <script src="script.js"></script>
+        <script src="../nav.js"></script>
+        <title>Die Schneeeule - Lexikon</title>
+        <link rel="apple-touch-icon" sizes="180x180" href="../assets/icons/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="../assets/icons/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="../assets/icons/favicon-16x16.png">
+        <link rel="manifest" href="../assets/icons/site.webmanifest">
+        <link rel="mask-icon" href="../assets/icons/safari-pinned-tab.svg" color="#5bbad5">
+        <link rel="shortcut icon" href="../assets/icons/favicon.ico">
+        <meta name="msapplication-TileColor" content="#00aba9">
+        <meta name="msapplication-config" content="../assets/icons/browserconfig.xml">
+        <meta name="theme-color" content="#175632">
+    </head>
+    <body>
+        <header>
+            <div class="container">
+                <div>
+                    <a href="../index.html"><img src="../assets/images/logo128.png" alt="Logo" id="logo" height="45px"/></a>
+                    <a href="../index.html"><span class="logo-text">Abenteuer Tierwelt</span></a>
+                </div>
+                <a id="burger-menu" onclick="toggleNav(event)">
+                    <span></span>
+                    <span></span>
+                </a>
+            </div>
+            <hr id="header-seperator"/>
+        </header>
+        <nav id="nav">
+            <a href="../index.html">Startseite</a>
+            <a href="../lexikon/index.html" class="self">Lexikon</a>
+            <a href="../quiz/index.html">Quizze</a>
+            <a href="../spiel/index.html">Spiele</a>
+            <a href="../fragen-und-antworten/index.html">Fragen & Antworten</a>
+        </nav>
+        <main id="animal-page-main">
+            <section class="hero">
+                <div class="hero-text">
+                    <h1>Die Schneeeule</h1>
+                    <p>
+                        Die Schneeeule, ein majestätischer Bewohner der Arktis, fasziniert mit ihrem weißen Federkleid und ihrem scharfen Blick.
+                        <br><br>
+                        Erforsche die geheimnisvolle Welt dieser Eulenart und entdecke, wie sie sich in den eisigen Regionen der Polarzone behauptet.
+                    </p>
+                </div>
+                <div class="hero-image">
+                    <img src="../assets/images/lexikon/main/schneeeule.png" alt="Eine Schneeeulenfamilie in einem verscheiten Wald; gezeichnet">
+                </div>
+            </section>
+            <aside class="facts">
+                <h2 class="section-title">Steckbrief</h2>
+                <div class="facts-list">
+                    <ul>
+                        <li>
+                            <img src="../assets/icons/height.svg" alt="Größensymbol" class="facts-list-icon"> <!-- Source: https://www.svgrepo.com/svg/532189/line-height -->
+                            <div class="facts-list-label">Größe</div>
+                            <div class="facts-list-value">53 bis 65 cm</div>
+                        </li>
+                        <li>
+                            <img src="../assets/icons/weight.svg" alt="Gewichtssymbol" class="facts-list-icon"> <!-- Source: https://www.svgrepo.com/svg/152443/weight-tool -->
+                            <div class="facts-list-label">Gewicht</div>
+                            <div class="facts-list-value">1,6 bis 2,9 kg</div>
+                        </li>
+                        <li>
+                            <img src="../assets/icons/age.svg" alt="Alterssymbol" class="facts-list-icon"> <!-- Source: https://www.svgrepo.com/svg/352172/hourglass-half -->
+                            <div class="facts-list-label">Lebenserwartung</div>
+                            <div class="facts-list-value">10 bis 17 Jahre</div>
+                        </li>
+                        <li>
+                            <img src="../assets/icons/continent.svg" alt="Kontinentsymbol" class="facts-list-icon"> <!-- Source: https://www.svgrepo.com/svg/382663/earth-global-globe-planet-world-2 -->
+                            <div class="facts-list-label">Kontinente</div>
+                            <div class="facts-list-value">Polar</div>
+                        </li>
+                        <li>
+                            <img src="../assets/icons/habitat.svg" alt="Lebensraumsymbol" class="facts-list-icon"> <!-- Source: https://www.svgrepo.com/svg/382687/environment-forest-leaf-nature-tree -->
+                            <div class="facts-list-label">Lebensraum</div>
+                            <div class="facts-list-value">Tundra</div>
+                        </li>
+                        <li>
+                            <img src="../assets/icons/food.svg" alt="Nahrungssymbol" class="facts-list-icon"> <!-- Source: https://www.svgrepo.com/svg/490738/food-restaurant -->
+                            <div class="facts-list-label">Nahrung</div>
+                            <div class="facts-list-value">Fleischfresser</div>
+                        </li>
+                        <li>
+                            <img src="../assets/icons/social.svg" alt="Sozialverhaltenssymbol" class="facts-list-icon"> <!-- Source: https://www.svgrepo.com/svg/140768/users-relation -->
+                            <div class="facts-list-label">Sozialverhalten</div>
+                            <div class="facts-list-value">Einzelgänger</div>
+                        </li>
+                    </ul>
+                </div>
+            </aside>
+            <aside class="funfact">
+                <img src="../assets/icons/funfact.svg" alt="Funfact-Symbol" class="funfact-icon"> <!-- Source: https://www.svgrepo.com/svg/374948/light-bulb -->
+                <h3 class="funfact-heading">Lustiger Fakt</h3>
+                <p class="funfact-text">
+                    Schneeeulen, die zauberhaften Bewohner des Nordens, sind nicht nur kluge Jäger, sondern haben auch <b>magische Farbwechselkräfte</b> – ihre Federn können je nach Jahreszeit ihre Farbe ändern! Im Sommer sind sie eher braun, um sich besser zu tarnen, aber im Winter erstrahlen sie in einem schneeweißen Federkleid, als wären sie die echten "Winterzauberer" der Arktis.
+                </p>
+            </aside>
+            <article class="first-paragraph">
+                <h3>Majestätische Bewohner arktischer Ebenen</h3>
+                <p>
+                    Schneeeulen, auch als Polar- oder Schnee-Eulen bekannt, sind imposante Vögel, die die weitläufigen Tundren der Arktis und Subarktis bewohnen. Mit ihrem dichten, schneeweißen Federkleid sind sie perfekt an die winterlichen Bedingungen ihrer Lebensräume angepasst. Diese Eulen haben auffällige goldgelbe Augen und einen kräftigen Schnabel, der ihnen hilft, ihre Hauptbeute, wie Lemminge und andere kleine Säugetiere, zu erbeuten. Im Gegensatz zu vielen anderen Eulenarten sind Schneeeulen tagaktive Jäger und nutzen ihre scharfen Augen, um Beute aus großer Entfernung zu erspähen. Während der Brutzeit formen sie oft flache Nester auf dem Boden und legen eine kleine Anzahl von Eiern ab.
+                </p>
+                <p>
+                    Schneeeulen sind dafür bekannt, weite Wanderungen zu unternehmen, insbesondere wenn ihre Hauptnahrungsquelle, die Lemminge, knapp wird. Diese Vögel können beträchtliche Distanzen zurücklegen, um geeignete Nahrungsquellen zu finden. Ihre Anpassungsfähigkeit an die extremen arktischen Bedingungen macht sie zu faszinierenden Bewohnern dieser kalten Regionen.
+                </p>
+            </article>
+            <article class="second-paragraph">
+                <h3>Überlebenskünstler im eisigen Norden</h3>
+                <p>
+                    Der Lebensraum der Schneeeulen erstreckt sich von der arktischen Tundra bis hin zu den nördlichen Teilen von Nordamerika, Europa und Asien. Sie bevorzugen offene Landschaften, wo sie ihre Beute leicht erspähen können. Schneeeulen sind an das Leben in extremen Klimazonen angepasst, und ihr dichtes Federkleid schützt sie nicht nur vor der Kälte, sondern auch vor dem Wind. Im Winter können sie in der verschneiten Landschaft nahezu unsichtbar sein, da ihre weiße Farbe sie perfekt mit ihrer Umgebung verschmelzen lässt. Diese Tarnung dient nicht nur als Schutz vor Raubtieren, sondern auch als effektive Strategie bei der Jagd.
+                </p>
+                <p>
+                    Die Bestände der Schneeeulen können stark variieren und hängen oft von der Verfügbarkeit ihrer Hauptnahrungsquelle ab. In Jahren mit reichlich Lemmingen kann es zu einer Zunahme der Brutpaare kommen, während in Jahren mit Lemmingknappheit die Populationen abnehmen können. Der Schutz dieser beeindruckenden Eulen erfordert nicht nur den Erhalt ihrer Lebensräume, sondern auch die Forschung und Überwachung ihrer Bestände, um langfristige Erhaltungsstrategien zu entwickeln.
+                </p>
+            </article>
+        </main>
+    </body>
+</html>

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../style.css">
+        <script src="script.js"></script>
+        <script src="../nav.js"></script>
+        <title>Der Eisbär - Lexikon</title>
+        <link rel="apple-touch-icon" sizes="180x180" href="../assets/icons/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="../assets/icons/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="../assets/icons/favicon-16x16.png">
+        <link rel="manifest" href="../assets/icons/site.webmanifest">
+        <link rel="mask-icon" href="../assets/icons/safari-pinned-tab.svg" color="#5bbad5">
+        <link rel="shortcut icon" href="../assets/icons/favicon.ico">
+        <meta name="msapplication-TileColor" content="#00aba9">
+        <meta name="msapplication-config" content="../assets/icons/browserconfig.xml">
+        <meta name="theme-color" content="#175632">
+    </head>
+    <body>
+        <header>
+            <div class="container">
+                <div>
+                    <a href="../index.html"><img src="../assets/images/logo128.png" alt="Logo" id="logo" height="45px"/></a>
+                    <a href="../index.html"><span class="logo-text">Abenteuer Tierwelt</span></a>
+                </div>
+                <a id="burger-menu" onclick="toggleNav(event)">
+                    <span></span>
+                    <span></span>
+                </a>
+            </div>
+            <hr id="header-seperator"/>
+        </header>
+        <nav id="nav">
+            <a href="../index.html">Startseite</a>
+            <a href="../lexikon/index.html" class="self">Lexikon</a>
+            <a href="../quiz/index.html">Quizze</a>
+            <a href="../spiel/index.html">Spiele</a>
+            <a href="../fragen-und-antworten/index.html">Fragen & Antworten</a>
+        </nav>
+        <main id="animal-page-main">
+            <section class="hero">
+                <div class="hero-text">
+                    <h1>Der Eisbär</h1>
+                    <p>
+                        Der Eisbär, ein faszinierender Jäger der Arktis, beeindruckt mit seinem weißen Fell und seiner Anpassung an die eisige Umgebung.
+                        <br><br>
+                        Erkunde die spannende Welt dieses majestätischen Raubtiers und erfahre, wie es in den eisigen Regionen des Nordpols lebt.
+                    </p>
+                </div>
+                <div class="hero-image">
+                    <img src="../assets/images/lexikon/main/eisbär.png" alt="Eine Eisbärenfamilie im Schnee; gezeichnet">
+                </div>
+            </section>
+            <aside class="facts">
+                <h2 class="section-title">Steckbrief</h2>
+                <div class="facts-list">
+                    <ul>
+                        <li>
+                            <img src="../assets/icons/height.svg" alt="Größensymbol" class="facts-list-icon"> <!-- Source: https://www.svgrepo.com/svg/532189/line-height -->
+                            <div class="facts-list-label">Größe</div>
+                            <div class="facts-list-value">2,4 bis 3 m</div>
+                        </li>
+                        <li>
+                            <img src="../assets/icons/weight.svg" alt="Gewichtssymbol" class="facts-list-icon"> <!-- Source: https://www.svgrepo.com/svg/152443/weight-tool -->
+                            <div class="facts-list-label">Gewicht</div>
+                            <div class="facts-list-value">350 bis 700 kg</div>
+                        </li>
+                        <li>
+                            <img src="../assets/icons/age.svg" alt="Alterssymbol" class="facts-list-icon"> <!-- Source: https://www.svgrepo.com/svg/352172/hourglass-half -->
+                            <div class="facts-list-label">Lebenserwartung</div>
+                            <div class="facts-list-value">20 bis 30 Jahre</div>
+                        </li>
+                        <li>
+                            <img src="../assets/icons/continent.svg" alt="Kontinentsymbol" class="facts-list-icon"> <!-- Source: https://www.svgrepo.com/svg/382663/earth-global-globe-planet-world-2 -->
+                            <div class="facts-list-label">Kontinente</div>
+                            <div class="facts-list-value">Polar</div>
+                        </li>
+                        <li>
+                            <img src="../assets/icons/habitat.svg" alt="Lebensraumsymbol" class="facts-list-icon"> <!-- Source: https://www.svgrepo.com/svg/382687/environment-forest-leaf-nature-tree -->
+                            <div class="facts-list-label">Lebensraum</div>
+                            <div class="facts-list-value">Eisige Küsten</div>
+                        </li>
+                        <li>
+                            <img src="../assets/icons/food.svg" alt="Nahrungssymbol" class="facts-list-icon"> <!-- Source: https://www.svgrepo.com/svg/490738/food-restaurant -->
+                            <div class="facts-list-label">Nahrung</div>
+                            <div class="facts-list-value">Fleischfresser</div>
+                        </li>
+                        <li>
+                            <img src="../assets/icons/social.svg" alt="Sozialverhaltenssymbol" class="facts-list-icon"> <!-- Source: https://www.svgrepo.com/svg/140768/users-relation -->
+                            <div class="facts-list-label">Sozialverhalten</div>
+                            <div class="facts-list-value">Einzelgänger</div>
+                        </li>
+                    </ul>
+                </div>
+            </aside>
+            <aside class="funfact">
+                <img src="../assets/icons/funfact.svg" alt="Funfact-Symbol" class="funfact-icon"> <!-- Source: https://www.svgrepo.com/svg/374948/light-bulb -->
+                <h3 class="funfact-heading">Lustiger Fakt</h3>
+                <p class="funfact-text">
+                    Eisbären sind nicht nur die Könige der Arktis, sondern haben auch <b>super-rutschige Rutschpartys</b> – sie gleiten auf ihren Bäuchen über das Eis, um schneller voranzukommen und Spaß zu haben! Mit ihren rutschenden Fähigkeiten könnten sie als die "Eisbären-Champions der Schlitterbahn" des Nordens betrachtet werden.
+                </p>
+            </aside>
+            <article class="first-paragraph">
+                <h3>Herrscher der arktischen Gefilde</h3>
+                <p>
+                    Eisbären, auch als Polarbären bekannt, sind majestätische Raubtiere, die in den eisigen Regionen der Arktis beheimatet sind. Mit ihrem dichten, weißen Fell und kräftigen Körperbau sind sie perfekt an das Leben in den kalten und schneebedeckten Landschaften angepasst. Ihr charakteristisches Erscheinungsbild macht sie leicht erkennbar, während sie über das Packeis streifen und nach Nahrung suchen. Eisbären sind hervorragende Schwimmer und können große Distanzen im eisigen Wasser zurücklegen, um Robben, ihre Hauptbeute, zu jagen. Mit ihren kräftigen Pranken und scharfen Krallen durchbrechen sie die Eislöcher, um an ihre Beute zu gelangen.
+                </p>
+                <p>
+                    Eisbären sind Einzelgänger und durchstreifen weite Gebiete auf der Suche nach Nahrung und geeigneten Fortpflanzungspartnern. Im Sommer, wenn das Packeis schmilzt, können sie auf Landgebieten wandern und auch pflanzliche Nahrung zu sich nehmen. Fortpflanzung erfolgt meist auf dem Packeis, wo die Weibchen Höhlen graben, um ihre Jungen, die sogenannten Eisbärkinder, zur Welt zu bringen. Das Überleben der Eisbären ist stark mit dem Zustand der arktischen Lebensräume verbunden, und sie gelten als gefährdete Art aufgrund des Klimawandels und des damit verbundenen Rückgangs des Packeises.
+                </p>
+            </article>
+            <article class="second-paragraph">
+                <h3>Überlebenskünstler der Kälte</h3>
+                <p>
+                    Eisbären haben beeindruckende Anpassungen an das Leben in der extremen Kälte entwickelt. Ihr dichtes Fell wirkt nicht nur als effektiver Isolator, sondern hat auch eine weiße Farbe, die ihnen beim Schleichen auf Beutetiere im Schnee hilft. Ihre Fettreserven dienen als Energiespeicher, um die mageren Zeiten zu überstehen, wenn Nahrung knapp ist. Die Ohren der Eisbären sind klein und rund, um Wärmeverlust zu minimieren, während ihre breiten Pfoten ihnen helfen, auf dem Eis zu balancieren und beim Schwimmen effizient voranzukommen.
+                </p>
+                <p>
+                    Eisbären sind bedrohte Tiere, und ihr Schutzstatus ist international anerkannt. Die Hauptbedrohung für ihre Populationen ist der Verlust ihres Lebensraums aufgrund des schwindenden arktischen Packeises aufgrund des Klimawandels. Schutzmaßnahmen, wie die Schaffung von Schutzgebieten und Bemühungen zur Reduzierung des CO2-Ausstoßes, sind entscheidend, um das Überleben dieser faszinierenden Raubtiere zu sichern. Eisbären sind nicht nur faszinierende Bewohner der Arktis, sondern auch Botschafter für den Schutz empfindlicher Ökosysteme vor den Auswirkungen des Klimawandels.
+                </p>
+            </article>
+        </main>
+    </body>
+</html>

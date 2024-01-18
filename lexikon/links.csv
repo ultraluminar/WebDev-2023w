@@ -8,7 +8,7 @@ Name, Link
 'capybara',
 'chamäleon', chamaeleon.html
 'dachs', dachs.html
-'eisbär',
+'eisbär', eisbaer.html
 'elefant', elefant.html
 'emu', emu.html
 'feuersalamander', feuersalamander.html
@@ -17,29 +17,29 @@ Name, Link
 'grizzlybär', grizzlybaer.html
 'gürteltier',
 'jaguar',
-'kaiserpinguin',
+'kaiserpinguin', kaiserpinguin.html
 'koala', koala.html
 'komodowaran', komodowaran.html
 'krokodil', krokodil.html
 'känguru', kaenguru.html
 'leopard', leopard.html
 'luchs', luchs.html
-'löwe',
+'löwe', loewe.html
 'nilpferd', nilpferd.html
 'orang-utan', orang-utan.html
-'orca',
+'orca', orca.html
 'panda', panda.html
 'pfeilgiftfrosch',
 'puma', puma.html
 'reh', reh.html
-'ringelrobbe',
+'ringelrobbe', ringelrobbe.html
 'rote eichhörnchen', eichhoernchen.html
 'rotfuchs', rotfuchs.html
 'schnabeltier', schnabeltier.html
 'schnappschildkröte', schnappschildkroete.html
-'schneeeule',
-'tapir',
+'schneeeule', schneeeule.html
+'tapir', 
 'tiger', tiger.html
-'walross',
+'walross', walross.html
 'weißkopfseeadler', weißkopfseeadler.html
-'zebra' zebra.html
+'zebra', zebra.html

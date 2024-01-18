@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../style.css">
+        <script src="script.js"></script>
+        <script src="../nav.js"></script>
+        <title>Der Orca - Lexikon</title>
+        <link rel="apple-touch-icon" sizes="180x180" href="../assets/icons/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="../assets/icons/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="../assets/icons/favicon-16x16.png">
+        <link rel="manifest" href="../assets/icons/site.webmanifest">
+        <link rel="mask-icon" href="../assets/icons/safari-pinned-tab.svg" color="#5bbad5">
+        <link rel="shortcut icon" href="../assets/icons/favicon.ico">
+        <meta name="msapplication-TileColor" content="#00aba9">
+        <meta name="msapplication-config" content="../assets/icons/browserconfig.xml">
+        <meta name="theme-color" content="#175632">
+    </head>
+    <body>
+        <header>
+            <div class="container">
+                <div>
+                    <a href="../index.html"><img src="../assets/images/logo128.png" alt="Logo" id="logo" height="45px"/></a>
+                    <a href="../index.html"><span class="logo-text">Abenteuer Tierwelt</span></a>
+                </div>
+                <a id="burger-menu" onclick="toggleNav(event)">
+                    <span></span>
+                    <span></span>
+                </a>
+            </div>
+            <hr id="header-seperator"/>
+        </header>
+        <nav id="nav">
+            <a href="../index.html">Startseite</a>
+            <a href="../lexikon/index.html" class="self">Lexikon</a>
+            <a href="../quiz/index.html">Quizze</a>
+            <a href="../spiel/index.html">Spiele</a>
+            <a href="../fragen-und-antworten/index.html">Fragen & Antworten</a>
+        </nav>
+        <main id="animal-page-main">
+            <section class="hero">
+                <div class="hero-text">
+                    <h1>Der Orca</h1>
+                    <p>
+                        Der Orca, ein faszinierender Meeresbewohner und intelligenter Jäger, beeindruckt mit seinem schwarz-weißen Muster und seiner sozialen Lebensweise.
+                        <br><br>
+                        Entdecke die aufregende Welt dieser majestätischen Wale und erfahre, wie sie in den Ozeanen rund um den Globus leben.
+                    </p>
+                </div>
+                <div class="hero-image">
+                    <img src="../assets/images/lexikon/main/orca.png" alt="Eine Orcafamilie im Polarmeer; gezeichnet">
+                </div>
+            </section>
+            <aside class="facts">
+                <h2 class="section-title">Steckbrief</h2>
+                <div class="facts-list">
+                    <ul>
+                        <li>
+                            <img src="../assets/icons/height.svg" alt="Größensymbol" class="facts-list-icon"> <!-- Source: https://www.svgrepo.com/svg/532189/line-height -->
+                            <div class="facts-list-label">Größe</div>
+                            <div class="facts-list-value">6 bis 8 m</div>
+                        </li>
+                        <li>
+                            <img src="../assets/icons/weight.svg" alt="Gewichtssymbol" class="facts-list-icon"> <!-- Source: https://www.svgrepo.com/svg/152443/weight-tool -->
+                            <div class="facts-list-label">Gewicht</div>
+                            <div class="facts-list-value">3.000 bis 6.000 kg</div>
+                        </li>
+                        <li>
+                            <img src="../assets/icons/age.svg" alt="Alterssymbol" class="facts-list-icon"> <!-- Source: https://www.svgrepo.com/svg/352172/hourglass-half -->
+                            <div class="facts-list-label">Lebenserwartung</div>
+                            <div class="facts-list-value">30 bis 50 Jahre</div>
+                        </li>
+                        <li>
+                            <img src="../assets/icons/continent.svg" alt="Kontinentsymbol" class="facts-list-icon"> <!-- Source: https://www.svgrepo.com/svg/382663/earth-global-globe-planet-world-2 -->
+                            <div class="facts-list-label">Kontinente</div>
+                            <div class="facts-list-value">Polar</div>
+                        </li>
+                        <li>
+                            <img src="../assets/icons/habitat.svg" alt="Lebensraumsymbol" class="facts-list-icon"> <!-- Source: https://www.svgrepo.com/svg/382687/environment-forest-leaf-nature-tree -->
+                            <div class="facts-list-label">Lebensraum</div>
+                            <div class="facts-list-value">Ozeane</div>
+                        </li>
+                        <li>
+                            <img src="../assets/icons/food.svg" alt="Nahrungssymbol" class="facts-list-icon"> <!-- Source: https://www.svgrepo.com/svg/490738/food-restaurant -->
+                            <div class="facts-list-label">Nahrung</div>
+                            <div class="facts-list-value">Fleischfresser</div>
+                        </li>
+                        <li>
+                            <img src="../assets/icons/social.svg" alt="Sozialverhaltenssymbol" class="facts-list-icon"> <!-- Source: https://www.svgrepo.com/svg/140768/users-relation -->
+                            <div class="facts-list-label">Sozialverhalten</div>
+                            <div class="facts-list-value">Rudeltier</div>
+                        </li>
+                    </ul>
+                </div>
+            </aside>
+            <aside class="funfact">
+                <img src="../assets/icons/funfact.svg" alt="Funfact-Symbol" class="funfact-icon"> <!-- Source: https://www.svgrepo.com/svg/374948/light-bulb -->
+                <h3 class="funfact-heading">Lustiger Fakt</h3>
+                <p class="funfact-text">
+                    Orcas, auch als Killerwale bekannt, sind nicht nur geschickte Jäger, sondern haben auch <b>ihren eigenen Dialekt</b> – verschiedene Gruppen haben einzigartige "Sprachen" und können sich anhand ihrer unterschiedlichen Klick- und Pfeiflaute voneinander unterscheiden! Diese sprachbegabten Meeresbewohner könnten als die "Dolmetscher der Ozeane" betrachtet werden.
+                </p>
+            </aside>
+            <article class="first-paragraph">
+                <h3>Meeresbewohner mit beeindruckender Intelligenz</h3>
+                <p>
+                    Orcas, auch als Killerwale bekannt, sind faszinierende Meeressäuger, die zu den größten Raubtieren der Weltmeere zählen. Mit ihrer charakteristischen schwarz-weißen Zeichnung, ihrem stromlinienförmigen Körper und der markanten Rückenflosse sind sie leicht zu identifizieren. Orcas haben eine bemerkenswerte Intelligenz und leben in komplexen sozialen Gruppen, den sogenannten Pods. Diese Gruppen bestehen aus eng verwandten Tieren und reichen in ihrer Größe von wenigen bis zu über zwanzig Individuen. Orcas kommunizieren miteinander durch komplexe Klick- und Pfeiflaute, die es ihnen ermöglichen, in der weitläufigen Unterwasserumgebung zu navigieren und gemeinsam zu jagen.
+                </p>
+                <p>
+                    Orcas sind vielseitige Jäger und ernähren sich von einer breiten Palette von Beutetieren, darunter Fische, Tintenfische und sogar andere Meeressäuger wie Robben und Delfine. Eine einzigartige Jagdtechnik der Orcas besteht darin, Wellen zu erzeugen, um Robben von Eisschollen zu spülen. Diese beeindruckenden Meeresbewohner haben auch die Fähigkeit, große Gruppen von Fischen zu umkreisen und sie so zu zwingen, sich zu Ballen zu formen, was die Jagd erleichtert. Ihre adaptiven Fähigkeiten und die Zusammenarbeit in den Pods machen Orcas zu faszinierenden und hochentwickelten Meeresbewohnern.
+                </p>
+            </article>
+            <article class="second-paragraph">
+                <h3>Weltweit verbreitete Meeresgiganten</h3>
+                <p>
+                    Orcas sind in den Ozeanen der Welt weit verbreitet und kommen sowohl in den arktischen als auch in den antarktischen Gewässern vor. Es gibt verschiedene Populationen mit spezifischen Lebensräumen, darunter Resident, Transient und Offshore Orcas. Resident Orcas bleiben in der Regel in einem bestimmten Gebiet und ernähren sich hauptsächlich von Fischen, während Transient Orcas größere Distanzen zurücklegen und sich von Meeressäugern ernähren. Der Schutzstatus der Orcas variiert je nach Population und Region, aber viele Orcas stehen unter dem Einfluss von Umweltbedrohungen wie Überfischung, Meeresverschmutzung und Klimawandel.
+                </p>
+                <p>
+                    Weltweit setzen sich Wissenschaftler und Naturschützer dafür ein, die Orcapopulationen zu erforschen und ihre Lebensräume zu schützen. Der Mensch hat eine bedeutende Rolle in der Bedrohung von Orcas gespielt, sei es durch den Verlust von Lebensraum, den Einsatz von Schadstoffen oder den Lärm durch Schiffsverkehr. Die Erhaltung der Ozeane und ihrer Bewohner, einschließlich der Orcas, erfordert daher engagierte Anstrengungen zum Schutz und zur nachhaltigen Nutzung der marinen Umwelt. Orcas bleiben ein faszinierendes Forschungsobjekt und eine Schlüsselspezies für das Verständnis der Komplexität mariner Ökosysteme.
+                </p>
+            </article>
+        </main>
+    </body>
+</html>
