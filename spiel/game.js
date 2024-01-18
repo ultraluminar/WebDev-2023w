@@ -1,21 +1,10 @@
 "use strict";
 
-async function loadCSV(link) {
-    // load csv file anf get text
-    const csvResponse = await fetch(link);
-    const csvText = await csvResponse.text();
-
-    // split text into rows and columns and remove empty cells
-    return csvText
-        .split(/\r?\n/)
-        .map(row => row.split(',')
-            .map(value => value.trim())
-            .filter(value => value !== ''))
-        .filter(row => row.length > 1);
-}
+import { csvTo2dArray } from '../lib/utils.js';
+import { DataTable } from "../lib/DataTable";
 
 async function parseAnimalsCSV() {
-    const data = await loadCSV('animals.csv');
+    const data = await csvTo2dArray('animals.csv');
 
     // split data into header, sorted data and sorted column0
     return {
@@ -26,7 +15,7 @@ async function parseAnimalsCSV() {
 }
 
 async function parseLinksCSV() {
-    const data = await loadCSV('../lexikon/links.csv');
+    const data = await csvTo2dArray('../lexikon/links.csv');
 
     // remove header
     data.shift();
