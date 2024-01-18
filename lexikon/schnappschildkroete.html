@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../style.css">
+        <script src="script.js"></script>
+        <script src="../nav.js"></script>
+        <title>Die Schnappschildkröte - Lexikon</title>
+        <link rel="apple-touch-icon" sizes="180x180" href="../assets/icons/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="../assets/icons/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="../assets/icons/favicon-16x16.png">
+        <link rel="manifest" href="../assets/icons/site.webmanifest">
+        <link rel="mask-icon" href="../assets/icons/safari-pinned-tab.svg" color="#5bbad5">
+        <link rel="shortcut icon" href="../assets/icons/favicon.ico">
+        <meta name="msapplication-TileColor" content="#00aba9">
+        <meta name="msapplication-config" content="../assets/icons/browserconfig.xml">
+        <meta name="theme-color" content="#175632">
+    </head>
+    <body>
+        <header>
+            <div class="container">
+                <div>
+                    <a href="../index.html"><img src="../assets/images/logo128.png" alt="Logo" id="logo" height="45px"/></a>
+                    <a href="../index.html"><span class="logo-text">Abenteuer Tierwelt</span></a>
+                </div>
+                <a id="burger-menu" onclick="toggleNav(event)">
+                    <span></span>
+                    <span></span>
+                </a>
+            </div>
+            <hr id="header-seperator"/>
+        </header>
+        <nav id="nav">
+            <a href="../index.html">Startseite</a>
+            <a href="../lexikon/index.html" class="self">Lexikon</a>
+            <a href="../quiz/index.html">Quizze</a>
+            <a href="../spiel/index.html">Spiele</a>
+            <a href="../fragen-und-antworten/index.html">Fragen & Antworten</a>
+        </nav>
+        <main id="animal-page-main">
+            <section class="hero">
+                <div class="hero-text">
+                    <h1>Die Schnapp­schildkröte</h1>
+                    <p>
+                        Die Schnappschildkröte, ein faszinierendes Reptil, beeindruckt mit ihrem kraftvollen Kiefer und ihrem gepanzerten Rückenpanzer.
+                        <br><br>
+                        Erkunde die aufregende Welt dieser Schildkrötenart und erfahre, wie sie in Gewässern und Ufern von Flüssen lebt.
+                    </p>
+                </div>
+                <div class="hero-image">
+                    <img src="../assets/images/lexikon/main/schnappschildkröte.png" alt="Eine Schnappschildkrötenfamilie am Flussufer; gezeichnet">
+                </div>
+            </section>
+            <aside class="facts">
+                <h2 class="section-title">Steckbrief</h2>
+                <div class="facts-list">
+                    <ul>
+                        <li>
+                            <img src="../assets/icons/height.svg" alt="Größensymbol" class="facts-list-icon"> <!-- Source: https://www.svgrepo.com/svg/532189/line-height -->
+                            <div class="facts-list-label">Größe</div>
+                            <div class="facts-list-value">35 bis 47 cm</div>
+                        </li>
+                        <li>
+                            <img src="../assets/icons/weight.svg" alt="Gewichtssymbol" class="facts-list-icon"> <!-- Source: https://www.svgrepo.com/svg/152443/weight-tool -->
+                            <div class="facts-list-label">Gewicht</div>
+                            <div class="facts-list-value">4,5 bis 16 kg</div>
+                        </li>
+                        <li>
+                            <img src="../assets/icons/age.svg" alt="Alterssymbol" class="facts-list-icon"> <!-- Source: https://www.svgrepo.com/svg/352172/hourglass-half -->
+                            <div class="facts-list-label">Lebenserwartung</div>
+                            <div class="facts-list-value">20 bis 70 Jahre</div>
+                        </li>
+                        <li>
+                            <img src="../assets/icons/continent.svg" alt="Kontinentsymbol" class="facts-list-icon"> <!-- Source: https://www.svgrepo.com/svg/382663/earth-global-globe-planet-world-2 -->
+                            <div class="facts-list-label">Kontinente</div>
+                            <div class="facts-list-value">Nordamerika</div>
+                        </li>
+                        <li>
+                            <img src="../assets/icons/habitat.svg" alt="Lebensraumsymbol" class="facts-list-icon"> <!-- Source: https://www.svgrepo.com/svg/382687/environment-forest-leaf-nature-tree -->
+                            <div class="facts-list-label">Lebensraum</div>
+                            <div class="facts-list-value">Süßwasser</div>
+                        </li>
+                        <li>
+                            <img src="../assets/icons/food.svg" alt="Nahrungssymbol" class="facts-list-icon"> <!-- Source: https://www.svgrepo.com/svg/490738/food-restaurant -->
+                            <div class="facts-list-label">Nahrung</div>
+                            <div class="facts-list-value">Allesfresser</div>
+                        </li>
+                        <li>
+                            <img src="../assets/icons/social.svg" alt="Sozialverhaltenssymbol" class="facts-list-icon"> <!-- Source: https://www.svgrepo.com/svg/140768/users-relation -->
+                            <div class="facts-list-label">Sozialverhalten</div>
+                            <div class="facts-list-value">Einzelgänger</div>
+                        </li>
+                    </ul>
+                </div>
+            </aside>
+            <aside class="funfact">
+                <img src="../assets/icons/funfact.svg" alt="Funfact-Symbol" class="funfact-icon"> <!-- Source: https://www.svgrepo.com/svg/374948/light-bulb -->
+                <h3 class="funfact-heading">Lustiger Fakt</h3>
+                <p class="funfact-text">
+                    Schnappschildkröten sind nicht nur pfiffige Jäger, sondern haben auch <b>musikalische Neigungen</b> – sie können unter Wasser Geräusche erzeugen, die wie ein "schnorchelndes" Lied klingen! Diese klangvollen Schildkröten sind vielleicht die unterhaltsamsten Musiker der Teiche und Flüsse.
+                </p>
+            </aside>
+            <article class="first-paragraph">
+                <h3>Geschickte Jäger unter Wasser</h3>
+                <p>
+                    Schnappschildkröten, auch als Alligator-Schildkröten bekannt, sind faszinierende Reptilien, die in den Gewässern Nordamerikas beheimatet sind. Mit ihrem kuppelförmigen Rückenpanzer, der von dunklen Mustern geprägt ist, und ihrem breiten Maul, das an das einer Schnappschildkröte erinnert, sind sie leicht zu erkennen. Diese Schildkröten sind geschickte Jäger und leben in langsam fließenden Gewässern wie Teichen, Seen und Sümpfen. Ihr ausgezeichnetes Tarnmuster hilft ihnen dabei, sich in ihrem natürlichen Lebensraum zu verbergen, während sie geduldig auf ihre Beute warten.
+                </p>
+                <p>
+                    Schnappschildkröten sind Allesfresser und ernähren sich von Fischen, Fröschen, Insekten, kleinen Säugetieren und sogar Aas. Sie lauern oft regungslos im Wasser, nur mit den Augen und den Nasenlöchern an der Wasseroberfläche, und schnappen blitzschnell zu, um ihre Beute zu fangen. Ihre kräftigen Kiefer und scharfen Zähne ermöglichen es ihnen, auch größere Beutetiere zu bewältigen. Schnappschildkröten sind anpassungsfähige Reptilien, die eine wichtige Rolle im aquatischen Ökosystem spielen und durch ihre Jagdtechniken faszinieren.
+                </p>
+            </article>
+            <article class="second-paragraph">
+                <h3>Ruhe und Fortpflanzung im Wasserreich</h3>
+                <p>
+                    Schnappschildkröten zeigen interessante Verhaltensweisen während der Fortpflanzungszeit. Die Weibchen suchen im Frühling oder Frühsommer nach geeigneten Stellen, um ihre Eier abzulegen. Nach der Eiablage vergraben sie die Eier im Sand, wo sie sich über mehrere Monate entwickeln, bevor die Jungtiere schlüpfen. Die kleinen Schildkröten brechen dann aus ihren Eierschalen aus und machen sich auf den Weg zum Wasser. Die ersten Jahre ihres Lebens verbringen sie oft im flachen Wasser, bevor sie später in tiefere Gewässer umsiedeln.
+                </p>
+                <p>
+                    Schnappschildkröten sind eher Einzelgänger und verteidigen ihr Territorium gegenüber Artgenossen. Ihr langes Leben und ihre Anpassungsfähigkeit an unterschiedliche Wasserlebensräume machen sie zu faszinierenden Bewohnern der nordamerikanischen Gewässer. Die Schnappschildkröten sind aufgrund ihrer besonderen Erscheinung und ihrer wichtigen Rolle im ökologischen Gefüge der Gewässer eine interessante Spezies, die die Neugier von Naturforschern weckt.
+                </p>
+            </article>
+        </main>
+    </body>
+</html>

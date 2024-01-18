@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../style.css">
+        <script src="script.js"></script>
+        <script src="../nav.js"></script>
+        <title>Der Alligator - Lexikon</title>
+        <link rel="apple-touch-icon" sizes="180x180" href="../assets/icons/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="../assets/icons/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="../assets/icons/favicon-16x16.png">
+        <link rel="manifest" href="../assets/icons/site.webmanifest">
+        <link rel="mask-icon" href="../assets/icons/safari-pinned-tab.svg" color="#5bbad5">
+        <link rel="shortcut icon" href="../assets/icons/favicon.ico">
+        <meta name="msapplication-TileColor" content="#00aba9">
+        <meta name="msapplication-config" content="../assets/icons/browserconfig.xml">
+        <meta name="theme-color" content="#175632">
+    </head>
+    <body>
+        <header>
+            <div class="container">
+                <div>
+                    <a href="../index.html"><img src="../assets/images/logo128.png" alt="Logo" id="logo" height="45px"/></a>
+                    <a href="../index.html"><span class="logo-text">Abenteuer Tierwelt</span></a>
+                </div>
+                <a id="burger-menu" onclick="toggleNav(event)">
+                    <span></span>
+                    <span></span>
+                </a>
+            </div>
+            <hr id="header-seperator"/>
+        </header>
+        <nav id="nav">
+            <a href="../index.html">Startseite</a>
+            <a href="../lexikon/index.html" class="self">Lexikon</a>
+            <a href="../quiz/index.html">Quizze</a>
+            <a href="../spiel/index.html">Spiele</a>
+            <a href="../fragen-und-antworten/index.html">Fragen & Antworten</a>
+        </nav>
+        <main id="animal-page-main">
+            <section class="hero">
+                <div class="hero-text">
+                    <h1>Der Alligator</h1>
+                    <p>
+                        Der Alligator, ein faszinierender Bewohner von Sümpfen und Flüssen, beeindruckt mit seinem schuppenbedeckten Körper und seinen mächtigen Kiefern.
+                        <br><br>
+                        Entdecke die aufregende Welt dieses Reptils und erfahre, wie es in den Gewässern Nord- und Südamerikas lebt.
+                    </p>
+                </div>
+                <div class="hero-image">
+                    <img src="../assets/images/lexikon/main/alligator.png" alt="Eine Alligatorefamilie im Sumpf; gezeichnet">
+                </div>
+            </section>
+            <aside class="facts">
+                <h2 class="section-title">Steckbrief</h2>
+                <div class="facts-list">
+                    <ul>
+                        <li>
+                            <img src="../assets/icons/height.svg" alt="Größensymbol" class="facts-list-icon"> <!-- Source: https://www.svgrepo.com/svg/532189/line-height -->
+                            <div class="facts-list-label">Größe</div>
+                            <div class="facts-list-value">3 bis 4,5 m</div>
+                        </li>
+                        <li>
+                            <img src="../assets/icons/weight.svg" alt="Gewichtssymbol" class="facts-list-icon"> <!-- Source: https://www.svgrepo.com/svg/152443/weight-tool -->
+                            <div class="facts-list-label">Gewicht</div>
+                            <div class="facts-list-value">230 bis 500 kg</div>
+                        </li>
+                        <li>
+                            <img src="../assets/icons/age.svg" alt="Alterssymbol" class="facts-list-icon"> <!-- Source: https://www.svgrepo.com/svg/352172/hourglass-half -->
+                            <div class="facts-list-label">Lebenserwartung</div>
+                            <div class="facts-list-value">30 bis 50 Jahre</div>
+                        </li>
+                        <li>
+                            <img src="../assets/icons/continent.svg" alt="Kontinentsymbol" class="facts-list-icon"> <!-- Source: https://www.svgrepo.com/svg/382663/earth-global-globe-planet-world-2 -->
+                            <div class="facts-list-label">Kontinente</div>
+                            <div class="facts-list-value">Nordamerika</div>
+                        </li>
+                        <li>
+                            <img src="../assets/icons/habitat.svg" alt="Lebensraumsymbol" class="facts-list-icon"> <!-- Source: https://www.svgrepo.com/svg/382687/environment-forest-leaf-nature-tree -->
+                            <div class="facts-list-label">Lebensraum</div>
+                            <div class="facts-list-value">Süßwasserseen, Sümpfe, Flüsse</div>
+                        </li>
+                        <li>
+                            <img src="../assets/icons/food.svg" alt="Nahrungssymbol" class="facts-list-icon"> <!-- Source: https://www.svgrepo.com/svg/490738/food-restaurant -->
+                            <div class="facts-list-label">Nahrung</div>
+                            <div class="facts-list-value">Fleischfresser</div>
+                        </li>
+                        <li>
+                            <img src="../assets/icons/social.svg" alt="Sozialverhaltenssymbol" class="facts-list-icon"> <!-- Source: https://www.svgrepo.com/svg/140768/users-relation -->
+                            <div class="facts-list-label">Sozialverhalten</div>
+                            <div class="facts-list-value">Einzelgänger</div>
+                        </li>
+                    </ul>
+                </div>
+            </aside>
+            <aside class="funfact">
+                <img src="../assets/icons/funfact.svg" alt="Funfact-Symbol" class="funfact-icon"> <!-- Source: https://www.svgrepo.com/svg/374948/light-bulb -->
+                <h3 class="funfact-heading">Lustiger Fakt</h3>
+                <p class="funfact-text">
+                    Alligatoren sind nicht nur starke Schwimmer, sondern haben auch <b>besondere Zahn-Tauschpartys</b> – sie regenerieren ständig neue Zähne! Ein Alligator kann im Laufe seines Lebens Hunderte von Zähnen austauschen, sodass es so aussieht, als würden sie ihre eigenen kleinen Zahnfeierlichkeiten im Sumpf abhalten.
+                </p>
+            </aside>
+            <article class="first-paragraph">
+                <h3>Eindrucksvolle Reptilien der Feuchtgebiete</h3>
+                <p>
+                    Alligatoren sind faszinierende Reptilien, die in den Feuchtgebieten Nordamerikas beheimatet sind. Mit ihren kraftvollen Körpern, der schuppenbedeckten Haut und den scharfen Zähnen gehören sie zur Gruppe der Krokodile. Alligatoren sind exzellente Schwimmer und bewegen sich gleichermaßen geschickt an Land. Ihre Augen und Nasenlöcher befinden sich auf der Oberseite des Kopfes, sodass sie im Wasser nur knapp sichtbar sind. Diese Anpassung ermöglicht es ihnen, auf ihre Beute zu lauern, während der Rest ihres Körpers getarnt unter der Wasseroberfläche bleibt.
+                </p>
+                <p>
+                    Alligatoren ernähren sich von Fischen, Vögeln, Schildkröten und kleinen Säugetieren. Mit ihrem beeindruckenden Kieferdruck können sie ihre Beute im Ganzen verschlingen oder sie in Stücke reißen. Alligatoren haben eine bemerkenswerte Fähigkeit, längere Zeit ohne Nahrung auszukommen und können sogar während kalter Monate inaktiv bleiben. Diese eindrucksvollen Reptilien spielen eine wichtige Rolle im ökologischen Gleichgewicht der Feuchtgebiete und faszinieren durch ihre einzigartige Anpassung an ihre Umgebung.
+                </p>
+            </article>
+            <article class="second-paragraph">
+                <h3>Gemeinschaftsleben und beeindruckende Brutpflege</h3>
+                <p>
+                    Alligatoren sind nicht nur Einzelgänger, sondern können auch in Gruppen leben, vor allem während der Paarungszeit. Diese intelligenten Reptilien kommunizieren miteinander durch Laute wie Brüllen und Zischen. Alligatoren haben eine beeindruckende Brutpflege, bei der die Weibchen Nester aus Pflanzenmaterial und Schlamm bauen, um ihre Eier darin zu legen. Während der Brutzeit bewachen die Weibchen ihre Nester und sorgen dafür, dass die Eier vor Gefahren geschützt sind.
+                </p>
+                <p>
+                    Nach dem Schlüpfen werden die jungen Alligatoren von ihrer Mutter behütet und beschützt. Dieses soziale Verhalten unterstützt das Überleben der Jungtiere in den ersten Lebensphasen. Alligatoren sind nicht nur beeindruckende Jäger, sondern auch faszinierende Eltern, die eine erstaunliche Fürsorglichkeit für ihre Nachkommen zeigen. Insgesamt sind Alligatoren faszinierende Reptilien, die durch ihre Lebensweise und ihre Rolle in den Feuchtgebieten die Neugier junger Naturforscher wecken können.
+                </p>
+            </article>
+        </main>
+    </body>
+</html>
