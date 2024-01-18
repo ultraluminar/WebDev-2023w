@@ -1,17 +1,21 @@
 "use strict";
 
-async function loadAndParseCSV() {
+async function loadCSV(link) {
     // load csv file anf get text
-    const csvResponse = await fetch('animals.csv');
+    const csvResponse = await fetch(link);
     const csvText = await csvResponse.text();
 
     // split text into rows and columns and remove empty cells
-    let data = csvText
+    return csvText
         .split(/\r?\n/)
         .map(row => row.split(',')
             .map(value => value.trim())
             .filter(value => value !== ''))
         .filter(row => row.length > 1);
+}
+
+async function parseAnimalsCSV() {
+    const data = await loadCSV('animals.csv');
 
     // split data into header, sorted data and sorted column0
     return {
@@ -21,9 +25,23 @@ async function loadAndParseCSV() {
     };
 }
 
+async function parseLinksCSV() {
+    const data = await loadCSV('../lexikon/links.csv');
+
+    // remove header
+    data.shift();
+    let obj = {};
+
+    data.map(row => {
+        obj[row[0]] = row[1];
+    });
+    return obj;
+}
+
 class AnimalTable {
-    constructor(csv) {
+    constructor(csv, links) {
         this.csv = csv;
+        this.links = links;
         this.guessList = [];
 
         this.dataTable = document.getElementById('animalTable');
@@ -31,6 +49,7 @@ class AnimalTable {
         this.buttonNode = document.getElementById("cb1-button");
 
         this.randomAnimalRow = csv.data[Math.floor(Math.random() * csv.data.length)];
+        console.log(this.randomAnimalRow[0]);
 
 
         // create header row
@@ -67,14 +86,20 @@ class AnimalTable {
     makeGuess(guess) {
         this.guessList.push(guess);
         this.createContentRow(guess);
-        console.log(this.randomAnimalRow[0], guess, this.randomAnimalRow[0] === guess);
-        if (guess === this.randomAnimalRow[0]) {
+        if (this.randomAnimalRow[0] === this.animalRowWithSoftHyphens(guess)[0]) {
             this.dataTable.classList.add('correct');
 
             this.comboboxNode.placeholder = "Gewonnen!";
             this.comboboxNode.disabled = true;
             this.buttonNode.disabled = true;
 
+            this.dataTable.tBodies[0].childNodes.forEach(tr => {
+                const animalNode = tr.firstChild;
+                const link = this.links[animalNode.textContent.replace(/\u00AD/g,'')];
+                if (link !== undefined) {
+                    animalNode.innerHTML = "<a href='../lexikon/" + link + "'>" + animalNode.textContent + "</a>";
+                }
+            });
         }
     }
 }
@@ -210,6 +235,9 @@ class Combobox{
 }
 
 document.addEventListener("DOMContentLoaded", async function () {
-    const csv = await loadAndParseCSV();
-    new Combobox(csv.column0, new AnimalTable(csv));
+    const csv = await parseAnimalsCSV();
+    const links = await parseLinksCSV();
+
+    new Combobox(csv.column0, new AnimalTable(csv, links));
+
 });
