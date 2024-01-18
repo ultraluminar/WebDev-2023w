@@ -26,8 +26,10 @@ class AnimalTable {
         this.csv = csv;
         this.guessList = [];
 
-        // get table and random animal row
         this.dataTable = document.getElementById('animalTable');
+        this.comboboxNode = document.getElementById("cb1-input");
+        this.buttonNode = document.getElementById("cb1-button");
+
         this.randomAnimalRow = csv.data[Math.floor(Math.random() * csv.data.length)];
 
 
@@ -65,6 +67,15 @@ class AnimalTable {
     makeGuess(guess) {
         this.guessList.push(guess);
         this.createContentRow(guess);
+        console.log(this.randomAnimalRow[0], guess, this.randomAnimalRow[0] === guess);
+        if (guess === this.randomAnimalRow[0]) {
+            this.dataTable.classList.add('correct');
+
+            this.comboboxNode.placeholder = "Gewonnen!";
+            this.comboboxNode.disabled = true;
+            this.buttonNode.disabled = true;
+
+        }
     }
 }
 
@@ -98,6 +109,8 @@ class Combobox{
             this.allOptions.push(li);
 
         });
+
+        this.filterOptions();
 
     }
     onBlur(event) {
@@ -157,8 +170,8 @@ class Combobox{
 
     toggleOpen() {
         this.listboxNode.classList.toggle('open');
-        this.toggleAttributeValue(this.comboboxNode, 'aria-expanded');
-        this.toggleAttributeValue(this.buttonNode, 'aria-expanded');
+        this.comboboxNode.ariaExpanded = this.isOpen();
+        this.buttonNode.ariaExpanded = this.isOpen();
     }
 
     toggleAttributeValue(node, attr) {
