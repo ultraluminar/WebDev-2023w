@@ -1,5 +1,23 @@
 "use strict";
 
+async function loadAndParseCSV() {
+    const csvResponse = await fetch('animals.csv');
+    const csvText = await csvResponse.text();
+
+    let data = csvText
+        .split(/\r?\n/)
+        .map(row => row.split(',')
+            .map(value => value.trim())
+            .filter(value => value !== ''))
+        .filter(row => row.length > 1);
+
+    return {
+        header: data.shift(),
+        column0: data.map(row => row[0]),
+        data: data
+    };
+}
+
 class AnimalTable {
     constructor(csv) {
         this.csv = csv;
@@ -51,32 +69,39 @@ class Combobox{
         this.buttonNode = document.getElementById("cb1-button");
         this.listboxNode = document.getElementById("cb1-listbox");
 
-        this.buttonNode.addEventListener('click', this.onButtonClick.bind(this));
-        this.comboboxNode.addEventListener('click', this.onInputClick.bind(this));
-        this.comboboxNode.addEventListener('input', this.filterOptions.bind(this));
+        this.buttonNode.addEventListener('mousedown', this.onButtonMouseDown.bind(this));
         this.comboboxNode.addEventListener('keydown', this.onInputKeyDown.bind(this));
+        this.comboboxNode.addEventListener('mousedown', this.onInputMouseDown.bind(this));
+        this.comboboxNode.addEventListener('input', this.filterOptions.bind(this));
 
-        //TODO: close listbox on focusout
+
+        this.comboboxNode.addEventListener('blur', this.onBlur.bind(this));
 
         nodesContent.forEach(nodeContent => {
             const li = Object.assign(
                 document.createElement('li'),
                 {textContent: nodeContent, role: 'option', tabindex: '-1' });
 
-            li.addEventListener('click',  this.onOptionClick.bind(this));
+            li.addEventListener('mousedown',  this.onOptionMouseDown.bind(this));
             this.allOptions.push(li);
 
         });
         this.filterOptions();
 
     }
+    onBlur(event) {
+        this.Close();
+    }
 
     onInputKeyDown(event) {
-        if (event.key === "Enter" && this.isOpen() && this.filteredOptions.length > 0) {
+        if (!this.isOpen() && event.key.match(/[A-Za-z]/)) {
+            this.Open();
+            return;
+        }
+        if (event.key === "Enter" && this.filteredOptions.length > 0) {
             const guess = this.filteredOptions[0].textContent;
             if (this.animalTable.validateGuess(guess)) {
-                this.toggleOpen();
-                this.comboboxNode.blur();
+                this.Close();
                 this.comboboxNode.value = "";
                 this.filterOptions();
                 this.animalTable.makeGuess(guess);
@@ -84,9 +109,9 @@ class Combobox{
         }
     }
 
-    onOptionClick(event) {
-        console.log(event)
-        this.toggleOpen();
+    onOptionMouseDown(event) {
+        event.preventDefault();
+        this.Close();
         this.comboboxNode.value = "";
         this.filterOptions();
         this.animalTable.makeGuess(event.target.textContent);
@@ -96,15 +121,25 @@ class Combobox{
         return this.listboxNode.classList.contains('open');
     }
 
-    onInputClick() {
+    onInputMouseDown() {
+        this.Open();
+    }
+
+    onButtonMouseDown(event) {
+        this.toggleOpen();
+        event.preventDefault();
+
+    }
+    Open() {
         if (!this.isOpen()) {
             this.toggleOpen();
         }
     }
 
-    onButtonClick() {
-        this.toggleOpen();
-        (this.isOpen()) ? this.comboboxNode.focus() : this.comboboxNode.blur();
+    Close() {
+        if (this.isOpen()) {
+            this.toggleOpen();
+        }
     }
 
     toggleOpen() {
@@ -128,14 +163,16 @@ class Combobox{
         this.filteredOptions = (filter.length === 0) ? this.allOptions : this.allOptions.filter(
             option => option.textContent.match(pattern) !== null && !this.animalTable.guessList.includes(option.textContent));
 
+        this.filteredOptions.sort((a, b) => {
+        });
         this.filteredOptions.forEach(option => {
             option.innerHTML = option.textContent.replace(pattern, replaceMask);
             this.listboxNode.appendChild(option);
         });
 
-        if (this.filteredOptions.length > 0) {
+        /*if (this.filteredOptions.length > 0) {
             this.filteredOptions[0].setAttribute('aria-selected', 'true');
-        }
+        }*/
     }
 }
 
@@ -145,22 +182,3 @@ document.addEventListener("DOMContentLoaded", async function () {
     const animalTable = new AnimalTable(csv)
     new Combobox(csv.column0.sort(), animalTable);
 });
-
-// Load CSV data from local file and parse it
-async function loadAndParseCSV() {
-    const csvResponse = await fetch('animals.csv'); 
-    const csvText = await csvResponse.text();
-
-    let data = csvText
-        .split(/\r?\n/)
-        .map(row => row.split(',')
-            .map(value => value.trim())
-            .filter(value => value !== ''))
-        .filter(row => row.length > 1);
-
-    return {
-        header: data.shift(),
-        column0: data.map(row => row[0]),
-        data: data
-    };
-}
