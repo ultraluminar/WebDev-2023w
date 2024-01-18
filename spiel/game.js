@@ -80,7 +80,7 @@ class AnimalTable {
     }
 
     validateGuess(guess) {
-        return this.csv.column0.includes(guess) && !this.guessList.includes(guess);
+        return this.csv.column0.includes(guess) && !this.alreadyGuessed(guess);
     }
 
     makeGuess(guess) {
