@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../style.css">
+        <script src="script.js"></script>
+        <script src="../nav.js"></script>
+        <title>Das rote Eichhörnchen - Lexikon</title>
+        <link rel="apple-touch-icon" sizes="180x180" href="../assets/icons/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="../assets/icons/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="../assets/icons/favicon-16x16.png">
+        <link rel="manifest" href="../assets/icons/site.webmanifest">
+        <link rel="mask-icon" href="../assets/icons/safari-pinned-tab.svg" color="#5bbad5">
+        <link rel="shortcut icon" href="../assets/icons/favicon.ico">
+        <meta name="msapplication-TileColor" content="#00aba9">
+        <meta name="msapplication-config" content="../assets/icons/browserconfig.xml">
+        <meta name="theme-color" content="#175632">
+    </head>
+    <body>
+        <header>
+            <div class="container">
+                <div>
+                    <a href="../index.html"><img src="../assets/images/logo128.png" alt="Logo" id="logo" height="45px"/></a>
+                    <a href="../index.html"><span class="logo-text">Abenteuer Tierwelt</span></a>
+                </div>
+                <a id="burger-menu" onclick="toggleNav(event)">
+                    <span></span>
+                    <span></span>
+                </a>
+            </div>
+            <hr id="header-seperator"/>
+        </header>
+        <nav id="nav">
+            <a href="../index.html">Startseite</a>
+            <a href="../lexikon/index.html" class="self">Lexikon</a>
+            <a href="../quiz/index.html">Quizze</a>
+            <a href="../spiel/index.html">Spiele</a>
+            <a href="../fragen-und-antworten/index.html">Fragen & Antworten</a>
+        </nav>
+        <main id="animal-page-main">
+            <section class="hero">
+                <div class="hero-text">
+                    <h1>Das rote Eichhörnchen</h1>
+                    <p>
+                        Das rote Eichhörnchen, ein quirliger Waldbewohner, begeistert mit seinem flauschigen roten Fell und seinem geschickten Klettertalent.
+                        <br><br>
+                        Entdecke die faszinierende Welt dieses kleinen Nagetiers und erfahre, wie es in den Bäumen der Wälder lebt.
+                    </p>
+                </div>
+                <div class="hero-image">
+                    <img src="../assets/images/lexikon/main/eichhörnchen.png" alt="Eine Eichhörnchenfamilie im Baumwipfel; gezeichnet">
+                </div>
+            </section>
+            <aside class="facts">
+                <h2 class="section-title">Steckbrief</h2>
+                <div class="facts-list">
+                    <ul>
+                        <li>
+                            <img src="../assets/icons/height.svg" alt="Größensymbol" class="facts-list-icon"> <!-- Source: https://www.svgrepo.com/svg/532189/line-height -->
+                            <div class="facts-list-label">Größe</div>
+                            <div class="facts-list-value">18 bis 24 cm</div>
+                        </li>
+                        <li>
+                            <img src="../assets/icons/weight.svg" alt="Gewichtssymbol" class="facts-list-icon"> <!-- Source: https://www.svgrepo.com/svg/152443/weight-tool -->
+                            <div class="facts-list-label">Gewicht</div>
+                            <div class="facts-list-value">250 bis 350 g</div>
+                        </li>
+                        <li>
+                            <img src="../assets/icons/age.svg" alt="Alterssymbol" class="facts-list-icon"> <!-- Source: https://www.svgrepo.com/svg/352172/hourglass-half -->
+                            <div class="facts-list-label">Lebenserwartung</div>
+                            <div class="facts-list-value">2 bis 6 Jahre</div>
+                        </li>
+                        <li>
+                            <img src="../assets/icons/continent.svg" alt="Kontinentsymbol" class="facts-list-icon"> <!-- Source: https://www.svgrepo.com/svg/382663/earth-global-globe-planet-world-2 -->
+                            <div class="facts-list-label">Kontinente</div>
+                            <div class="facts-list-value">Europa, Asien</div>
+                        </li>
+                        <li>
+                            <img src="../assets/icons/habitat.svg" alt="Lebensraumsymbol" class="facts-list-icon"> <!-- Source: https://www.svgrepo.com/svg/382687/environment-forest-leaf-nature-tree -->
+                            <div class="facts-list-label">Lebensraum</div>
+                            <div class="facts-list-value">Wälder</div>
+                        </li>
+                        <li>
+                            <img src="../assets/icons/food.svg" alt="Nahrungssymbol" class="facts-list-icon"> <!-- Source: https://www.svgrepo.com/svg/490738/food-restaurant -->
+                            <div class="facts-list-label">Nahrung</div>
+                            <div class="facts-list-value">Allesfresser</div>
+                        </li>
+                        <li>
+                            <img src="../assets/icons/social.svg" alt="Sozialverhaltenssymbol" class="facts-list-icon"> <!-- Source: https://www.svgrepo.com/svg/140768/users-relation -->
+                            <div class="facts-list-label">Sozialverhalten</div>
+                            <div class="facts-list-value">Einzelgänger</div>
+                        </li>
+                    </ul>
+                </div>
+            </aside>
+            <aside class="funfact">
+                <img src="../assets/icons/funfact.svg" alt="Funfact-Symbol" class="funfact-icon"> <!-- Source: https://www.svgrepo.com/svg/374948/light-bulb -->
+                <h3 class="funfact-heading">Lustiger Fakt</h3>
+                <p class="funfact-text">
+                    Rote Eichhörnchen sind nicht nur flinke Kletterer, sondern auch wahre <b>Versteckspiel-Experten</b> – sie können ihre Nüsse an mehreren tausend verschiedenen Orten vergraben und erinnern sich sogar nach Monaten noch an die meisten davon! Mit ihrem "Nuss-Schatzkarten-Gedächtnis" sind sie die kleinen Entdecker des Waldes.
+                </p>
+            </aside>
+            <article class="first-paragraph">
+                <h3>Flinke Kletterkünstler</h3>
+                <p>
+                    Rote Eichhörnchen sind kleine Nagetiere, die mit ihrer leuchtend roten Fellfarbe auffallen. Sie sind vor allem in Wäldern, Parks und Gärten zu finden. Ihr schmales, geschmeidiges Körperbau und der buschige Schwanz machen sie zu flinken Kletterkünstlern. Mit ihren scharfen Krallen und Zähnen können sie geschickt die Baumstämme hinaufklettern und sich von Ast zu Ast bewegen.
+                </p>
+                <p>
+                    Rote Eichhörnchen sind Allesfresser und ernähren sich hauptsächlich von Nüssen, Samen, Früchten, Knospen und Insekten. Sie sind besonders geschickt darin, Nahrung zu verstecken und in verschiedenen Verstecken zu speichern. Im Herbst sammeln sie eine Vorrat an Nüssen, den sie dann im Winter nutzen, wenn die Nahrungsquellen knapper werden. Diese lebhaften Bewohner der Bäume sind nicht nur geschickte Kletterer, sondern auch kluge Vorratsjäger, die sich gut an ihre Umgebung anpassen können.
+                </p>
+            </article>
+            <article class="second-paragraph">
+                <h3>Die Sprachkünstler der Baumwipfel</h3>
+                <p>
+                    Rote Eichhörnchen kommunizieren miteinander durch eine Vielzahl von Geräuschen, einschließlich lebhaften Rufstimmen und klappernden Lauten. Diese Lautäußerungen dienen dazu, Artgenossen auf sich aufmerksam zu machen oder Gefahren zu signalisieren. Rote Eichhörnchen sind territorial und markieren ihr Revier mit Duftmarken, um ihre Anwesenheit zu zeigen und Rivalen fernzuhalten. Ihr Territorium kann sich je nach Verfügbarkeit von Nahrung ändern.
+                </p>
+                <p>
+                    Während der Paarungszeit zeigen die Männchen oft beeindruckende akrobatische Einlagen, um die Weibchen zu beeindrucken. Die Fortpflanzung erfolgt in einem kugelförmigen Nest, sogenannten Kobeln, das in den Baumwipfeln oder Nistkästen gebaut wird. Die Weibchen ziehen ihre Jungen, die sogenannten Kitze, liebevoll auf. Das soziale Verhalten und die kommunikativen Fähigkeiten der Roten Eichhörnchen verleihen diesen faszinierenden Baumwipfelbewohnern eine besondere Note in der Natur.
+                </p>
+            </article>
+        </main>
+    </body>
+</html>
