@@ -1,9 +1,11 @@
 "use strict";
 
 async function loadAndParseCSV() {
+    // load csv file anf get text
     const csvResponse = await fetch('animals.csv');
     const csvText = await csvResponse.text();
 
+    // split text into rows and columns and remove empty cells
     let data = csvText
         .split(/\r?\n/)
         .map(row => row.split(',')
@@ -11,10 +13,11 @@ async function loadAndParseCSV() {
             .filter(value => value !== ''))
         .filter(row => row.length > 1);
 
+    // split data into header, sorted data and sorted column0
     return {
         header: data.shift(),
-        column0: data.map(row => row[0]),
-        data: data
+        data: data.sort(),
+        column0: data.map((row) => row[0].replace(/\u00AD/g,''))
     };
 }
 
@@ -23,6 +26,7 @@ class AnimalTable {
         this.csv = csv;
         this.guessList = [];
 
+        // get table and random animal row
         this.dataTable = document.getElementById('animalTable');
         this.randomAnimalRow = csv.data[Math.floor(Math.random() * csv.data.length)];
 
@@ -30,15 +34,19 @@ class AnimalTable {
         // create header row
         const tableHeader = this.dataTable.insertRow(0);
         this.csv.header.forEach(header => {
-            const th = tableHeader.insertCell(-1)
-            th.outerHTML = "<th>" + header + "</th>";
+            // make cell a header cell
+            tableHeader.insertCell(-1).outerHTML = "<th>" + header + "</th>";
         });
 
     }
+    animalRowWithSoftHyphens (animal) {
+        // get animal row that includes soft hyphens
+        return this.csv.data[this.csv.column0.indexOf(animal)]; }
 
     createContentRow(animal) {
+
         const tableRow = this.dataTable.insertRow(1);
-        const animalRow = this.csv.data.find(row => row[0] === animal);
+        const animalRow = this.animalRowWithSoftHyphens(animal);
         animalRow.forEach((value, index) => {
             const td = tableRow.insertCell(-1);
             td.classList.add(value === this.randomAnimalRow[index] ? 'correct' : 'incorrect');
@@ -46,6 +54,10 @@ class AnimalTable {
         });
 
     }
+    alreadyGuessed(guess) {
+        return this.guessList.includes(guess);
+    }
+
     validateGuess(guess) {
         return this.csv.column0.includes(guess) && !this.guessList.includes(guess);
     }
@@ -86,7 +98,6 @@ class Combobox{
             this.allOptions.push(li);
 
         });
-        this.filterOptions();
 
     }
     onBlur(event) {
@@ -95,6 +106,7 @@ class Combobox{
 
     onInputKeyDown(event) {
         if (!this.isOpen() && event.key.match(/[A-Za-z]/)) {
+            this.filterOptions();
             this.Open();
             return;
         }
@@ -122,6 +134,7 @@ class Combobox{
     }
 
     onInputMouseDown() {
+        this.filterOptions();
         this.Open();
     }
 
@@ -157,28 +170,33 @@ class Combobox{
 
         this.listboxNode.innerHTML = '';
 
-        const pattern = new RegExp(`(${filter})`, 'ig');
+        // create regex pattern and replace mask for highlighting
+        const pattern = new RegExp(`(${filter})`, 'i');
         const replaceMask = '<b>$1</b>';
 
+        // all options that match the filter or all options if filter is empty
         this.filteredOptions = (filter.length === 0) ? this.allOptions : this.allOptions.filter(
-            option => option.textContent.match(pattern) !== null && !this.animalTable.guessList.includes(option.textContent));
+            option => option.textContent.match(pattern) !== null);
 
+        // remove already guessed options
+        this.filteredOptions = this.filteredOptions.filter(
+            option => !this.animalTable.alreadyGuessed(option.textContent)
+        );
+
+        // sort options by index of first match
         this.filteredOptions.sort((a, b) => {
+            return a.textContent.match(pattern).index - b.textContent.match(pattern).index;
         });
+
+        // add options to listbox and highlight matches
         this.filteredOptions.forEach(option => {
             option.innerHTML = option.textContent.replace(pattern, replaceMask);
             this.listboxNode.appendChild(option);
         });
-
-        /*if (this.filteredOptions.length > 0) {
-            this.filteredOptions[0].setAttribute('aria-selected', 'true');
-        }*/
     }
 }
 
 document.addEventListener("DOMContentLoaded", async function () {
     const csv = await loadAndParseCSV();
-
-    const animalTable = new AnimalTable(csv)
-    new Combobox(csv.column0.sort(), animalTable);
+    new Combobox(csv.column0, new AnimalTable(csv));
 });
