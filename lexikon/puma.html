@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../style.css">
+        <script src="script.js"></script>
+        <script src="../nav.js"></script>
+        <title>Der Puma - Lexikon</title>
+        <link rel="apple-touch-icon" sizes="180x180" href="../assets/icons/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="../assets/icons/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="../assets/icons/favicon-16x16.png">
+        <link rel="manifest" href="../assets/icons/site.webmanifest">
+        <link rel="mask-icon" href="../assets/icons/safari-pinned-tab.svg" color="#5bbad5">
+        <link rel="shortcut icon" href="../assets/icons/favicon.ico">
+        <meta name="msapplication-TileColor" content="#00aba9">
+        <meta name="msapplication-config" content="../assets/icons/browserconfig.xml">
+        <meta name="theme-color" content="#175632">
+    </head>
+    <body>
+        <header>
+            <div class="container">
+                <div>
+                    <a href="../index.html"><img src="../assets/images/logo128.png" alt="Logo" id="logo" height="45px"/></a>
+                    <a href="../index.html"><span class="logo-text">Abenteuer Tierwelt</span></a>
+                </div>
+                <a id="burger-menu" onclick="toggleNav(event)">
+                    <span></span>
+                    <span></span>
+                </a>
+            </div>
+            <hr id="header-seperator"/>
+        </header>
+        <nav id="nav">
+            <a href="../index.html">Startseite</a>
+            <a href="../lexikon/index.html" class="self">Lexikon</a>
+            <a href="../quiz/index.html">Quizze</a>
+            <a href="../spiel/index.html">Spiele</a>
+            <a href="../fragen-und-antworten/index.html">Fragen & Antworten</a>
+        </nav>
+        <main id="animal-page-main">
+            <section class="hero">
+                <div class="hero-text">
+                    <h1>Der Puma</h1>
+                    <p>
+                        Der Puma, ein geschickter Jäger und Athlet der Wildnis, fasziniert mit seiner schlanken Gestalt und seiner beeindruckenden Sprungkraft.
+                        <br><br>
+                        Entdecke die spannende Welt dieses eleganten Raubtiers und erfahre, wie es in den Wäldern und Gebirgen Amerikas lebt.
+                    </p>
+                </div>
+                <div class="hero-image">
+                    <img src="../assets/images/lexikon/main/puma.png" alt="Eine Pumafamilie in den Bergen; gezeichnet">
+                </div>
+            </section>
+            <aside class="facts">
+                <h2 class="section-title">Steckbrief</h2>
+                <div class="facts-list">
+                    <ul>
+                        <li>
+                            <img src="../assets/icons/height.svg" alt="Größensymbol" class="facts-list-icon"> <!-- Source: https://www.svgrepo.com/svg/532189/line-height -->
+                            <div class="facts-list-label">Größe</div>
+                            <div class="facts-list-value">1,5 bis 2,75 m</div>
+                        </li>
+                        <li>
+                            <img src="../assets/icons/weight.svg" alt="Gewichtssymbol" class="facts-list-icon"> <!-- Source: https://www.svgrepo.com/svg/152443/weight-tool -->
+                            <div class="facts-list-label">Gewicht</div>
+                            <div class="facts-list-value">53 bis 100 kg</div>
+                        </li>
+                        <li>
+                            <img src="../assets/icons/age.svg" alt="Alterssymbol" class="facts-list-icon"> <!-- Source: https://www.svgrepo.com/svg/352172/hourglass-half -->
+                            <div class="facts-list-label">Lebenserwartung</div>
+                            <div class="facts-list-value">8 bis 13 Jahre</div>
+                        </li>
+                        <li>
+                            <img src="../assets/icons/continent.svg" alt="Kontinentsymbol" class="facts-list-icon"> <!-- Source: https://www.svgrepo.com/svg/382663/earth-global-globe-planet-world-2 -->
+                            <div class="facts-list-label">Kontinente</div>
+                            <div class="facts-list-value">Nordamerika</div>
+                        </li>
+                        <li>
+                            <img src="../assets/icons/habitat.svg" alt="Lebensraumsymbol" class="facts-list-icon"> <!-- Source: https://www.svgrepo.com/svg/382687/environment-forest-leaf-nature-tree -->
+                            <div class="facts-list-label">Lebensraum</div>
+                            <div class="facts-list-value">Wälder, Berge, Wüsten</div>
+                        </li>
+                        <li>
+                            <img src="../assets/icons/food.svg" alt="Nahrungssymbol" class="facts-list-icon"> <!-- Source: https://www.svgrepo.com/svg/490738/food-restaurant -->
+                            <div class="facts-list-label">Nahrung</div>
+                            <div class="facts-list-value">Fleischfresser</div>
+                        </li>
+                        <li>
+                            <img src="../assets/icons/social.svg" alt="Sozialverhaltenssymbol" class="facts-list-icon"> <!-- Source: https://www.svgrepo.com/svg/140768/users-relation -->
+                            <div class="facts-list-label">Sozialverhalten</div>
+                            <div class="facts-list-value">Einzelgänger</div>
+                        </li>
+                    </ul>
+                </div>
+            </aside>
+            <aside class="funfact">
+                <img src="../assets/icons/funfact.svg" alt="Funfact-Symbol" class="funfact-icon"> <!-- Source: https://www.svgrepo.com/svg/374948/light-bulb -->
+                <h3 class="funfact-heading">Lustiger Fakt</h3>
+                <p class="funfact-text">
+                    Pumas sind nicht nur geschickte Jäger, sondern haben auch <b>spektakuläre Sprungkräfte</b> – sie können bis zu sechs Meter weit springen! Mit ihren beeindruckenden Sprüngen sind sie so etwas wie die "Wildnis-Akrobaten" und können mühelos über Hindernisse hinweggleiten.
+                </p>
+            </aside>
+            <article class="first-paragraph">
+                <h3>Elegante Raubkatzen Nordamerikas</h3>
+                <p>
+                    Pumas, auch als Berglöwen oder Kuguar bezeichnet, sind elegante Raubkatzen, die in den weitläufigen Landschaften Amerikas beheimatet sind. Mit ihrem schlanken Körperbau, kurzem Fell und charakteristischem Gesichtsausdruck sind sie geschickte Jäger und hervorragend an ihre Umgebung angepasst. Pumas haben eine breite Verbreitung von Nord- bis Südamerika und bewohnen verschiedene Lebensräume, darunter Wälder, Graslandschaften und Gebirgsregionen.
+                </p>
+                <p>
+                    Pumas sind Einzelgänger und territorial. Ihr ausgeprägter Jagdinstinkt und ihre beeindruckende Geschwindigkeit machen sie zu effizienten Räubern. Mit kräftigen Hinterbeinen können sie erstaunliche Sprünge über Hindernisse machen und ihre Beute geschickt verfolgen. Pumas sind Fleischfresser und ernähren sich von einer Vielzahl von Tieren, darunter Hirsche, Nagetiere und gelegentlich auch größere Beutetiere wie Guanakos oder Kojoten. Ihre Anpassungsfähigkeit und ihre Rolle als Spitzenprädatoren prägen die ökologischen Zusammenhänge in den amerikanischen Wildnisgebieten.
+                </p>
+            </article>
+            <article class="second-paragraph">
+                <h3>Solitäre Jäger mit instinktiver Brutpflege</h3>
+                <p>
+                    Pumas sind nachtaktive Jäger, die sich geschickt an ihre Beute heranschleichen, um sie mit einem schnellen Angriff zu überraschen. Ihre scharfen Krallen und Zähne ermöglichen es ihnen, ihre Beute effektiv zu erlegen. Pumas sind territorial und markieren ihr Revier durch Kratzspuren an Bäumen und das Aussenden von Duftmarken. Die Paarung erfolgt im Winter, und nach einer Tragzeit von etwa drei Monaten bringt das Weibchen ein bis vier Junge zur Welt.
+                </p>
+                <p>
+                    Die Puma-Kinder, auch als Kätzchen bezeichnet, werden liebevoll von ihrer Mutter aufgezogen und sind in den ersten Monaten auf ihre Fürsorge angewiesen. Nach einigen Monaten beginnen die Jungen, selbständiger zu werden und lernen von ihrer Mutter die Jagdtechniken. Pumas spielen eine entscheidende Rolle im Gleichgewicht der Natur, indem sie die Populationen anderer Tierarten kontrollieren und dadurch die Biodiversität in ihren Lebensräumen unterstützen. Die elegante Lebensweise und das Überlebensgeschick der Pumas machen sie zu faszinierenden Vertretern der amerikanischen Tierwelt.
+                </p>
+            </article>
+        </main>
+    </body>
+</html>

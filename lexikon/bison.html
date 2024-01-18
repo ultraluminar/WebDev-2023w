@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../style.css">
+        <script src="script.js"></script>
+        <script src="../nav.js"></script>
+        <title>Das Bison - Lexikon</title>
+        <link rel="apple-touch-icon" sizes="180x180" href="../assets/icons/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="../assets/icons/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="../assets/icons/favicon-16x16.png">
+        <link rel="manifest" href="../assets/icons/site.webmanifest">
+        <link rel="mask-icon" href="../assets/icons/safari-pinned-tab.svg" color="#5bbad5">
+        <link rel="shortcut icon" href="../assets/icons/favicon.ico">
+        <meta name="msapplication-TileColor" content="#00aba9">
+        <meta name="msapplication-config" content="../assets/icons/browserconfig.xml">
+        <meta name="theme-color" content="#175632">
+    </head>
+    <body>
+        <header>
+            <div class="container">
+                <div>
+                    <a href="../index.html"><img src="../assets/images/logo128.png" alt="Logo" id="logo" height="45px"/></a>
+                    <a href="../index.html"><span class="logo-text">Abenteuer Tierwelt</span></a>
+                </div>
+                <a id="burger-menu" onclick="toggleNav(event)">
+                    <span></span>
+                    <span></span>
+                </a>
+            </div>
+            <hr id="header-seperator"/>
+        </header>
+        <nav id="nav">
+            <a href="../index.html">Startseite</a>
+            <a href="../lexikon/index.html" class="self">Lexikon</a>
+            <a href="../quiz/index.html">Quizze</a>
+            <a href="../spiel/index.html">Spiele</a>
+            <a href="../fragen-und-antworten/index.html">Fragen & Antworten</a>
+        </nav>
+        <main id="animal-page-main">
+            <section class="hero">
+                <div class="hero-text">
+                    <h1>Das Bison</h1>
+                    <p>
+                        Der Bison, ein imposantes Wildrind, fasziniert mit seinem massigen Körper und seinem charakteristischen Fell.
+                        <br><br>
+                        Entdecke die spannende Welt dieser majestätischen Tiere und erfahre, wie sie in den weiten Prärien Nordamerikas leben.
+                    </p>
+                </div>
+                <div class="hero-image">
+                    <img src="../assets/images/lexikon/main/bison.png" alt="Eine Bisonfamilie in der Prärie; gezeichnet">
+                </div>
+            </section>
+            <aside class="facts">
+                <h2 class="section-title">Steckbrief</h2>
+                <div class="facts-list">
+                    <ul>
+                        <li>
+                            <img src="../assets/icons/height.svg" alt="Größensymbol" class="facts-list-icon"> <!-- Source: https://www.svgrepo.com/svg/532189/line-height -->
+                            <div class="facts-list-label">Größe</div>
+                            <div class="facts-list-value">1,8 bis 2,1 m</div>
+                        </li>
+                        <li>
+                            <img src="../assets/icons/weight.svg" alt="Gewichtssymbol" class="facts-list-icon"> <!-- Source: https://www.svgrepo.com/svg/152443/weight-tool -->
+                            <div class="facts-list-label">Gewicht</div>
+                            <div class="facts-list-value">600 bis 1.000 kg</div>
+                        </li>
+                        <li>
+                            <img src="../assets/icons/age.svg" alt="Alterssymbol" class="facts-list-icon"> <!-- Source: https://www.svgrepo.com/svg/352172/hourglass-half -->
+                            <div class="facts-list-label">Lebenserwartung</div>
+                            <div class="facts-list-value">15 bis 20 Jahre</div>
+                        </li>
+                        <li>
+                            <img src="../assets/icons/continent.svg" alt="Kontinentsymbol" class="facts-list-icon"> <!-- Source: https://www.svgrepo.com/svg/382663/earth-global-globe-planet-world-2 -->
+                            <div class="facts-list-label">Kontinente</div>
+                            <div class="facts-list-value">Nordamerika</div>
+                        </li>
+                        <li>
+                            <img src="../assets/icons/habitat.svg" alt="Lebensraumsymbol" class="facts-list-icon"> <!-- Source: https://www.svgrepo.com/svg/382687/environment-forest-leaf-nature-tree -->
+                            <div class="facts-list-label">Lebensraum</div>
+                            <div class="facts-list-value">Prärie, Grasland</div>
+                        </li>
+                        <li>
+                            <img src="../assets/icons/food.svg" alt="Nahrungssymbol" class="facts-list-icon"> <!-- Source: https://www.svgrepo.com/svg/490738/food-restaurant -->
+                            <div class="facts-list-label">Nahrung</div>
+                            <div class="facts-list-value">Pflanzenfresser</div>
+                        </li>
+                        <li>
+                            <img src="../assets/icons/social.svg" alt="Sozialverhaltenssymbol" class="facts-list-icon"> <!-- Source: https://www.svgrepo.com/svg/140768/users-relation -->
+                            <div class="facts-list-label">Sozialverhalten</div>
+                            <div class="facts-list-value">Herdentier</div>
+                        </li>
+                    </ul>
+                </div>
+            </aside>
+            <aside class="funfact">
+                <img src="../assets/icons/funfact.svg" alt="Funfact-Symbol" class="funfact-icon"> <!-- Source: https://www.svgrepo.com/svg/374948/light-bulb -->
+                <h3 class="funfact-heading">Lustiger Fakt</h3>
+                <p class="funfact-text">
+                    Bisons sind nicht nur massive Tiere, sondern haben auch <b>coole Frisuren</b> – ihre buschigen Mähnen sehen manchmal aus wie wilde "Bison-Frisurpartys"! Diese flauschigen Hauptdecken machen sie zu den wahren Haarikonen der Prärie.
+                </p>
+            </aside>
+            <article class="first-paragraph">
+                <h3>Imposante Bewohner der Graslandschaften</h3>
+                <p>
+                    Bison, auch Amerikanische Büffel genannt, sind imposante Säugetiere, die einst die weiten Graslandschaften Nordamerikas bevölkerten. Mit ihrem massiven Körperbau, dem dicken Fell und den kräftigen Hörnern sind sie gut an das Leben in offenen, weiten Regionen angepasst. Die beeindruckenden Hörner dienen nicht nur zur Verteidigung, sondern auch als Werkzeuge, um durch Schnee zu graben und nach Nahrung zu suchen. Bison sind soziale Tiere und leben in Herden, die oft von einem dominanten Bullen geführt werden.
+                </p>
+                <p>
+                    Bisons ernähren sich hauptsächlich von Gräsern, die sie mit ihren kräftigen Mäulern abreißen. Ihr ausgezeichneter Geruchssinn hilft ihnen, Nahrungsquellen in der weiten Prärie zu finden. Während der Fortpflanzungszeit zeigen die Bullen beeindruckende Rituale, um die Aufmerksamkeit der Kühe zu erregen. Das soziale Leben der Bisonherden und ihre Anpassung an die Graslandschaften machen sie zu faszinierenden Vertretern der nordamerikanischen Tierwelt.
+                </p>
+            </article>
+            <article class="second-paragraph">
+                <h3>Überlebenskünstler der Prärie</h3>
+                <p>
+                    Bisonherden haben im Laufe der Evolution beeindruckende Überlebensstrategien entwickelt. Die Tiere ziehen in den unterschiedlichen Jahreszeiten durch die Prärie, um optimale Weidegründe zu finden. Im Winter können sie Schnee mit ihren kräftigen Hufen beiseite schieben, um an die darunter liegende Vegetation zu gelangen. Die Herden sind auch dafür bekannt, sich in dichten Formationen vor Raubtieren zu schützen, wobei die Kälber in der Mitte der Gruppe sicher sind.
+                </p>
+                <p>
+                    Die Anpassungsfähigkeit der Bison an ihre Umgebung spiegelt sich auch in ihrer Wanderungsbereitschaft wider. Um Ressourcen optimal zu nutzen, können Bisonherden weite Strecken zurücklegen. Obwohl sie einst massiv von der Ausrottung bedroht waren, haben Schutzmaßnahmen in den letzten Jahrzehnten dazu beigetragen, die Populationen zu stabilisieren. Heute sind Bison ein Symbol für den Naturschutz und die Erhaltung der einzigartigen Lebensräume Nordamerikas.
+                </p>
+            </article>
+        </main>
+    </body>
+</html>
