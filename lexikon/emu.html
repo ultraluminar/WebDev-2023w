@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../style.css">
+        <script src="script.js"></script>
+        <script src="../nav.js"></script>
+        <title>Der Emu - Lexikon</title>
+        <link rel="apple-touch-icon" sizes="180x180" href="../assets/icons/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="../assets/icons/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="../assets/icons/favicon-16x16.png">
+        <link rel="manifest" href="../assets/icons/site.webmanifest">
+        <link rel="mask-icon" href="../assets/icons/safari-pinned-tab.svg" color="#5bbad5">
+        <link rel="shortcut icon" href="../assets/icons/favicon.ico">
+        <meta name="msapplication-TileColor" content="#00aba9">
+        <meta name="msapplication-config" content="../assets/icons/browserconfig.xml">
+        <meta name="theme-color" content="#175632">
+    </head>
+    <body>
+        <header>
+            <div class="container">
+                <div>
+                    <a href="../index.html"><img src="../assets/images/logo128.png" alt="Logo" id="logo" height="45px"/></a>
+                    <a href="../index.html"><span class="logo-text">Abenteuer Tierwelt</span></a>
+                </div>
+                <a id="burger-menu" onclick="toggleNav(event)">
+                    <span></span>
+                    <span></span>
+                </a>
+            </div>
+            <hr id="header-seperator"/>
+        </header>
+        <nav id="nav">
+            <a href="../index.html">Startseite</a>
+            <a href="../lexikon/index.html" class="self">Lexikon</a>
+            <a href="../quiz/index.html">Quizze</a>
+            <a href="../spiel/index.html">Spiele</a>
+            <a href="../fragen-und-antworten/index.html">Fragen & Antworten</a>
+        </nav>
+        <main id="animal-page-main">
+            <section class="hero">
+                <div class="hero-text">
+                    <h1>Der Emu</h1>
+                    <p>
+                        Der Emu, ein flugunfähiger Laufvogel, begeistert mit seinem weichen Federkleid und seinem schnellen Laufvermögen.
+                        <br><br>
+                        Entdecke die einzigartige Welt dieses Vogels und erfahre, wie er in den weiten Landschaften Australiens lebt.
+                    </p>
+                </div>
+                <div class="hero-image">
+                    <img src="../assets/images/lexikon/main/emu.png" alt="Eine Emufamilie im Wald; gezeichnet">
+                </div>
+            </section>
+            <aside class="facts">
+                <h2 class="section-title">Steckbrief</h2>
+                <div class="facts-list">
+                    <ul>
+                        <li>
+                            <img src="../assets/icons/height.svg" alt="Größensymbol" class="facts-list-icon"> <!-- Source: https://www.svgrepo.com/svg/532189/line-height -->
+                            <div class="facts-list-label">Größe</div>
+                            <div class="facts-list-value">1,5 bis 1,9 m</div>
+                        </li>
+                        <li>
+                            <img src="../assets/icons/weight.svg" alt="Gewichtssymbol" class="facts-list-icon"> <!-- Source: https://www.svgrepo.com/svg/152443/weight-tool -->
+                            <div class="facts-list-label">Gewicht</div>
+                            <div class="facts-list-value">18 bis 60 kg</div>
+                        </li>
+                        <li>
+                            <img src="../assets/icons/age.svg" alt="Alterssymbol" class="facts-list-icon"> <!-- Source: https://www.svgrepo.com/svg/352172/hourglass-half -->
+                            <div class="facts-list-label">Lebenserwartung</div>
+                            <div class="facts-list-value">10 bis 20 Jahre</div>
+                        </li>
+                        <li>
+                            <img src="../assets/icons/continent.svg" alt="Kontinentsymbol" class="facts-list-icon"> <!-- Source: https://www.svgrepo.com/svg/382663/earth-global-globe-planet-world-2 -->
+                            <div class="facts-list-label">Kontinente</div>
+                            <div class="facts-list-value">Australien</div>
+                        </li>
+                        <li>
+                            <img src="../assets/icons/habitat.svg" alt="Lebensraumsymbol" class="facts-list-icon"> <!-- Source: https://www.svgrepo.com/svg/382687/environment-forest-leaf-nature-tree -->
+                            <div class="facts-list-label">Lebensraum</div>
+                            <div class="facts-list-value">Grasland, Wälder</div>
+                        </li>
+                        <li>
+                            <img src="../assets/icons/food.svg" alt="Nahrungssymbol" class="facts-list-icon"> <!-- Source: https://www.svgrepo.com/svg/490738/food-restaurant -->
+                            <div class="facts-list-label">Nahrung</div>
+                            <div class="facts-list-value">Allesfresser</div>
+                        </li>
+                        <li>
+                            <img src="../assets/icons/social.svg" alt="Sozialverhaltenssymbol" class="facts-list-icon"> <!-- Source: https://www.svgrepo.com/svg/140768/users-relation -->
+                            <div class="facts-list-label">Sozialverhalten</div>
+                            <div class="facts-list-value">Einzelgänger (und kleine Gruppen)</div>
+                        </li>
+                    </ul>
+                </div>
+            </aside>
+            <aside class="funfact">
+                <img src="../assets/icons/funfact.svg" alt="Funfact-Symbol" class="funfact-icon"> <!-- Source: https://www.svgrepo.com/svg/374948/light-bulb -->
+                <h3 class="funfact-heading">Lustiger Fakt</h3>
+                <p class="funfact-text">
+                    Emus sind nicht nur flugunfähige Vögel, sondern haben auch <b>echte Tanztalente</b> – sie können ihre Federn so bewegen, als würden sie bei einem fröhlichen Emu-Tanzfest mitmachen! Ihre wippenden Bewegungen sehen aus, als ob sie ihre eigene emufantastische Choreografie für den Dschungel kreiert haben.
+                </p>
+            </aside>
+            <article class="first-paragraph">
+                <h3>Flugunfähige Riesen des Outbacks</h3>
+                <p>
+                    Der Emu ist ein faszinierender Vogel, der in Australien beheimatet ist. Er ist bekannt für seine imposante Größe und die Unfähigkeit zu fliegen. Obwohl er flugunfähig ist, ist der Emu ein ausgezeichneter Läufer und kann erstaunlich hohe Geschwindigkeiten erreichen. Seine langen Beine und der kräftige Körper machen ihn zu einem perfekten Läufer in den weiten Landschaften des australischen Outbacks.
+                </p>
+                <p>
+                    Emus haben einen auffälligen nackten Kopf mit blauen Hautfalten, die bei Aufregung leuchten. Sie haben auch starke Beine, die mit drei Zehen ausgestattet sind, von denen jeder mit einer scharfen Kralle endet. Diese Krallen helfen dem Emu nicht nur beim Laufen, sondern auch beim Verteidigen vor möglichen Bedrohungen.
+                </p>
+            </article>
+            <article class="second-paragraph">
+                <h3>Gesellige Laufvögel in der Wildnis</h3>
+                <p>
+                    Obwohl Emus oft als Einzelgänger betrachtet werden, haben sie in Wirklichkeit ein soziales Leben. Besonders während der Paarungszeit versammeln sich mehrere Emus zu kleinen Gruppen. Die Männchen sind für das Brüten der Eier verantwortlich und kümmern sich liebevoll um die Küken, sobald sie geschlüpft sind.
+                </p>
+                <p>
+                    Emus sind auch für ihre ungewöhnlichen Rufe bekannt, die wie Trompeten klingen können. Diese Rufe dienen dazu, andere Emus anzulocken oder territoriale Ansprüche geltend zu machen. Die geselligen und kommunikativen Eigenschaften der Emus machen sie zu faszinierenden Vögeln, die nicht nur durch ihre Größe, sondern auch durch ihr interessantes Verhalten beeindrucken können.
+                </p>
+            </article>
+        </main>
+    </body>
+</html>
