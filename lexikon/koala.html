@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../style.css">
+        <script src="script.js"></script>
+        <script src="../nav.js"></script>
+        <title>Der Koala - Lexikon</title>
+        <link rel="apple-touch-icon" sizes="180x180" href="../assets/icons/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="../assets/icons/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="../assets/icons/favicon-16x16.png">
+        <link rel="manifest" href="../assets/icons/site.webmanifest">
+        <link rel="mask-icon" href="../assets/icons/safari-pinned-tab.svg" color="#5bbad5">
+        <link rel="shortcut icon" href="../assets/icons/favicon.ico">
+        <meta name="msapplication-TileColor" content="#00aba9">
+        <meta name="msapplication-config" content="../assets/icons/browserconfig.xml">
+        <meta name="theme-color" content="#175632">
+    </head>
+    <body>
+        <header>
+            <div class="container">
+                <div>
+                    <a href="../index.html"><img src="../assets/images/logo128.png" alt="Logo" id="logo" height="45px"/></a>
+                    <a href="../index.html"><span class="logo-text">Abenteuer Tierwelt</span></a>
+                </div>
+                <a id="burger-menu" onclick="toggleNav(event)">
+                    <span></span>
+                    <span></span>
+                </a>
+            </div>
+            <hr id="header-seperator"/>
+        </header>
+        <nav id="nav">
+            <a href="../index.html">Startseite</a>
+            <a href="../lexikon/index.html" class="self">Lexikon</a>
+            <a href="../quiz/index.html">Quizze</a>
+            <a href="../spiel/index.html">Spiele</a>
+            <a href="../fragen-und-antworten/index.html">Fragen & Antworten</a>
+        </nav>
+        <main id="animal-page-main">
+            <section class="hero">
+                <div class="hero-text">
+                    <h1>Der Koala</h1>
+                    <p>
+                        Der Koala, ein niedlicher Baumbewohner, beeindruckt mit seinem weichen Fell und seiner Vorliebe für Eukalyptusblätter.
+                        <br><br>
+                        Erkunde die faszinierende Welt dieses Beuteltiers und erfahre, wie es in den Eukalyptuswäldern Australiens lebt.
+                    </p>
+                </div>
+                <div class="hero-image">
+                    <img src="../assets/images/lexikon/main/koala.png" alt="Eine Koalafamilie im Eukalyptuswald; gezeichnet">
+                </div>
+            </section>
+            <aside class="facts">
+                <h2 class="section-title">Steckbrief</h2>
+                <div class="facts-list">
+                    <ul>
+                        <li>
+                            <img src="../assets/icons/height.svg" alt="Größensymbol" class="facts-list-icon"> <!-- Source: https://www.svgrepo.com/svg/532189/line-height -->
+                            <div class="facts-list-label">Größe</div>
+                            <div class="facts-list-value">60 bis 85 cm</div>
+                        </li>
+                        <li>
+                            <img src="../assets/icons/weight.svg" alt="Gewichtssymbol" class="facts-list-icon"> <!-- Source: https://www.svgrepo.com/svg/152443/weight-tool -->
+                            <div class="facts-list-label">Gewicht</div>
+                            <div class="facts-list-value">4 bis 15 kg</div>
+                        </li>
+                        <li>
+                            <img src="../assets/icons/age.svg" alt="Alterssymbol" class="facts-list-icon"> <!-- Source: https://www.svgrepo.com/svg/352172/hourglass-half -->
+                            <div class="facts-list-label">Lebenserwartung</div>
+                            <div class="facts-list-value">10 bis 15 Jahre</div>
+                        </li>
+                        <li>
+                            <img src="../assets/icons/continent.svg" alt="Kontinentsymbol" class="facts-list-icon"> <!-- Source: https://www.svgrepo.com/svg/382663/earth-global-globe-planet-world-2 -->
+                            <div class="facts-list-label">Kontinente</div>
+                            <div class="facts-list-value">Australien</div>
+                        </li>
+                        <li>
+                            <img src="../assets/icons/habitat.svg" alt="Lebensraumsymbol" class="facts-list-icon"> <!-- Source: https://www.svgrepo.com/svg/382687/environment-forest-leaf-nature-tree -->
+                            <div class="facts-list-label">Lebensraum</div>
+                            <div class="facts-list-value">Eukalyptuswälder</div>
+                        </li>
+                        <li>
+                            <img src="../assets/icons/food.svg" alt="Nahrungssymbol" class="facts-list-icon"> <!-- Source: https://www.svgrepo.com/svg/490738/food-restaurant -->
+                            <div class="facts-list-label">Nahrung</div>
+                            <div class="facts-list-value">Pflanzenfresser</div>
+                        </li>
+                        <li>
+                            <img src="../assets/icons/social.svg" alt="Sozialverhaltenssymbol" class="facts-list-icon"> <!-- Source: https://www.svgrepo.com/svg/140768/users-relation -->
+                            <div class="facts-list-label">Sozialverhalten</div>
+                            <div class="facts-list-value">Einzelgänger</div>
+                        </li>
+                    </ul>
+                </div>
+            </aside>
+            <aside class="funfact">
+                <img src="../assets/icons/funfact.svg" alt="Funfact-Symbol" class="funfact-icon"> <!-- Source: https://www.svgrepo.com/svg/374948/light-bulb -->
+                <h3 class="funfact-heading">Lustiger Fakt</h3>
+                <p class="funfact-text">
+                    Koalas sind nicht nur Meister des Nickerchens, sondern haben auch einen <b>feinen Geschmack für Eukalyptus</b> – sie bevorzugen bestimmte Blättersorten und können sogar zwischen verschiedenen Eukalyptusarten wählerisch sein! So könnten manche Koalas als echte "Blattgourmets" betrachtet werden, die ihre Mahlzeiten mit Stil auswählen.
+                </p>
+            </aside>
+            <article class="first-paragraph">
+                <h3>Gemütliche Bewohner der Eukalyptusbäume</h3>
+                <p>
+                    Die Koalas sind faszinierende Beuteltiere, die in den Eukalyptuswäldern Australiens beheimatet sind. Diese pelzigen Tiere haben eine einzigartige Lebensweise, die sich hauptsächlich um den Verzehr von Eukalyptusblättern dreht. Mit ihrer flauschigen Nase und den großen Ohren sehen Koalas nicht nur süß aus, sondern haben auch spezielle Anpassungen, die ihnen das Überleben in den Bäumen erleichtern.
+                </p>
+                <p>
+                    Die Hauptnahrung der Koalas besteht aus den Blättern des Eukalyptusbaums, die sie mit ihren geschickten Pfoten greifen und zum Mund führen. Eukalyptusblätter sind nicht nur ihre Hauptnahrungsquelle, sondern dienen auch dazu, den Flüssigkeitsbedarf der Koalas zu decken, da sie wenig Wasser trinken.
+                </p>
+            </article>
+            <article class="second-paragraph">
+                <h3>Schlafende Akrobaten und gemütliche Kletterer</h3>
+                <p>
+                    Koalas sind bekannt für ihre gemütlichen und faulen Lebensgewohnheiten. Sie verbringen den Großteil des Tages mit Schlafen, manchmal bis zu 20 Stunden! Aber wenn sie wach sind, zeigen sie erstaunliche Fähigkeiten im Klettern. Mit ihren scharfen Krallen und starken Armen bewegen sie sich geschickt von Ast zu Ast, ohne jemals den Boden zu berühren.
+                </p>
+                <p>
+                    Die Koalas sind nicht nur geschickte Kletterer, sondern auch Schlafmützen mit einem einzigartigen Schlafmuster. Sie ruhen meistens tagsüber, um Energie zu sparen, und werden in der Dämmerung und Nacht aktiver. Ihre ruhige Natur und ihre entspannte Lebensweise machen die Koalas zu charmanten Akrobaten der Bäume.
+                </p>
+            </article>
+        </main>
+    </body>
+</html>
