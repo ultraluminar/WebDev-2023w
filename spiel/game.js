@@ -1,8 +1,5 @@
 "use strict";
 
-import { csvTo2dArray } from '../lib/utils.js';
-import { DataTable } from "../lib/DataTable";
-
 async function parseAnimalsCSV() {
     const data = await csvTo2dArray('animals.csv');
 
