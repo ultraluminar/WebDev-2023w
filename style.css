@@ -498,9 +498,22 @@ nav a.self {
     gap: 2em;
 }
 
+@media screen and (min-width: 900px) {
+    #animal-page-main {
+        grid-template-columns: 1fr calc(10% + 15em);
+        grid-template-areas: 
+        "hero hero"
+        "first-paragraph facts"
+        "funfact facts"
+        "second-paragraph facts";
+        margin: 2em calc(12% - 2em);
+    }
+}
+
 /* facts-list */
 .facts {
     grid-area: facts;
+    height: fit-content;
     display: flex;
     flex-direction: column;
     gap: 1em;
@@ -549,6 +562,7 @@ nav a.self {
 /* funfact */
 .funfact {
     grid-area: funfact;
+    height: fit-content;
     display: grid;
     grid-template-columns: min-content 1fr min-content;
     align-items: center;
@@ -779,8 +793,8 @@ em {
     width: 100%;
     outline: none;
     margin-left: 1em;
-    font-size: 87.5%;
     padding: 1px 3px;
+    font-size: 1em;
 }
 
 .combobox button {
@@ -798,6 +812,7 @@ em {
 ul[role="listbox"] {
     margin: 0;
     padding: 0;
+    z-index: 2;
     position: absolute;
     list-style: none;
     background-color: var(--background-color);
@@ -808,11 +823,10 @@ ul[role="listbox"] {
     border-bottom-left-radius: 1em;
     border-bottom-right-radius: 1em;
     overflow: hidden;
-    max-height: 250px;
+    max-height: 40vh;
     width: 100%;
     overflow: scroll;
     overflow-x: hidden;
-    font-size: 87.5%;
     cursor: pointer;
 }
 
