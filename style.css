@@ -2,6 +2,7 @@
 
 :root{
     --primary-color: #175632;
+    --primary-color-light: #4D8F5F;
     --secondary-color: #60D26F;
     --secondary-color-light: #A3E6A4;
     --accent-color: #83BEC5;
@@ -154,7 +155,7 @@ nav a {
 }
 
 nav a.self {
-    background-color: var(--secondary-color);
+    background-color: var(--secondary-color-light);
     color: var(--text-color);
 }
 
@@ -347,30 +348,37 @@ nav a.self {
     max-width: 6vw;
 }
 
-/* Helpers */
-/* Button colors */
-.bg-primary {
-    background-color: var(--primary-color);
-    color: var(--background-color);
-}
-
-.bg-secondary {
-    background-color: var(--secondary-color-light);
-    color: var(--text-color);
-}
-
 
 /* encyclopaedia */
 #animal-page-main {
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-areas: "hero"
-                         "facts"
-                         "first-paragraph"
-                         "funfact"
-                         "second-paragraph";
+    grid-template-areas: 
+    "hero"
+    "facts"
+    "first-paragraph"
+    "funfact"
+    "second-paragraph";
     margin: 2em 4%;
     gap: 2em;
+}
+
+/* breadcrumbs */
+.breadcrumbs {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.5em;
+    padding: 0.5em 1em;
+    margin: 0 auto;
+    background-color: var(--secondary-color-light);
+    border-end-end-radius: 1em;
+    border-end-start-radius: 1em;
+}
+
+.breadcrumb-arrow {
+    width: 1.5em;
 }
 
 /* facts-list */
@@ -475,6 +483,18 @@ nav a.self {
 }
 
 
+/* Helpers */
+/* Button colors */
+.bg-primary {
+    background-color: var(--primary-color);
+    color: var(--background-color);
+}
+
+.bg-secondary {
+    background-color: var(--secondary-color-light);
+    color: var(--text-color);
+}
+
 /* Text, Links */
 .inline-link {
     color: var(--primary-color);
@@ -483,7 +503,7 @@ nav a.self {
 }
 
 .inline-link:hover {
-    color: var(--secondary-color);
+    color: var(--primary-color-light);
 }
 
 h1 {
