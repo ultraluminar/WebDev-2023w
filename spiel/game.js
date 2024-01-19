@@ -110,7 +110,7 @@ class Combobox{
     constructor(nodesContent, animalTable) {
         this.animalTable = animalTable;
 
-        this.allOptions = [];
+
         this.option = null;
 
         this.filteredOptions = [];
@@ -126,16 +126,14 @@ class Combobox{
 
         this.comboboxNode.addEventListener('blur', this.Close.bind(this));
 
-        nodesContent.forEach(nodeContent => {
-            const li = Object.assign(
-                document.createElement('li'),
-                {textContent: nodeContent, role: 'option', tabindex: '-1' });
 
-            li.addEventListener('mousedown',  this.onOptionMouseDown.bind(this));
-            this.allOptions.push(li);
-
+        this.allOptions = nodesContent.map(optionText => {
+            const li = document.createElement('li');
+            li.addEventListener('mousedown', this.onOptionMouseDown.bind(this));
+            return Object.assign(li, {textContent: optionText, role: 'option', tabindex: '-1'});
         });
 
+        //Stop
         this.filterOptions();
 
     }
