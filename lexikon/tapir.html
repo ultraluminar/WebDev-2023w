@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../style.css">
+        <script src="script.js"></script>
+        <script src="../nav.js"></script>
+        <title>Der Tapir - Lexikon</title>
+        <link rel="apple-touch-icon" sizes="180x180" href="../assets/icons/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="../assets/icons/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="../assets/icons/favicon-16x16.png">
+        <link rel="manifest" href="../assets/icons/site.webmanifest">
+        <link rel="mask-icon" href="../assets/icons/safari-pinned-tab.svg" color="#5bbad5">
+        <link rel="shortcut icon" href="../assets/icons/favicon.ico">
+        <meta name="msapplication-TileColor" content="#00aba9">
+        <meta name="msapplication-config" content="../assets/icons/browserconfig.xml">
+        <meta name="theme-color" content="#175632">
+    </head>
+    <body>
+        <header>
+            <div class="container">
+                <div>
+                    <a href="../index.html"><img src="../assets/images/logo128.png" alt="Logo" id="logo" height="45px"/></a>
+                    <a href="../index.html"><span class="logo-text">Abenteuer Tierwelt</span></a>
+                </div>
+                <a id="burger-menu" onclick="toggleNav(event)">
+                    <span></span>
+                    <span></span>
+                </a>
+            </div>
+            <hr id="header-seperator"/>
+        </header>
+        <nav id="nav">
+            <a href="../index.html">Startseite</a>
+            <a href="../lexikon/index.html" class="self">Lexikon</a>
+            <a href="../quiz/index.html">Quizze</a>
+            <a href="../spiel/index.html">Spiele</a>
+            <a href="../fragen-und-antworten/index.html">Fragen & Antworten</a>
+        </nav>
+        <main id="animal-page-main">
+            <section class="hero">
+                <div class="hero-text">
+                    <h1>Der Tapir</h1>
+                    <p>
+                        Der Tapir, ein faszinierendes Säugetier, beeindruckt mit seiner ungewöhnlichen Rüsselnase und seiner gemütlichen Art
+                    </p>
+                    <p>
+                        Erkunde die liebenswerte Welt dieser Tiere und erfahre, wie sie in den dichten Wäldern und Feuchtgebieten Südamerikas leben.
+                    </p>
+                </div>
+                <div class="hero-image">
+                    <img src="../assets/images/lexikon/main/tapir.png" alt="Eine Tapirfamilie im Regenwald; gezeichnet">
+                </div>
+            </section>
+            <aside class="facts">
+                <h2 class="section-title">Steckbrief</h2>
+                <div class="facts-list">
+                    <ul>
+                        <li>
+                            <img src="../assets/icons/height.svg" alt="Größensymbol" class="facts-list-icon"> <!-- Source: https://www.svgrepo.com/svg/532189/line-height -->
+                            <div class="facts-list-label">Größe</div>
+                            <div class="facts-list-value">77 bis 108 cm</div>
+                        </li>
+                        <li>
+                            <img src="../assets/icons/weight.svg" alt="Gewichtssymbol" class="facts-list-icon"> <!-- Source: https://www.svgrepo.com/svg/152443/weight-tool -->
+                            <div class="facts-list-label">Gewicht</div>
+                            <div class="facts-list-value">150 bis 300 kg</div>
+                        </li>
+                        <li>
+                            <img src="../assets/icons/age.svg" alt="Alterssymbol" class="facts-list-icon"> <!-- Source: https://www.svgrepo.com/svg/352172/hourglass-half -->
+                            <div class="facts-list-label">Lebenserwartung</div>
+                            <div class="facts-list-value">25 bis 30 Jahre</div>
+                        </li>
+                        <li>
+                            <img src="../assets/icons/dna.svg" alt="Dnasymbol" class="facts-list-icon"> <!-- Source: https://www.svgrepo.com/svg/167430/dna-strand -->
+                            <div class="facts-list-label">Klasse</div>
+                            <div class="facts-list-value">Säugetiere</div>
+                        </li>
+                        <li>
+                            <img src="../assets/icons/continent.svg" alt="Kontinentsymbol" class="facts-list-icon"> <!-- Source: https://www.svgrepo.com/svg/382663/earth-global-globe-planet-world-2 -->
+                            <div class="facts-list-label">Kontinente</div>
+                            <div class="facts-list-value">Südamerika</div>
+                        </li>
+                        <li>
+                            <img src="../assets/icons/habitat.svg" alt="Lebensraumsymbol" class="facts-list-icon"> <!-- Source: https://www.svgrepo.com/svg/382687/environment-forest-leaf-nature-tree -->
+                            <div class="facts-list-label">Lebensraum</div>
+                            <div class="facts-list-value">Regenwald, Savannen, Grasland</div>
+                        </li>
+                        <li>
+                            <img src="../assets/icons/food.svg" alt="Nahrungssymbol" class="facts-list-icon"> <!-- Source: https://www.svgrepo.com/svg/490738/food-restaurant -->
+                            <div class="facts-list-label">Nahrung</div>
+                            <div class="facts-list-value">Pflanzenfresser</div>
+                        </li>
+                        <li>
+                            <img src="../assets/icons/social.svg" alt="Sozialverhaltenssymbol" class="facts-list-icon"> <!-- Source: https://www.svgrepo.com/svg/140768/users-relation -->
+                            <div class="facts-list-label">Sozialverhalten</div>
+                            <div class="facts-list-value">Einzelgänger</div>
+                        </li>
+                    </ul>
+                </div>
+            </aside>
+            <aside class="funfact">
+                <img src="../assets/icons/funfact.svg" alt="Funfact-Symbol" class="funfact-icon"> <!-- Source: https://www.svgrepo.com/svg/374948/light-bulb -->
+                <h3 class="funfact-heading">Lustiger Fakt</h3>
+                <p class="funfact-text">
+                    Tapire sind nicht nur gemütliche Zeitgenossen, sondern haben auch <b>ihre eigenen Hufschuhe</b> – ihre Hufe haben eine besondere Struktur, die ihnen hilft, geräuschlos durch den Wald zu wandern! Diese schleichenden Tapire könnten als die "Geräuschlosen Pfadfinder" des Dschungels betrachtet werden.
+                </p>
+            </aside>
+            <article class="first-paragraph">
+                <h3>Einblick in das Leben dieser Urzeitgiganten</h3>
+                <p>
+                    Tapire sind faszinierende pflanzenfressende Säugetiere, die in den tropischen Regenwäldern, Grasländern und Feuchtgebieten Südamerikas beheimatet sind. Diese imposanten Tiere haben einen massigen Körper, einen kurzen Rüssel und auffällige, oft zweifarbige Fellmuster. Ihr Rüssel, auch "Proboscis" genannt, erinnert an den eines Ameisenbärs und ist äußerst flexibel. Tapire nutzen ihren Rüssel, um Blätter, Früchte, Zweige und Gräser zu greifen und sie zum Verzehr in ihren mächtigen Gebiss zu führen. Obwohl sie groß erscheinen, sind Tapire flinke und agile Tiere, die sich geschickt durch ihre Lebensräume bewegen.
+                </p>
+                <p>
+                    Tapire sind vor allem nachtaktiv, um den heißen Temperaturen des Tages zu entgehen. Sie sind ausgezeichnete Schwimmer und genießen es, sich in Gewässern abzukühlen. Fortpflanzungstechnisch sind Tapire eher Einzelgänger, wobei Weibchen alle zwei Jahre ein einzelnes Junges zur Welt bringen. Diese Jungtiere haben oft eine gestreifte Fellzeichnung, die mit dem Alter verschwindet. Tapire spielen eine wichtige Rolle in den Ökosystemen, indem sie Pflanzen verbreiten und zur Bewahrung der Biodiversität beitragen.
+                </p>
+            </article>
+            <article class="second-paragraph">
+                <h3>Vor den Gefahren der Moderne schützen</h3>
+                <p>
+                    Tapire stehen heute verschiedenen Bedrohungen gegenüber, die ihre Populationen gefährden. Eine der Hauptursachen ist der Verlust ihres natürlichen Lebensraums durch Abholzung, Landwirtschaft und Infrastrukturentwicklung. Diese Veränderungen zwingen Tapire in zunehmend isolierte Gebiete und erschweren den Austausch zwischen Populationen. Darüber hinaus sind Tapire anfällig für Wilderei, da ihr Fleisch in einigen Regionen als Delikatesse gilt, und sie werden oft wegen ihres Fells oder aus sportlichen Gründen gejagt.
+                </p>
+                <p>
+                    Der Schutz von Tapiren erfordert daher Maßnahmen wie die Schaffung von Schutzgebieten, den nachhaltigen Umgang mit natürlichen Ressourcen und den Schutz vor illegaler Jagd. Wissenschaftliche Forschung und Aufklärungsarbeit über die Bedeutung dieser beeindruckenden Tiere für die Ökosysteme tragen dazu bei, das Bewusstsein für ihre Erhaltung zu schärfen. Durch den Schutz der Tapire wird nicht nur ihre eigene Existenz gesichert, sondern auch die vielfältigen Lebensräume, in denen sie leben, erhalten und geschützt.
+                </p>
+            </article>
+        </main>
+    </body>
+</html>

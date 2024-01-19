@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../style.css">
+        <script src="script.js"></script>
+        <script src="../nav.js"></script>
+        <title>Der Pfeilgiftfrosch - Lexikon</title>
+        <link rel="apple-touch-icon" sizes="180x180" href="../assets/icons/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="../assets/icons/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="../assets/icons/favicon-16x16.png">
+        <link rel="manifest" href="../assets/icons/site.webmanifest">
+        <link rel="mask-icon" href="../assets/icons/safari-pinned-tab.svg" color="#5bbad5">
+        <link rel="shortcut icon" href="../assets/icons/favicon.ico">
+        <meta name="msapplication-TileColor" content="#00aba9">
+        <meta name="msapplication-config" content="../assets/icons/browserconfig.xml">
+        <meta name="theme-color" content="#175632">
+    </head>
+    <body>
+        <header>
+            <div class="container">
+                <div>
+                    <a href="../index.html"><img src="../assets/images/logo128.png" alt="Logo" id="logo" height="45px"/></a>
+                    <a href="../index.html"><span class="logo-text">Abenteuer Tierwelt</span></a>
+                </div>
+                <a id="burger-menu" onclick="toggleNav(event)">
+                    <span></span>
+                    <span></span>
+                </a>
+            </div>
+            <hr id="header-seperator"/>
+        </header>
+        <nav id="nav">
+            <a href="../index.html">Startseite</a>
+            <a href="../lexikon/index.html" class="self">Lexikon</a>
+            <a href="../quiz/index.html">Quizze</a>
+            <a href="../spiel/index.html">Spiele</a>
+            <a href="../fragen-und-antworten/index.html">Fragen & Antworten</a>
+        </nav>
+        <main id="animal-page-main">
+            <section class="hero">
+                <div class="hero-text">
+                    <h1>Der Pfeilgiftfrosch</h1>
+                    <p>
+                        Der Pfeilgiftfrosch, ein farbenfrohes Amphibium, bezaubert mit seinen lebendigen Farben und seiner winzigen Größe.
+                    </p>
+                    <p>
+                        Erforsche die aufregende Welt dieser kleinen Giftträger und entdecke, wie sie in den Regenwäldern Mittel- und Südamerikas leben.
+                    </p>
+                </div>
+                <div class="hero-image">
+                    <img src="../assets/images/lexikon/main/pfeilgiftfrosch.png" alt="Eine Pfeilgiftfroschfamilie im Regenwald; gezeichnet">
+                </div>
+            </section>
+            <aside class="facts">
+                <h2 class="section-title">Steckbrief</h2>
+                <div class="facts-list">
+                    <ul>
+                        <li>
+                            <img src="../assets/icons/height.svg" alt="Größensymbol" class="facts-list-icon"> <!-- Source: https://www.svgrepo.com/svg/532189/line-height -->
+                            <div class="facts-list-label">Größe</div>
+                            <div class="facts-list-value">1,5 bis 6 cm</div>
+                        </li>
+                        <li>
+                            <img src="../assets/icons/weight.svg" alt="Gewichtssymbol" class="facts-list-icon"> <!-- Source: https://www.svgrepo.com/svg/152443/weight-tool -->
+                            <div class="facts-list-label">Gewicht</div>
+                            <div class="facts-list-value">1 bis 2 g</div>
+                        </li>
+                        <li>
+                            <img src="../assets/icons/age.svg" alt="Alterssymbol" class="facts-list-icon"> <!-- Source: https://www.svgrepo.com/svg/352172/hourglass-half -->
+                            <div class="facts-list-label">Lebenserwartung</div>
+                            <div class="facts-list-value">3 bis 15 Jahre</div>
+                        </li>
+                        <li>
+                            <img src="../assets/icons/dna.svg" alt="Dnasymbol" class="facts-list-icon"> <!-- Source: https://www.svgrepo.com/svg/167430/dna-strand -->
+                            <div class="facts-list-label">Klasse</div>
+                            <div class="facts-list-value">Amphibien</div>
+                        </li>
+                        <li>
+                            <img src="../assets/icons/continent.svg" alt="Kontinentsymbol" class="facts-list-icon"> <!-- Source: https://www.svgrepo.com/svg/382663/earth-global-globe-planet-world-2 -->
+                            <div class="facts-list-label">Kontinente</div>
+                            <div class="facts-list-value">Südamerika</div>
+                        </li>
+                        <li>
+                            <img src="../assets/icons/habitat.svg" alt="Lebensraumsymbol" class="facts-list-icon"> <!-- Source: https://www.svgrepo.com/svg/382687/environment-forest-leaf-nature-tree -->
+                            <div class="facts-list-label">Lebensraum</div>
+                            <div class="facts-list-value">Regenwald</div>
+                        </li>
+                        <li>
+                            <img src="../assets/icons/food.svg" alt="Nahrungssymbol" class="facts-list-icon"> <!-- Source: https://www.svgrepo.com/svg/490738/food-restaurant -->
+                            <div class="facts-list-label">Nahrung</div>
+                            <div class="facts-list-value">Fleischfresser</div>
+                        </li>
+                        <li>
+                            <img src="../assets/icons/social.svg" alt="Sozialverhaltenssymbol" class="facts-list-icon"> <!-- Source: https://www.svgrepo.com/svg/140768/users-relation -->
+                            <div class="facts-list-label">Sozialverhalten</div>
+                            <div class="facts-list-value">Einzelgänger</div>
+                        </li>
+                    </ul>
+                </div>
+            </aside>
+            <aside class="funfact">
+                <img src="../assets/icons/funfact.svg" alt="Funfact-Symbol" class="funfact-icon"> <!-- Source: https://www.svgrepo.com/svg/374948/light-bulb -->
+                <h3 class="funfact-heading">Lustiger Fakt</h3>
+                <p class="funfact-text">
+                    Pfeilgiftfrösche sind nicht nur kleine Künstler, sondern haben auch <b>ihre eigene Lichtshow</b> – einige Arten fluoreszieren unter UV-Licht und leuchten im Dunkeln wie kleine lebendige Laternen! Diese leuchtenden Frösche könnten als die "Nachtlicht-Künstler" des Dschungels betrachtet werden.
+                </p>
+            </aside>
+            <article class="first-paragraph">
+                <h3>Auffällige Farben, Gefährliche Gifte</h3>
+                <p>
+                    Die Pfeilgiftfrösche, auch als Giftfrösche bekannt, sind kleine, farbenfrohe Amphibien, die hauptsächlich in den tropischen Regenwäldern Mittel- und Südamerikas beheimatet sind. Diese Winzlinge fallen besonders durch ihre lebhaften Farben auf, die von leuchtendem Blau, Grün, Gelb bis zu lebhaftem Rot reichen können. Obwohl sie visuell beeindruckend sind, tragen diese Farben eine ernsthafte Warnung: Pfeilgiftfrösche sind für ihre hochgiftigen Hautsekrete bekannt. Diese Gifte dienen als Schutzmechanismus, der die Frösche vor Raubtieren schützt. In Gefangenschaft, wenn diese Frösche nicht mehr ihre natürliche Nahrung zu sich nehmen, verlieren sie jedoch ihre Giftigkeit.
+                </p>
+                <p>
+                    Die Gifte der Pfeilgiftfrösche werden von einigen indigenen Völkern für die Herstellung von Blasrohrgiften verwendet, die zur Jagd eingesetzt werden. Diese Frösche ernähren sich von kleinen Insekten und anderen wirbellose Tiere und haben oft eine aktive Lebensweise. Trotz ihrer geringen Größe sind Pfeilgiftfrösche territorial und können in ihren natürlichen Lebensräumen verschiedene Laute zur Kommunikation erzeugen.
+                </p>
+            </article>
+            <article class="second-paragraph">
+                <h3>Anpassung an Vielfältige Lebensräume</h3>
+                <p>
+                    Pfeilgiftfrösche bewohnen verschiedene Lebensräume, darunter Regenwälder, trockene Wälder und feuchte Gebirgsregionen. Sie sind oft in der Nähe von Gewässern wie Flüssen und Bächen zu finden, wo sie ihre Eier ablegen. Die Fortpflanzung bei diesen Fröschen ist interessant, da die Männchen sich aktiv an der Pflege der Eier und Kaulquappen beteiligen. Nachdem die Eier geschlüpft sind, tragen die Männchen die Kaulquappen auf ihrem Rücken zu Wasseransammlungen, wo sie sich weiterentwickeln.
+                </p>
+                <p>
+                    Die Hauptbedrohung für Pfeilgiftfrösche ist der Verlust ihres Lebensraums durch Abholzung und Landnutzungsänderungen. Die Zerstörung von Regenwäldern führt zu einem Rückgang ihrer Populationen, da sie spezialisierte Lebensräume benötigen. Einige Arten sind aufgrund ihrer begrenzten Verbreitungsgebiete bereits gefährdet. Der Erhalt dieser faszinierenden Amphibien erfordert den Schutz ihrer natürlichen Lebensräume und nachhaltige Maßnahmen zur Bewahrung der Biodiversität in den Ökosystemen, in denen sie vorkommen.
+                </p>
+            </article>
+        </main>
+    </body>
+</html>

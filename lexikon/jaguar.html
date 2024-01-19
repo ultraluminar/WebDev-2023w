@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../style.css">
+        <script src="script.js"></script>
+        <script src="../nav.js"></script>
+        <title>Der Jaguar - Lexikon</title>
+        <link rel="apple-touch-icon" sizes="180x180" href="../assets/icons/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="../assets/icons/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="../assets/icons/favicon-16x16.png">
+        <link rel="manifest" href="../assets/icons/site.webmanifest">
+        <link rel="mask-icon" href="../assets/icons/safari-pinned-tab.svg" color="#5bbad5">
+        <link rel="shortcut icon" href="../assets/icons/favicon.ico">
+        <meta name="msapplication-TileColor" content="#00aba9">
+        <meta name="msapplication-config" content="../assets/icons/browserconfig.xml">
+        <meta name="theme-color" content="#175632">
+    </head>
+    <body>
+        <header>
+            <div class="container">
+                <div>
+                    <a href="../index.html"><img src="../assets/images/logo128.png" alt="Logo" id="logo" height="45px"/></a>
+                    <a href="../index.html"><span class="logo-text">Abenteuer Tierwelt</span></a>
+                </div>
+                <a id="burger-menu" onclick="toggleNav(event)">
+                    <span></span>
+                    <span></span>
+                </a>
+            </div>
+            <hr id="header-seperator"/>
+        </header>
+        <nav id="nav">
+            <a href="../index.html">Startseite</a>
+            <a href="../lexikon/index.html" class="self">Lexikon</a>
+            <a href="../quiz/index.html">Quizze</a>
+            <a href="../spiel/index.html">Spiele</a>
+            <a href="../fragen-und-antworten/index.html">Fragen & Antworten</a>
+        </nav>
+        <main id="animal-page-main">
+            <section class="hero">
+                <div class="hero-text">
+                    <h1>Der Jaguar</h1>
+                    <p>
+                        Der Jaguar, ein eleganter Raubkatzenbewohner der Regenwälder, fasziniert mit seinem gefleckten Fell und seiner kraftvollen Erscheinung.
+                    </p>
+                    <p>
+                        Erkunde die fesselnde Welt dieser majestätischen Tiere und erfahre, wie sie in den dichten Dschungeln Amerikas leben.
+                    </p>
+                </div>
+                <div class="hero-image">
+                    <img src="../assets/images/lexikon/main/jaguar.png" alt="Eine Jaguarfamilie im Dschungel; gezeichnet">
+                </div>
+            </section>
+            <aside class="facts">
+                <h2 class="section-title">Steckbrief</h2>
+                <div class="facts-list">
+                    <ul>
+                        <li>
+                            <img src="../assets/icons/height.svg" alt="Größensymbol" class="facts-list-icon"> <!-- Source: https://www.svgrepo.com/svg/532189/line-height -->
+                            <div class="facts-list-label">Größe</div>
+                            <div class="facts-list-value">63 bis 76 cm</div>
+                        </li>
+                        <li>
+                            <img src="../assets/icons/weight.svg" alt="Gewichtssymbol" class="facts-list-icon"> <!-- Source: https://www.svgrepo.com/svg/152443/weight-tool -->
+                            <div class="facts-list-label">Gewicht</div>
+                            <div class="facts-list-value">56 bis 96 kg</div>
+                        </li>
+                        <li>
+                            <img src="../assets/icons/age.svg" alt="Alterssymbol" class="facts-list-icon"> <!-- Source: https://www.svgrepo.com/svg/352172/hourglass-half -->
+                            <div class="facts-list-label">Lebenserwartung</div>
+                            <div class="facts-list-value">12 bis 15 Jahre</div>
+                        </li>
+                        <li>
+                            <img src="../assets/icons/dna.svg" alt="Dnasymbol" class="facts-list-icon"> <!-- Source: https://www.svgrepo.com/svg/167430/dna-strand -->
+                            <div class="facts-list-label">Klasse</div>
+                            <div class="facts-list-value">Säugetiere</div>
+                        </li>
+                        <li>
+                            <img src="../assets/icons/continent.svg" alt="Kontinentsymbol" class="facts-list-icon"> <!-- Source: https://www.svgrepo.com/svg/382663/earth-global-globe-planet-world-2 -->
+                            <div class="facts-list-label">Kontinente</div>
+                            <div class="facts-list-value">Nord- und Südamerika</div>
+                        </li>
+                        <li>
+                            <img src="../assets/icons/habitat.svg" alt="Lebensraumsymbol" class="facts-list-icon"> <!-- Source: https://www.svgrepo.com/svg/382687/environment-forest-leaf-nature-tree -->
+                            <div class="facts-list-label">Lebensraum</div>
+                            <div class="facts-list-value">Regenwald, Sumpfgebiete</div>
+                        </li>
+                        <li>
+                            <img src="../assets/icons/food.svg" alt="Nahrungssymbol" class="facts-list-icon"> <!-- Source: https://www.svgrepo.com/svg/490738/food-restaurant -->
+                            <div class="facts-list-label">Nahrung</div>
+                            <div class="facts-list-value">Fleischfresser</div>
+                        </li>
+                        <li>
+                            <img src="../assets/icons/social.svg" alt="Sozialverhaltenssymbol" class="facts-list-icon"> <!-- Source: https://www.svgrepo.com/svg/140768/users-relation -->
+                            <div class="facts-list-label">Sozialverhalten</div>
+                            <div class="facts-list-value">Einzelgänger</div>
+                        </li>
+                    </ul>
+                </div>
+            </aside>
+            <aside class="funfact">
+                <img src="../assets/icons/funfact.svg" alt="Funfact-Symbol" class="funfact-icon"> <!-- Source: https://www.svgrepo.com/svg/374948/light-bulb -->
+                <h3 class="funfact-heading">Lustiger Fakt</h3>
+                <p class="funfact-text">
+                    Jaguare, die geheimnisvollen Jäger des Dschungels, sind nicht nur stark, sondern haben auch <b>eine besondere Schwäche fürs Planschen</b> – sie sind ausgezeichnete Schwimmer und tauchen gerne, um ihre Beute zu überraschen! Diese tauchenden Jaguare könnten als die "Unterwasser-Spione" des Regenwaldes betrachtet werden.
+                </p>
+            </aside>
+            <article class="first-paragraph">
+                <h3>Meister des Dschungels</h3>
+                <p>
+                    Der Jaguar, Panthera onca, ist eine imposante Raubkatze, die in den Regenwäldern, Sümpfen und Grasländern Amerikas heimisch ist. Mit seinem muskulösen Körperbau, dem charakteristischen gefleckten Fell und dem kräftigen Kopf ist der Jaguar ein beeindruckendes Tier. Die Flecken auf seinem Fell dienen als Tarnung in seinem natürlichen Lebensraum und helfen ihm, sich unbemerkt an seine Beute heranzuschleichen. Jaguare sind ausgezeichnete Jäger und haben eine breite Palette von Beutetieren, darunter Hirsche, Affen, Fische und sogar Kaimane. Mit kräftigen Kiefern und scharfen Zähnen können sie ihre Beute mit einem einzigen Biss töten.
+                </p>
+                <p>
+                    Jaguare sind territoriale Tiere und markieren ihr Revier durch Kratzen und Urinieren. Diese faszinierenden Raubkatzen sind dafür bekannt, starke Schwimmer zu sein und können Flüsse überqueren, um ihre Beute zu verfolgen. Ihr Lebensraum erstreckt sich von Mexiko bis in Teile Südamerikas, obwohl ihre Populationen aufgrund von Lebensraumverlust und illegaler Jagd in einigen Regionen gefährdet sind. Die Erhaltung des Jaguarbestandes erfordert daher Schutzmaßnahmen wie die Einrichtung von Schutzgebieten und den Schutz ihrer natürlichen Lebensräume.
+                </p>
+            </article>
+            <article class="second-paragraph">
+                <h3>Schlüsselrolle im Ökosystem</h3>
+                <p>
+                    Jaguare spielen eine entscheidende Rolle im ökologischen Gleichgewicht ihrer Lebensräume. Als Spitzenprädatoren kontrollieren sie die Populationen anderer Tiere, was das Gleichgewicht zwischen Beutetieren und Raubtieren aufrechterhält. Ihr Verhalten beeinflusst die Struktur der Tiergemeinschaften und fördert die Artenvielfalt in den von ihnen bewohnten Gebieten. Trotz ihrer wichtigen Rolle im Ökosystem stehen Jaguare verschiedenen Bedrohungen gegenüber. Die Zerstörung ihrer Lebensräume durch Abholzung und der illegale Handel mit ihren Körperteilen bedrohen ihre Bestände.
+                </p>
+                <p>
+                    Die Erhaltung des Jaguars erfordert internationale Anstrengungen, um Lebensraumverluste zu minimieren und den illegalen Handel zu bekämpfen. Organisationen und Naturschutzbehörden setzen sich aktiv für den Schutz dieser majestätischen Raubkatzen ein, um sicherzustellen, dass zukünftige Generationen die Möglichkeit haben, die Schönheit und Bedeutung dieser Tiere in ihrer natürlichen Umgebung zu erleben.
+                </p>
+            </article>
+        </main>
+    </body>
+</html>

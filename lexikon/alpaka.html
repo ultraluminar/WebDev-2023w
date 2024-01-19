@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../style.css">
+        <script src="script.js"></script>
+        <script src="../nav.js"></script>
+        <title>Das Alpaka - Lexikon</title>
+        <link rel="apple-touch-icon" sizes="180x180" href="../assets/icons/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="../assets/icons/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="../assets/icons/favicon-16x16.png">
+        <link rel="manifest" href="../assets/icons/site.webmanifest">
+        <link rel="mask-icon" href="../assets/icons/safari-pinned-tab.svg" color="#5bbad5">
+        <link rel="shortcut icon" href="../assets/icons/favicon.ico">
+        <meta name="msapplication-TileColor" content="#00aba9">
+        <meta name="msapplication-config" content="../assets/icons/browserconfig.xml">
+        <meta name="theme-color" content="#175632">
+    </head>
+    <body>
+        <header>
+            <div class="container">
+                <div>
+                    <a href="../index.html"><img src="../assets/images/logo128.png" alt="Logo" id="logo" height="45px"/></a>
+                    <a href="../index.html"><span class="logo-text">Abenteuer Tierwelt</span></a>
+                </div>
+                <a id="burger-menu" onclick="toggleNav(event)">
+                    <span></span>
+                    <span></span>
+                </a>
+            </div>
+            <hr id="header-seperator"/>
+        </header>
+        <nav id="nav">
+            <a href="../index.html">Startseite</a>
+            <a href="../lexikon/index.html" class="self">Lexikon</a>
+            <a href="../quiz/index.html">Quizze</a>
+            <a href="../spiel/index.html">Spiele</a>
+            <a href="../fragen-und-antworten/index.html">Fragen & Antworten</a>
+        </nav>
+        <main id="animal-page-main">
+            <section class="hero">
+                <div class="hero-text">
+                    <h1>Das Alpaka</h1>
+                    <p>
+                        Das Alpaka, ein charmantes Kamelid, begeistert mit seinem flauschigen Fell und seinem sanften Wesen.
+                    </p>
+                    <p>
+                        Entdecke die liebenswerte Welt dieser Tiere und erfahre, wie sie in den Hochebenen der südamerikanischen Anden leben.
+                    </p>
+                </div>
+                <div class="hero-image">
+                    <img src="../assets/images/lexikon/main/alpaka.png" alt="Eine Alpakafamilie im Gebirge; gezeichnet">
+                </div>
+            </section>
+            <aside class="facts">
+                <h2 class="section-title">Steckbrief</h2>
+                <div class="facts-list">
+                    <ul>
+                        <li>
+                            <img src="../assets/icons/height.svg" alt="Größensymbol" class="facts-list-icon"> <!-- Source: https://www.svgrepo.com/svg/532189/line-height -->
+                            <div class="facts-list-label">Größe</div>
+                            <div class="facts-list-value">0,8 bis 1,0 m</div>
+                        </li>
+                        <li>
+                            <img src="../assets/icons/weight.svg" alt="Gewichtssymbol" class="facts-list-icon"> <!-- Source: https://www.svgrepo.com/svg/152443/weight-tool -->
+                            <div class="facts-list-label">Gewicht</div>
+                            <div class="facts-list-value">55 bis 65 kg</div>
+                        </li>
+                        <li>
+                            <img src="../assets/icons/age.svg" alt="Alterssymbol" class="facts-list-icon"> <!-- Source: https://www.svgrepo.com/svg/352172/hourglass-half -->
+                            <div class="facts-list-label">Lebenserwartung</div>
+                            <div class="facts-list-value">15 bis 20 Jahre</div>
+                        </li>
+                        <li>
+                            <img src="../assets/icons/dna.svg" alt="Dnasymbol" class="facts-list-icon"> <!-- Source: https://www.svgrepo.com/svg/167430/dna-strand -->
+                            <div class="facts-list-label">Klasse</div>
+                            <div class="facts-list-value">Säugetiere</div>
+                        </li>
+                        <li>
+                            <img src="../assets/icons/continent.svg" alt="Kontinentsymbol" class="facts-list-icon"> <!-- Source: https://www.svgrepo.com/svg/382663/earth-global-globe-planet-world-2 -->
+                            <div class="facts-list-label">Kontinente</div>
+                            <div class="facts-list-value">Südamerika</div>
+                        </li>
+                        <li>
+                            <img src="../assets/icons/habitat.svg" alt="Lebensraumsymbol" class="facts-list-icon"> <!-- Source: https://www.svgrepo.com/svg/382687/environment-forest-leaf-nature-tree -->
+                            <div class="facts-list-label">Lebensraum</div>
+                            <div class="facts-list-value">Anden</div>
+                        </li>
+                        <li>
+                            <img src="../assets/icons/food.svg" alt="Nahrungssymbol" class="facts-list-icon"> <!-- Source: https://www.svgrepo.com/svg/490738/food-restaurant -->
+                            <div class="facts-list-label">Nahrung</div>
+                            <div class="facts-list-value">Pflanzenfresser</div>
+                        </li>
+                        <li>
+                            <img src="../assets/icons/social.svg" alt="Sozialverhaltenssymbol" class="facts-list-icon"> <!-- Source: https://www.svgrepo.com/svg/140768/users-relation -->
+                            <div class="facts-list-label">Sozialverhalten</div>
+                            <div class="facts-list-value">Herdentier</div>
+                        </li>
+                    </ul>
+                </div>
+            </aside>
+            <aside class="funfact">
+                <img src="../assets/icons/funfact.svg" alt="Funfact-Symbol" class="funfact-icon"> <!-- Source: https://www.svgrepo.com/svg/374948/light-bulb -->
+                <h3 class="funfact-heading">Lustiger Fakt</h3>
+                <p class="funfact-text">
+                    Alpakas sind nicht nur flauschige Freunde, sondern haben auch <b>eine Vorliebe für Selbstausdruck</b> – sie können unterschiedliche Gesichtsausdrücke zeigen, um ihre Gefühle auszudrücken! Diese gefühlvollen Alpakas könnten als die "Gesichtskünstler der Weide" betrachtet werden.
+                </p>
+            </aside>
+            <article class="first-paragraph">
+                <h3>Angepasste Bewohner der südamerikanischen Hochebenen</h3>
+                <p>
+                    Alpakas sind domestizierte Kamelarten, die in den hochgelegenen Regionen der Anden in Südamerika beheimatet sind. Sie sind enge Verwandte von Lamas und wurden von den indigenen Völkern der Anden seit Jahrhunderten als Nutztiere gehalten. Mit ihrem charakteristischen Aussehen, darunter lange Hälse, große, nach vorne gerichtete Augen und flauschige Faserdecken, haben Alpakas eine beeindruckende Anpassung an das raue Bergklima. Die Fasern ihres Fells, Alpaka-Wolle genannt, sind besonders weich, leicht und wärmeisolierend. Diese Eigenschaften machen die Wolle begehrt, und Alpakas werden weltweit für die Produktion hochwertiger Textilien gezüchtet.
+                </p>
+                <p>
+                    Alpakas sind Herdentiere und leben in familiären Gruppen, wobei die sozialen Strukturen eine wichtige Rolle in ihrer Lebensweise spielen. Neben ihrer Rolle als Lieferanten von Wolle werden Alpakas auch für ihre ruhige Natur geschätzt. Sie sind in der Lage, sich gut an unterschiedliche Höhenlagen anzupassen und können in Höhen von bis zu 4.000 Metern über dem Meeresspiegel gefunden werden. Aufgrund ihrer friedlichen Natur und ihres ökologischen Fußabdrucks sind Alpakas nicht nur wertvolle Nutztiere, sondern auch beliebte Tiere in Zoos und auf Farmen weltweit.
+                </p>
+            </article>
+            <article class="second-paragraph">
+                <h3>Quelle von Wohlstand und Umweltschutz</h3>
+                <p>
+                    Die Wirtschaftliche Bedeutung der Alpakas erstreckt sich über die Wolle hinaus. In den Anden spielen sie eine wichtige Rolle im Lebensunterhalt der lokalen Gemeinschaften, da ihre Wolle nicht nur für den Eigenbedarf verwendet wird, sondern auch in den internationalen Handel gelangt. Die Zucht von Alpakas fördert nicht nur die Traditionen und die lokale Wirtschaft, sondern bietet auch eine nachhaltige Alternative zu anderen landwirtschaftlichen Praktiken.
+                </p>
+                <p>
+                    Darüber hinaus tragen Alpakas durch ihre Weidegewohnheiten und ihre Anpassungsfähigkeit zur Erhaltung der Umwelt bei. Sie können in Höhenlagen grasen, die für viele andere Nutztiere ungeeignet sind, und tragen somit zur Erhaltung der Biodiversität in diesen Regionen bei. Alpakas sind auch bekannt für ihre geringen Umweltauswirkungen, da sie wenig Wasser und Futter benötigen. Ihr Einsatz in ökologisch sensiblen Gebieten macht sie zu einem nachhaltigen Nutztier, das Umwelt und lokale Wirtschaft gleichermaßen unterstützt.
+                </p>
+            </article>
+        </main>
+    </body>
+</html>
