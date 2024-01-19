@@ -23,8 +23,7 @@ document.addEventListener('DOMContentLoaded',  async () => {
 
         return csvText
             .split(/\r?\n/)
-            .map(rows => rows.split(','))
-            .map(row => row
+            .map(rows => rows.split(',')
                 .map(value => value.trim())
                 .filter(value => value !== ''))
             .filter(value => value.length > 0);
@@ -45,12 +44,10 @@ document.addEventListener('DOMContentLoaded',  async () => {
 
         // remove header
         data.shift();
-        let obj = {};
-
-        data.map(row => {
-            obj[row[0]] = row[1];
-        });
-        return obj;
+        return data.reduce((acc, row) => {
+            acc[row[0]] = row[1];
+            return acc;
+        }, {});
     }
 
     class ComboBox {
