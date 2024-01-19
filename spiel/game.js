@@ -85,7 +85,13 @@ document.addEventListener('DOMContentLoaded',  async () => {
         }
 
         onButtonMouseDown(event) {
-            this.isDropdownOpen() ? this.closeDropdown() : this.openDropdown();
+            if (this.isDropdownOpen()) {
+                this.closeDropdown();
+            }
+            else {
+                this.openDropdown();
+                this.nodes.input.focus();
+            }
             event.preventDefault();
         }
 
