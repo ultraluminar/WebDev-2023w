@@ -110,7 +110,7 @@ class Combobox{
     constructor(nodesContent, animalTable) {
         this.animalTable = animalTable;
 
-        this.allOptions = [];
+
         this.option = null;
 
         this.filteredOptions = [];
@@ -126,16 +126,14 @@ class Combobox{
 
         this.comboboxNode.addEventListener('blur', this.Close.bind(this));
 
-        nodesContent.forEach(nodeContent => {
-            const li = Object.assign(
-                document.createElement('li'),
-                {textContent: nodeContent, role: 'option', tabindex: '-1' });
 
-            li.addEventListener('mousedown',  this.onOptionMouseDown.bind(this));
-            this.allOptions.push(li);
-
+        this.allOptions = nodesContent.map(optionText => {
+            const li = document.createElement('li');
+            li.addEventListener('mousedown', this.onOptionMouseDown.bind(this));
+            return Object.assign(li, {textContent: optionText, role: 'option', tabindex: '-1'});
         });
 
+        //Stop
         this.filterOptions();
 
     }
@@ -200,8 +198,6 @@ class Combobox{
     filterOptions(event) {
         let filter = event? event.target.value.toLowerCase() : '';
 
-        this.listboxNode.innerHTML = '';
-
         // create regex pattern and replace mask for highlighting
         const pattern = new RegExp(`(${filter})`, 'i');
         const replaceMask = '<b>$1</b>';
@@ -220,7 +216,8 @@ class Combobox{
             return a.textContent.match(pattern).index - b.textContent.match(pattern).index;
         });
 
-        // add options to listbox and highlight matches
+        // update listbox options and highlight matches
+        this.listboxNode.innerHTML = '';
         this.filteredOptions.forEach(option => {
             option.innerHTML = option.textContent.replace(pattern, replaceMask);
             this.listboxNode.appendChild(option);
