@@ -319,7 +319,7 @@ nav a.self {
 .game-body table {
     width: 100%;
     border-collapse: collapse;
-    font-size: clamp(0px, 2.6vw, 0.9em); /* Minimum size of 16px, preferred size of 2.25vw, maximum size of 32px */
+    font-size: clamp(0px, 2.6vw, 0.9em); /* Minimum size of 0px, preferred size of 2.6vw, maximum size of 0.9em*/
     border-radius: 1em;
     overflow: hidden;
 }
