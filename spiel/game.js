@@ -1,101 +1,232 @@
-"use strict";
+// await whole document is loaded
+document.addEventListener('DOMContentLoaded',  async () => {
+    async function main() {
+        const nodes = {
+            input: document.getElementById('cb1-input'),
+            button: document.getElementById('cb1-button'),
+            listbox: document.getElementById('cb1-listbox'),
+            datatable: document.getElementById('animalTable')
+        }
 
-async function csvTo2dArray(link) {
+        const csv = await parseAnimalsCSV();
+        const links = await parseLinksCSV();
+        new ComboBoxAnimals(nodes, csv.column0, new DataTableAnimals(nodes, csv, links));
+    }
 
-    const csvResponse = await fetch(link);
-    const csvText = await csvResponse.text();
+    async function csvTo2dArray(link) {
 
-    if (csvResponse.status === 404) { throw new Error('ERROR CSV-File not found: "' + link + '"'); }
-    if (csvText === '') { throw new Error('ERROR CSV-File is empty: "' + link + '"'); }
+        const csvResponse = await fetch(link);
+        const csvText = await csvResponse.text();
 
-    return csvText
-        .split(/\r?\n/)
-        .map(row => row.split(',')
-            .map(value => value.trim())
-            .filter(value => value !== ''))
-        .filter(row => row.length > 1);
-}
+        if (csvResponse.status === 404) { throw new Error('ERROR CSV-File not found: "' + link + '"'); }
+        if (csvText === '') { throw new Error('ERROR CSV-File is empty: "' + link + '"'); }
 
-async function parseAnimalsCSV() {
-    const data = await csvTo2dArray('animals.csv');
+        return csvText
+            .split(/\r?\n/)
+            .map(rows => rows.split(','))
+            .map(row => row
+                .map(value => value.trim())
+                .filter(value => value !== ''))
+            .filter(value => value.length > 0);
+    }
 
-    // split data into header, sorted data and sorted column0
-    return {
-        header: data.shift(),
-        data: data.sort(),
-        column0: data.map((row) => row[0].replace(/\u00AD/g,''))
-    };
-}
+    async function parseAnimalsCSV() {
+        const csv = await csvTo2dArray('./animals.csv');
 
-async function parseLinksCSV() {
-    const data = await csvTo2dArray('../lexikon/links.csv');
+        return {
+            header: csv.shift(),
+            body: csv.sort(),
+            column0: csv.map(row => row[0])
+        };
+    }
 
-    // remove header
-    data.shift();
-    let obj = {};
+    async function parseLinksCSV() {
+        const data = await csvTo2dArray('../lexikon/links.csv');
 
-    data.map(row => {
-        obj[row[0]] = row[1];
-    });
-    return obj;
-}
+        // remove header
+        data.shift();
+        let obj = {};
 
-class AnimalTable {
-    constructor(csv, links) {
-        this.csv = csv;
-        this.links = links;
-        this.guessList = [];
-
-        this.dataTable = document.getElementById('animalTable');
-        this.comboboxNode = document.getElementById("cb1-input");
-        this.buttonNode = document.getElementById("cb1-button");
-
-        this.randomAnimalRow = csv.data[Math.floor(Math.random() * csv.data.length)];
-        console.log(this.randomAnimalRow[0]);
-
-
-        // create header row
-        const tableHeader = this.dataTable.insertRow(0);
-        this.csv.header.forEach(header => {
-            // make cell a header cell
-            tableHeader.insertCell(-1).outerHTML = "<th>" + header + "</th>";
+        data.map(row => {
+            obj[row[0]] = row[1];
         });
-
-    }
-    animalRowWithSoftHyphens (animal) {
-        // get animal row that includes soft hyphens
-        return this.csv.data[this.csv.column0.indexOf(animal)]; }
-
-    createContentRow(animal) {
-
-        const tableRow = this.dataTable.insertRow(1);
-        const animalRow = this.animalRowWithSoftHyphens(animal);
-        animalRow.forEach((value, index) => {
-            const td = tableRow.insertCell(-1);
-            td.classList.add(value === this.randomAnimalRow[index] ? 'correct' : 'incorrect');
-            td.textContent = value;
-        });
-
-    }
-    alreadyGuessed(guess) {
-        return this.guessList.includes(guess);
+        return obj;
     }
 
-    validateGuess(guess) {
-        return this.csv.column0.includes(guess) && !this.alreadyGuessed(guess);
+    class ComboBox {
+        constructor(htmlElements, allOptionsTexts, dataTable) {
+            this.nodes = htmlElements;
+            this.dataTable = dataTable;
+            this.options = { all: [], filtered: [] }
+
+            this.options.all = allOptionsTexts.map(optionText => {
+                const li = document.createElement('li');
+                li.addEventListener('mousedown', this.onOptionMouseDown.bind(this));
+                return Object.assign(li, {textContent: optionText, role: 'option', tabindex: '-1'});
+            });
+
+            this.nodes.button.addEventListener('mousedown', this.onButtonMouseDown.bind(this));
+            this.nodes.input.addEventListener('keydown', this.onInputKeyDown.bind(this));
+            this.nodes.input.addEventListener('input', this.filterOptions.bind(this));
+
+            this.nodes.input.addEventListener('mousedown', this.openDropdown.bind(this));
+            this.nodes.input.addEventListener('blur', this.closeDropdown.bind(this));
+
+        }
+
+        submitOption(optionText) {
+            this.closeDropdown();
+            this.nodes.input.value = '';
+            this.dataTable.submitOption(optionText);
+        }
+
+        onOptionMouseDown(event) {
+            this.submitOption(event.target.textContent);
+            event.preventDefault();
+
+        }
+
+        onButtonMouseDown(event) {
+            this.isDropdownOpen() ? this.closeDropdown() : this.openDropdown();
+            event.preventDefault();
+        }
+
+        onInputKeyDown(event) {
+            if (!this.isDropdownOpen()) {
+                this.openDropdown();
+                return;
+            }
+            if (this.options.filtered.length !== 0) {
+                const optionText = this.options.filtered[0].textContent;
+                if (event.key === "Enter" && this.dataTable.isSubmitable(optionText)) {
+                    this.submitOption(optionText);
+                }
+            }
+        }
+
+        isDropdownOpen() {
+            return this.nodes.listbox.classList.contains('open');
+        }
+
+        closeDropdown() {
+            if (this.isDropdownOpen()) {
+                this.nodes.listbox.classList.remove('open');
+                this.nodes.input.ariaExpanded = 'false';
+                this.nodes.button.ariaExpanded = 'false';
+            }
+        }
+
+        openDropdown() {
+            if (!this.isDropdownOpen()) {
+                this.filterOptions();
+                this.nodes.listbox.classList.add('open');
+                this.nodes.input.ariaExpanded = 'true';
+                this.nodes.button.ariaExpanded = 'true';
+            }
+        }
+
+        filterOptions() {
+            const filterText = this.nodes.input.value;
+            this.nodes.listbox.innerHTML = '';
+
+            const pattern = new RegExp(filterText, 'i');
+            const replace_mask = '<b>$&</b>';
+
+            this.options.filtered = (filterText === '') ? this.options.all : this.options.all.filter(
+                option => option.textContent.match(pattern) !== null);
+
+
+            this.options.filtered = this.options.filtered.filter(
+                option => !this.dataTable.alreadySubmitted(option.textContent)
+            );
+
+
+            this.options.filtered.sort((a, b) => {
+                return a.textContent.match(pattern).index - b.textContent.match(pattern).index;
+            });
+
+            this.nodes.listbox.innerHTML = '';
+            this.options.filtered.forEach(option => {
+                option.innerHTML = option.textContent.replace(pattern, replace_mask);
+                this.nodes.listbox.appendChild(option);
+            });
+        }
     }
 
-    makeGuess(guess) {
-        this.guessList.push(guess);
-        this.createContentRow(guess);
-        if (this.randomAnimalRow[0] === this.animalRowWithSoftHyphens(guess)[0]) {
-            this.dataTable.classList.add('correct');
+    class ComboBoxAnimals extends ComboBox {
+        constructor(htmlElements, allOptionsTexts, dataTable) {
+            super(htmlElements, allOptionsTexts, dataTable);
+        }
+    }
 
-            this.comboboxNode.placeholder = "Gewonnen!";
-            this.comboboxNode.disabled = true;
-            this.buttonNode.disabled = true;
+    class DataTable {
+        constructor(htmlElements, csv, targetRow) {
+            this.nodes = htmlElements;
+            this.csv = csv;
+            this.submits = [];
+            this.targetRow = targetRow;
 
-            this.dataTable.tBodies[0].childNodes.forEach(tr => {
+            const header_row = this.nodes.datatable.insertRow();
+            this.csv.header.forEach(header => {
+                header_row.insertCell(-1).outerHTML = '<th>' + header + '</th>';
+            });
+        }
+        alreadySubmitted(optionText) {
+            return this.submits.includes(optionText);
+        }
+        isSubmitable(optionText) {
+            return !this.alreadySubmitted(optionText) && this.csv.column0.includes(optionText);
+        }
+
+        submitOption(optionText) {
+            this.submits.push(optionText);
+
+            const rowContents = this.bodyRowByColumn0(optionText);
+            this.createTableRow(rowContents, this.targetRow);
+
+            if (optionText === this.targetRow[0]) {
+                this.onMatch();
+            }
+        }
+        onMatch() {
+            this.nodes.datatable.classList.add('correct');
+
+            this.nodes.input.placeholder = "Gewonnen!";
+            this.nodes.input.disabled = true;
+            this.nodes.button.disabled = true;
+        }
+
+        bodyRowByColumn0(optionText) {
+            return this.csv.body[this.csv.column0.indexOf(optionText)];
+        }
+
+        createTableRow(rowContents, targetRow) {
+            const row = this.nodes.datatable.insertRow(1);
+            rowContents.forEach((value, index) => {
+                const td = row.insertCell(-1);
+                td.classList.add(value === targetRow[index] ? 'correct' : 'incorrect');
+                td.textContent = value;
+            });
+
+        }
+    }
+
+
+    class DataTableAnimals extends DataTable {
+        constructor(htmlElements, csv, links) {
+            const targetRow = csv.body[Math.floor(Math.random() * csv.body.length)];
+            console.log(targetRow[0]);
+            const sup = super(htmlElements, csv, targetRow);
+            sup.links = links;
+        }
+
+        onMatch() {
+            super.onMatch();
+            this.linkUpColumn0();
+        }
+
+        linkUpColumn0() {
+            this.nodes.datatable.tBodies[0].childNodes.forEach(tr => {
                 const animalNode = tr.firstChild;
                 const link = this.links[animalNode.textContent.replace(/\u00AD/g,'')];
                 if (link !== undefined) {
@@ -104,131 +235,6 @@ class AnimalTable {
             });
         }
     }
-}
-
-class Combobox{
-    constructor(nodesContent, animalTable) {
-        this.animalTable = animalTable;
-
-
-        this.option = null;
-
-        this.filteredOptions = [];
-
-        this.comboboxNode = document.getElementById("cb1-input");
-        this.buttonNode = document.getElementById("cb1-button");
-        this.listboxNode = document.getElementById("cb1-listbox");
-
-        this.buttonNode.addEventListener('mousedown', this.onButtonMouseDown.bind(this));
-        this.comboboxNode.addEventListener('keydown', this.onInputKeyDown.bind(this));
-        this.comboboxNode.addEventListener('mousedown', this.onInputMouseDown.bind(this));
-        this.comboboxNode.addEventListener('input', this.filterOptions.bind(this));
-
-        this.comboboxNode.addEventListener('blur', this.Close.bind(this));
-
-
-        this.allOptions = nodesContent.map(optionText => {
-            const li = document.createElement('li');
-            li.addEventListener('mousedown', this.onOptionMouseDown.bind(this));
-            return Object.assign(li, {textContent: optionText, role: 'option', tabindex: '-1'});
-        });
-
-        //Stop
-        this.filterOptions();
-
-    }
-
-    onInputKeyDown(event) {
-        if (!this.isOpen() && event.key.match(/[A-Za-z]/)) {
-            this.filterOptions();
-            this.Open();
-            return;
-        }
-        if (event.key === "Enter" && this.filteredOptions.length > 0) {
-            const guess = this.filteredOptions[0].textContent;
-            if (this.animalTable.validateGuess(guess)) {
-                this.Close();
-                this.comboboxNode.value = "";
-                this.filterOptions();
-                this.animalTable.makeGuess(guess);
-            }
-        }
-    }
-
-    onOptionMouseDown(event) {
-        event.preventDefault();
-        this.Close();
-        this.comboboxNode.value = "";
-        this.filterOptions();
-        this.animalTable.makeGuess(event.target.textContent);
-    }
-
-    isOpen() {
-        return this.listboxNode.classList.contains('open');
-    }
-
-    onInputMouseDown() {
-        this.filterOptions();
-        this.Open();
-    }
-
-    onButtonMouseDown(event) {
-        this.toggleOpen();
-        event.preventDefault();
-
-    }
-    Open() {
-        if (!this.isOpen()) {
-            this.toggleOpen();
-        }
-    }
-
-    Close() {
-        if (this.isOpen()) {
-            this.toggleOpen();
-        }
-    }
-
-    toggleOpen() {
-        this.listboxNode.classList.toggle('open');
-        this.comboboxNode.ariaExpanded = this.isOpen();
-        this.buttonNode.ariaExpanded = this.isOpen();
-    }
-
-    filterOptions(event) {
-        let filter = event? event.target.value.toLowerCase() : '';
-
-        // create regex pattern and replace mask for highlighting
-        const pattern = new RegExp(`(${filter})`, 'i');
-        const replaceMask = '<b>$1</b>';
-
-        // all options that match the filter or all options if filter is empty
-        this.filteredOptions = (filter.length === 0) ? this.allOptions : this.allOptions.filter(
-            option => option.textContent.match(pattern) !== null);
-
-        // remove already guessed options
-        this.filteredOptions = this.filteredOptions.filter(
-            option => !this.animalTable.alreadyGuessed(option.textContent)
-        );
-
-        // sort options by index of first match
-        this.filteredOptions.sort((a, b) => {
-            return a.textContent.match(pattern).index - b.textContent.match(pattern).index;
-        });
-
-        // update listbox options and highlight matches
-        this.listboxNode.innerHTML = '';
-        this.filteredOptions.forEach(option => {
-            option.innerHTML = option.textContent.replace(pattern, replaceMask);
-            this.listboxNode.appendChild(option);
-        });
-    }
-}
-
-document.addEventListener("DOMContentLoaded", async function () {
-    const csv = await parseAnimalsCSV();
-    const links = await parseLinksCSV();
-
-    new Combobox(csv.column0, new AnimalTable(csv, links));
-
+    await main();
 });
+
