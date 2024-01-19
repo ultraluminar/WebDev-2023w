@@ -125,7 +125,7 @@ document.addEventListener('DOMContentLoaded',  async () => {
             }
         }
 
-        filterOptions(event) {
+        filterOptions() {
             const filterText = this.nodes.input.value;
             this.nodes.listbox.innerHTML = '';
 
@@ -180,7 +180,6 @@ document.addEventListener('DOMContentLoaded',  async () => {
 
         submitOption(optionText) {
             this.submits.push(optionText);
-            console.log("submitted: " + optionText);
 
             const rowContents = this.bodyRowByColumn0(optionText);
             this.createTableRow(rowContents, this.targetRow);
