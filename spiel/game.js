@@ -1,5 +1,21 @@
 "use strict";
 
+async function csvTo2dArray(link) {
+
+    const csvResponse = await fetch(link);
+    const csvText = await csvResponse.text();
+
+    if (csvResponse.status === 404) { throw new Error('ERROR CSV-File not found: "' + link + '"'); }
+    if (csvText === '') { throw new Error('ERROR CSV-File is empty: "' + link + '"'); }
+
+    return csvText
+        .split(/\r?\n/)
+        .map(row => row.split(',')
+            .map(value => value.trim())
+            .filter(value => value !== ''))
+        .filter(row => row.length > 1);
+}
+
 async function parseAnimalsCSV() {
     const data = await csvTo2dArray('animals.csv');
 
@@ -108,8 +124,7 @@ class Combobox{
         this.comboboxNode.addEventListener('mousedown', this.onInputMouseDown.bind(this));
         this.comboboxNode.addEventListener('input', this.filterOptions.bind(this));
 
-
-        this.comboboxNode.addEventListener('blur', this.onBlur.bind(this));
+        this.comboboxNode.addEventListener('blur', this.Close.bind(this));
 
         nodesContent.forEach(nodeContent => {
             const li = Object.assign(
@@ -123,9 +138,6 @@ class Combobox{
 
         this.filterOptions();
 
-    }
-    onBlur(event) {
-        this.Close();
     }
 
     onInputKeyDown(event) {
@@ -183,10 +195,6 @@ class Combobox{
         this.listboxNode.classList.toggle('open');
         this.comboboxNode.ariaExpanded = this.isOpen();
         this.buttonNode.ariaExpanded = this.isOpen();
-    }
-
-    toggleAttributeValue(node, attr) {
-        node.setAttribute(attr, !node.getAttribute(attr).toString());
     }
 
     filterOptions(event) {
