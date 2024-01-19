@@ -5,7 +5,8 @@ document.addEventListener('DOMContentLoaded',  async () => {
             input: document.getElementById('cb1-input'),
             button: document.getElementById('cb1-button'),
             listbox: document.getElementById('cb1-listbox'),
-            datatable: document.getElementById('animalTable')
+            datatable: document.getElementById('animalTable'),
+            group_: document.getElementsByClassName('group')[0]
         }
 
         const csv = await parseAnimalsCSV();
@@ -108,6 +109,7 @@ document.addEventListener('DOMContentLoaded',  async () => {
         closeDropdown() {
             if (this.isDropdownOpen()) {
                 this.nodes.listbox.classList.remove('open');
+                this.nodes.group_.classList.remove('open');
                 this.nodes.input.ariaExpanded = 'false';
                 this.nodes.button.ariaExpanded = 'false';
             }
@@ -117,6 +119,7 @@ document.addEventListener('DOMContentLoaded',  async () => {
             if (!this.isDropdownOpen()) {
                 this.filterOptions();
                 this.nodes.listbox.classList.add('open');
+                this.nodes.group_.classList.add('open');
                 this.nodes.input.ariaExpanded = 'true';
                 this.nodes.button.ariaExpanded = 'true';
             }
@@ -187,7 +190,6 @@ document.addEventListener('DOMContentLoaded',  async () => {
         }
         onMatch() {
             this.nodes.datatable.classList.add('correct');
-
             this.nodes.input.placeholder = "Gewonnen!";
             this.nodes.input.disabled = true;
             this.nodes.button.disabled = true;
