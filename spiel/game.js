@@ -200,8 +200,6 @@ class Combobox{
     filterOptions(event) {
         let filter = event? event.target.value.toLowerCase() : '';
 
-        this.listboxNode.innerHTML = '';
-
         // create regex pattern and replace mask for highlighting
         const pattern = new RegExp(`(${filter})`, 'i');
         const replaceMask = '<b>$1</b>';
@@ -220,7 +218,8 @@ class Combobox{
             return a.textContent.match(pattern).index - b.textContent.match(pattern).index;
         });
 
-        // add options to listbox and highlight matches
+        // update listbox options and highlight matches
+        this.listboxNode.innerHTML = '';
         this.filteredOptions.forEach(option => {
             option.innerHTML = option.textContent.replace(pattern, replaceMask);
             this.listboxNode.appendChild(option);
