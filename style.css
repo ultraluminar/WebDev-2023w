@@ -39,6 +39,13 @@ body {
     font-family: Ubuntu, sans-serif;
 }
 
+@media screen and (min-width: 1250px) {
+    body {
+        font-size: 1.2em;
+    }
+    
+}
+
 /* Header */
 header {
     position: sticky;
@@ -76,7 +83,7 @@ header a {
 
 .logo-text {
     font-family: 'Rubik Scribble', cursive;
-    font-size: 1.75em;
+    font-size: 1.75rem;
     color: black;
 }
 
@@ -159,14 +166,8 @@ nav a.self {
     color: var(--text-color);
 }
 
-/* Home/Landingpage*/
-#landing-page-main {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-areas: "hero";
-    margin: 2em 4%;
-}
 
+/* Hero */
 .hero {
     grid-area: hero;
     display: flex;
@@ -207,14 +208,77 @@ nav a.self {
     text-align: center;
 }
 
+@media screen and (min-width: 900px) {
+    .hero {
+        flex-direction: row;
+        justify-content: space-between;
+        gap: 2em;
+    }
+
+    .hero-image {
+        width: 50%;
+        max-width: fit-content;
+        max-height: 100vh;
+    }
+
+    .hero-text {
+        width: 50%;
+        max-width: 500px;
+    }
+}
+
+
+/* Home/Landingpage*/
+#landing-page-main {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas: "hero";
+    margin: 2em 4%;
+}
+
+@media screen and (min-width: 900px) {
+    #landing-page-main {
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: "hero hero";
+        margin: 2em calc(12% - 2em);
+    }
+}
 
 /* lexicon */
 #lexikon-page-main {
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-areas: "hero";
+    grid-template-areas: 
+    "hero"
+    "afrika"
+    "asien"
+    "australien"
+    "europa"
+    "nordamerika"
+    "suedamerika"
+    "polar";
     margin: 2em 4%;
     gap: 2em;
+}
+
+@media screen and (min-width: 900px) {
+    #lexikon-page-main {
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+        "hero"
+        "afrika"
+        "asien"
+        "australien"
+        "europa"
+        "nordamerika"
+        "suedamerika"
+        "polar";
+        margin: 2em calc(12% - 2em);
+    }
+
+    .continent {
+        padding: 2em;
+    }
 }
 
 .continent {
@@ -222,13 +286,43 @@ nav a.self {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    box-shadow: 0px 0px 50px -15px #a5a5a5;
+    border-radius: 1em;
     gap: 1em;
     padding: 1em;
 }
 
+#afrika {
+    grid-area: afrika;
+}
+
+#asien {
+    grid-area: asien;
+}
+
+#australien {
+    grid-area: australien;
+}
+
+#europa {
+    grid-area: europa;
+}
+
+#nordamerika {
+    grid-area: nordamerika;
+}
+
+#suedamerika {
+    grid-area: suedamerika;
+}
+
+#polar {
+    grid-area: polar;
+}
+
 .card-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 1em;
 }
 
@@ -269,6 +363,7 @@ nav a.self {
     padding: 0.5em;
     background: linear-gradient(to bottom, #00000000 0%, #feffe5bd 70%, #FEFFE5 100%);
     color: var(--text-color);
+    font-size: 1rem;
     text-align: center;
     transition: 0.5s ease-in-out;
 }
@@ -294,10 +389,37 @@ nav a.self {
 #animal-guesser-page-main {
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-areas: "hero"
-                         "game";
+    grid-template-areas:
+    "heading"
+    "game"
+    "instructions";
     margin: 2em 4%;
     gap: 2em;
+}
+
+@media screen and (min-width: 1300px) {
+    #animal-guesser-page-main {
+        grid-template-columns: repeat(5, 1fr);
+        grid-template-rows: min-content 1fr 1fr;
+        grid-template-areas:
+        "heading heading heading instructions instructions"
+        "game game game instructions instructions"
+        "game game game instructions instructions";
+        margin: 2em calc(12% - 2em);
+    }
+}
+
+@media screen and (min-width: 1500px) {
+    #animal-guesser-page-main {
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: min-content 1fr 1fr;
+        grid-template-areas:
+        "heading heading instructions"
+        "game game instructions"
+        "game game instructions";
+        margin: 2em calc(12% - 2em);
+    }
+    
 }
 
 .correct {
@@ -309,7 +431,20 @@ nav a.self {
     color: white;
 }
 
+.heading-container {
+    grid-area: heading;
+}
+
+.game {
+    grid-area: game;
+}
+
+#game-instruction {
+    grid-area: instructions;
+}
+
 .game-head {
+    position: relative;
     display: flex;
     justify-content: center; /* Aligns items horizontally in the center */
     align-items: center; /* Aligns items vertically in the center */
@@ -361,24 +496,6 @@ nav a.self {
     "second-paragraph";
     margin: 2em 4%;
     gap: 2em;
-}
-
-/* breadcrumbs */
-.breadcrumbs {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: 0.5em;
-    padding: 0.5em 1em;
-    margin: 0 auto;
-    background-color: var(--secondary-color-light);
-    border-end-end-radius: 1em;
-    border-end-start-radius: 1em;
-}
-
-.breadcrumb-arrow {
-    width: 1.5em;
 }
 
 /* facts-list */
@@ -470,7 +587,6 @@ nav a.self {
     flex-direction: column;
     gap: 1em;
     text-align: left;
-    font-size: 1em;
     padding: 1em;
 }
 
@@ -507,31 +623,30 @@ nav a.self {
 }
 
 h1 {
-    font-size: 3rem;
+    font-size: 3em;
     color: var(--text-color);
     text-align: left;
 }
 
 h2 {
-    font-size: 2.2rem;
+    font-size: 2.2em;
     color: var(--text-color);
     text-align: left;
 }
 
 h3 {
-    font-size: 1.8rem;
+    font-size: 1.8em;
     color: var(--text-color);
     text-align: left;
 }
 
 h4 {
-    font-size: 1.3rem;
+    font-size: 1.3em;
     color: var(--text-color);
     text-align: left;
 }
 
 p {
-    font-size: 1em;
     line-height: 1.3;
 }
 
@@ -553,6 +668,24 @@ em {
     align-items: flex-start;
     gap: 0.5em;
     padding: 0 1em;
+}
+
+/* breadcrumbs */
+.breadcrumbs {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.5em;
+    padding: 0.5em 1em;
+    margin: 0 auto;
+    background-color: var(--secondary-color-light);
+    border-end-end-radius: 1em;
+    border-end-start-radius: 1em;
+}
+
+.breadcrumb-arrow {
+    width: 1.5em;
 }
 
 /* Info Box */
@@ -611,48 +744,50 @@ em {
     line-height: 0.5;
 }
 
-
-.game-head {
-    position: relative;
-}
-
+/* Combo Box */
 .combobox {
     position: relative;
 }
 
 .combobox .group {
     display: inline-flex;
-    padding: 4px;
     cursor: pointer;
+    border: 2px solid var(--primary-color);
+    border-radius: 1em;
+    overflow: hidden;
+}
+
+.combobox .group.open {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
 }
 
 .combobox input,
 .combobox button {
-    background-color: white;
+    background-color: var(--background-color);
     color: black;
     box-sizing: border-box;
-    height: 30px;
+    height: 40px;
     padding: 0;
     margin: 0;
-    vertical-align: bottom;
-    border: 1px solid gray;
+    border: 0;
     position: relative;
     cursor: pointer;
 }
 
 .combobox input {
-    width: 150px;
-    border-right: none;
+    width: 100%;
     outline: none;
+    margin-left: 1em;
     font-size: 87.5%;
     padding: 1px 3px;
 }
 
 .combobox button {
-    width: 19px;
-    border-left: none;
+    width: 55px;
+    border-radius: 1em;
     outline: none;
-    color: rgb(0 90 156);
+    color: var(--primary-color);
 }
 
 .combobox button[aria-expanded="true"] svg {
@@ -664,14 +799,17 @@ ul[role="listbox"] {
     margin: 0;
     padding: 0;
     position: absolute;
-    left: 4px;
     list-style: none;
-    background-color: white;
+    background-color: var(--background-color);
     display: none;
     box-sizing: border-box;
-    border: 1px solid gray;
+    border: 2px solid var(--primary-color);
+    border-top: none;
+    border-bottom-left-radius: 1em;
+    border-bottom-right-radius: 1em;
+    overflow: hidden;
     max-height: 250px;
-    width: 168px;
+    width: 100%;
     overflow: scroll;
     overflow-x: hidden;
     font-size: 87.5%;
@@ -685,9 +823,9 @@ ul[role="listbox"].open {
 ul[role="listbox"] li[role="option"] {
     margin: 0;
     display: block;
-    padding-left: 3px;
-    padding-top: 2px;
-    padding-bottom: 2px;
+    padding-left: 1em;
+    padding-top: 5px;
+    padding-bottom: 5px;
 }
 
 /* focus and hover styling */
@@ -699,7 +837,6 @@ ul[role="listbox"] li[role="option"] {
 
 .combobox .group.focus input,
 .combobox .group.focus button,
-.combobox .group input:hover,
 .combobox .group button:hover {
     background-color: #def;
 }
