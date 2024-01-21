@@ -6,12 +6,15 @@ document.addEventListener('DOMContentLoaded',  async () => {
             button: document.getElementById('cb1-button'),
             listbox: document.getElementById('cb1-listbox'),
             datatable: document.getElementById('animalTable'),
-            group_: document.getElementsByClassName('group')[0]
+            group_: document.getElementsByClassName('group')[0],
+            question: document.getElementsByClassName('subheading')[0]
         }
 
-        const csv = await parseAnimalsCSV();
+        const csv = await parseQuizCSV();
         const links = await parseLinksCSV();
-        new ComboBoxAnimals(nodes, csv.column0, new DataTableAnimals(nodes, csv, links));
+        new ComboBoxAnimals(nodes, csv.body, new DataTableAnimals(nodes, csv, links));
+
+        nodes.input.focus();
     }
 
     async function csvTo2dArray(link) {
@@ -30,13 +33,15 @@ document.addEventListener('DOMContentLoaded',  async () => {
             .filter(value => value.length > 0);
     }
 
-    async function parseAnimalsCSV() {
-        const csv = await csvTo2dArray('./animals.csv');
+    async function parseQuizCSV() {
+        const csv = await csvTo2dArray('./quiz.csv');
 
         return {
-            header: csv.shift(),
-            body: csv.sort(),
-            column0: csv.map(row => row[0])
+            header: [csv.shift()[0]],
+            body: csv.sort().map(row => [row[0]]),
+            column0: csv.map(row => row[0]),
+            questions: csv.map(row => (row[1]) ? row[1] : "No keine Frage zu diesem Tier vorhanden")
+
         };
     }
 
@@ -202,6 +207,7 @@ document.addEventListener('DOMContentLoaded',  async () => {
             this.nodes.button.disabled = true;
         }
 
+
         bodyRowByColumn0(optionText) {
             return this.csv.body[this.csv.column0.indexOf(optionText)];
         }
@@ -220,10 +226,12 @@ document.addEventListener('DOMContentLoaded',  async () => {
 
     class DataTableAnimals extends DataTable {
         constructor(htmlElements, csv, links) {
-            const targetRow = csv.body[Math.floor(Math.random() * csv.body.length)];
-            console.log(targetRow[0]);
+            const randomIndex = Math.floor(Math.random() * csv.body.length);
+            const targetRow = [csv.body[randomIndex][0], csv.questions[randomIndex]];
             const sup = super(htmlElements, csv, targetRow);
             sup.links = links;
+            sup.nodes.question.innerHTML = "Ich habe mir ein Tier ausgedacht. " +
+                "<b>" + targetRow[1] + "</b> ";
         }
 
         onMatch() {
