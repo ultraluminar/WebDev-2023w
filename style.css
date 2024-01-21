@@ -6,6 +6,7 @@
     --secondary-color: #60D26F;
     --secondary-color-light: #A3E6A4;
     --accent-color: #83BEC5;
+    --accent-color-light: #b6e2e573;
 
     --text-color: #0f0f0f;
     --background-color: #feffe5;
@@ -14,6 +15,10 @@
 * {
     margin: 0;
     padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 /* Scrollbar */
@@ -212,16 +217,6 @@ nav a.self:hover {
     width: 100%;
 }
 
-.hero-links a {
-    display: block;
-    padding: 0.8em 0;
-    width: 100%;
-    border-radius: 0.5em;
-    text-decoration: none;
-    text-align: center;
-    transition: 0.3s ease-in-out;
-}
-
 @media screen and (min-width: 900px) {
     .hero {
         flex-direction: row;
@@ -246,17 +241,79 @@ nav a.self:hover {
 #landing-page-main {
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-areas: "hero";
+    grid-template-areas: 
+    "hero"
+    "popular"
+    "discover";
     margin: 2em 4%;
+    gap: 3em;
+}
+
+#discover-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
 }
 
 @media screen and (min-width: 900px) {
     #landing-page-main {
-        grid-template-columns: 1fr 1fr;
-        grid-template-areas: "hero hero";
+        /* grid-template-columns: 1fr 1fr;
+        grid-template-areas: "hero hero"; */
         margin: 2em calc(12% - 2em);
     }
+
+    #discover-container {
+        flex-direction: row;
+    }
 }
+
+#popular {
+    grid-area: popular;
+}
+
+#discover {
+    grid-area: discover;
+}
+
+.landing-page-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 1em;
+    gap: 1em;
+    padding: 1em;
+}
+
+.shower {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 1em;
+    gap: 2em;
+    padding: 1em;
+    padding-top: 50px;
+    background-color: var(--accent-color-light);
+}
+
+.shower p {
+    padding: 0 1em;
+}
+
+.big {
+    position: absolute;
+    top: 0;
+    z-index: -1;
+    width: 100%;
+    text-align: center;
+    font-weight: bold;
+    font-size: 5em;
+    height: auto;
+    color: var(--primary-color-light)
+}
+
 
 /* lexicon */
 #lexikon-page-main {
@@ -629,6 +686,16 @@ nav a.self:hover {
 
 /* Helpers */
 /* Button colors */
+.link-button {
+    display: block;
+    padding: 0.8em 0;
+    width: 100%;
+    border-radius: 0.5em;
+    text-decoration: none;
+    text-align: center;
+    transition: 0.3s ease-in-out;
+}
+
 .bg-primary {
     background-color: var(--primary-color);
     color: var(--background-color);
