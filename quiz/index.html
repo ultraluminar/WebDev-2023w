@@ -5,6 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="../style.css">
         <script src="../nav.js"></script>
+        <script src="quiz.js"></script>
         <title>Quiz</title>
         <link rel="apple-touch-icon" sizes="180x180" href="../assets/icons/apple-touch-icon.png">
         <link rel="icon" type="image/png" sizes="32x32" href="../assets/icons/favicon-32x32.png">
@@ -51,7 +52,7 @@
                 <div class="game-head">
                     <div class="combobox" id="combobox-list">
                         <div class="group">
-                            <input id="cb1-input" class="cb_edit" type="text" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="cb1-listbox" placeholder="Lorem Ipsum">
+                            <input id="cb1-input" class="cb_edit" type="text" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="cb1-listbox" placeholder="Wähle ein Tier">
                             <button id="cb1-button" tabindex="-1" aria-label="States" aria-expanded="false" aria-controls="cb1-listbox">
                                 <svg width="18" height="16" aria-hidden="true" focusable="false" style="forced-color-adjust: auto">
                                     <polygon class="arrow" stroke-width="0" fill-opacity="0.75" fill="currentcolor" points="3,6 15,6 9,14"></polygon>
@@ -61,7 +62,6 @@
                         <ul id="cb1-listbox" role="listbox" aria-label="States">
                         </ul>
                     </div>
-                    <script src="quiz.js"></script>
 
                 </div>
                 <div class="game-body">
@@ -72,16 +72,16 @@
             </section>
             <aside class="info-box" id="game-instruction">
                 <div class="info-heading">
-                    <h2>Spieleanleitung</h2>
-                    <h4>Wie spielt man das Spiel in UNDEFINDED einfachen Schritten</h4>
+                    <h2>Anleitung</h2>
+                    <h4>Wie funktioniert das Quiz?</h4>
                 </div>
                 <div class="info-body">
-                    <p class="one">Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
-                    <p class="two">Duis euismod, nisl nec aliquam ultricies, nunc nisl aliquet nunc, quis aliquam nisl nunc vel nisl </p>
-                    <p class="three">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis euismod, nisl nec aliquam ultricies, nunc nisl aliquet nunc, quis aliquam nisl nunc vel nisl </p>
+                    <p class="one">Im Titel der Seite steht ein wird ein Tier aus unserem Lexikon beschrieben</p>
+                    <p class="two">Wähle das Tier im Menü aus, von dem du denkst, dass es zu der Beschreibung passt</p>
+                    <p class="three">Wenn du richtig lagst, wird das Tier grün hinterlegt in der Tabelle erscheinen. Wenn du leider falsch lagst, wird es rot hinterlegt erscheinen und du kannst es gleich nochmal mit einem weiteren Tier versuchen</p>
                 </div>
                 <div class="info-footer">
-                    <p>Du hast <em id="try-number">UNDEFINDED</em> Versuche um Lorem Ipsum </p>
+                    <p>Du kannst so oft versuchen wie du willst!</p>
                 </div>
             </aside>
         </main>
