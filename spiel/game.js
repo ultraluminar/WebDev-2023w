@@ -12,6 +12,8 @@ document.addEventListener('DOMContentLoaded',  async () => {
         const csv = await parseAnimalsCSV();
         const links = await parseLinksCSV();
         new ComboBoxAnimals(nodes, csv.column0, new DataTableAnimals(nodes, csv, links));
+
+        nodes.input.focus();
     }
 
     async function csvTo2dArray(link) {
@@ -196,9 +198,9 @@ document.addEventListener('DOMContentLoaded',  async () => {
         }
         onMatch() {
             this.nodes.input.blur();
+            this.nodes.input.placeholder = "Nochmal spielen?";
             this.nodes.button.style.visibility = 'hidden';
-            this.nodes.input.placeholder = "Nochmal spielen?";
-            this.nodes.input.placeholder = "Nochmal spielen?";
+            this.nodes.group_.classList.add('victory');
             this.nodes.input.addEventListener('keydown', location.reload.bind(location));
             this.nodes.input.addEventListener('mousedown', location.reload.bind(location));
         }

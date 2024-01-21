@@ -791,6 +791,7 @@ em {
     display: inline-flex;
     cursor: pointer;
     border: 2px solid var(--primary-color);
+    background-color: var(--background-color);
     border-radius: 1em;
     overflow: hidden;
 }
@@ -800,9 +801,22 @@ em {
     border-bottom-right-radius: 0;
 }
 
+.combobox .group.victory {
+    background-color: var(--primary-color);
+}
+
+.combobox .group.victory input::placeholder {
+    color: var(--background-color);
+}
+
+.combobox .group.victory:hover {
+    background-color: var(--primary-color-light);
+    border-color: var(--primary-color-light);
+}
+
 .combobox input,
 .combobox button {
-    background-color: var(--background-color);
+    background-color: inherit;
     color: black;
     box-sizing: border-box;
     height: 40px;
