@@ -195,11 +195,12 @@ document.addEventListener('DOMContentLoaded',  async () => {
             }
         }
         onMatch() {
-            this.nodes.datatable.classList.add('correct');
+            this.nodes.input.blur();
+            this.nodes.button.style.visibility = 'hidden';
+            this.nodes.input.placeholder = "Nochmal spielen?";
             this.nodes.input.placeholder = "Nochmal spielen?";
             this.nodes.input.addEventListener('keydown', location.reload.bind(location));
             this.nodes.input.addEventListener('mousedown', location.reload.bind(location));
-            this.nodes.button.disabled = true;
         }
 
         bodyRowByColumn0(optionText) {
