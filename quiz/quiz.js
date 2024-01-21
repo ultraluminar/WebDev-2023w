@@ -13,6 +13,8 @@ document.addEventListener('DOMContentLoaded',  async () => {
         const csv = await parseQuizCSV();
         const links = await parseLinksCSV();
         new ComboBoxAnimals(nodes, csv.body, new DataTableAnimals(nodes, csv, links));
+
+        nodes.input.focus();
     }
 
     async function csvTo2dArray(link) {
@@ -38,7 +40,7 @@ document.addEventListener('DOMContentLoaded',  async () => {
             header: [csv.shift()[0]],
             body: csv.sort().map(row => [row[0]]),
             column0: csv.map(row => row[0]),
-            questions: csv.map(row => (row[1]) ? row[1] : "UNDENFINED")
+            questions: csv.map(row => (row[1]) ? row[1] : "No keine Frage zu diesem Tier vorhanden")
 
         };
     }
