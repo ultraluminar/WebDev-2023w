@@ -184,6 +184,10 @@ nav a.self:hover {
     color: var(--background-color);
 }
 
+nav.open {
+    transform: translateY(0);
+}
+
 
 /* Hero */
 .hero {
