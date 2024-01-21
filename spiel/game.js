@@ -196,8 +196,9 @@ document.addEventListener('DOMContentLoaded',  async () => {
         }
         onMatch() {
             this.nodes.datatable.classList.add('correct');
-            this.nodes.input.placeholder = "Gewonnen!";
-            this.nodes.input.disabled = true;
+            this.nodes.input.placeholder = "Nochmal spielen?";
+            this.nodes.input.addEventListener('keydown', location.reload.bind(location));
+            this.nodes.input.addEventListener('mousedown', location.reload.bind(location));
             this.nodes.button.disabled = true;
         }
 
